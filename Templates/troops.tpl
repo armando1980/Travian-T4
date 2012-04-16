@@ -10,7 +10,7 @@ $reinfs = $village->enforcetome;
 $heroamt = 0;
 
 if(count($units) == 0 && count($reinfs) == 0) {
-	echo "<tr><td>هیچ</td></tr>";
+	echo "<tr><td>nincs</td></tr>";
 }
 else {
 	foreach($units as $unit) {

@@ -1,24 +1,22 @@
-<h1 class="titleInHeader">نانوایی <span class="level">سطح <?php echo $village->resarray['f'.$id]; ?></span></h1>
+﻿<h1 class="titleInHeader">Bakery <span class="level"> Level <?php echo $village->resarray['f'.$id]; ?></span></h1>
 <div id="build" class="gid9">
 <div class="build_desc">
 <a href="#" onClick="return Travian.Game.iPopup(9,4);" class="build_logo">
-	<img class="building big white g9" src="img/x.gif" alt="نانوایی" title="نانوایی" />
+	<img class="building big white g9" src="img/x.gif" alt="Pékség" title="Pékség" />
 </a>
-در نانوایی از آرد تولید شده در آسیاب نان تولید می‌شود. بسته 
-
-به سطح آن این ساختمان قادر به افزایش تولید گندم تا 50% می‌باشد.</div>
+Here the flour produced in your mill is used to bake bread. In conjunction with the grain mill the increase in crop production can go up to 50 percent.</div>
 
 
 	<table cellpadding="1" cellspacing="1" id="build_value">
 		<tr>
-			<th>افزایش تولید فعلی:</th>
+			<th>Current increase in production:</th>
 			<td><b><?php echo $bid9[$village->resarray['f'.$id]]['attri']; ?></b>%</td>
 		</tr>
 		<tr>
 		<?php 
         if(!$building->isMax($village->resarray['f'.$id.'t'],$id)) {
         ?>
-			<th>افزایش تولید در سطح <?php echo $village->resarray['f'.$id]+1; ?>:</th>
+			<th>Increase in production at level  <?php echo $village->resarray['f'.$id]+1; ?> L</th>
 			<td><b><?php echo $bid9[$village->resarray['f'.$id]+1]['attri']; ?></b>%</td>
             <?php
             }

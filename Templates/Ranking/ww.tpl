@@ -1,4 +1,4 @@
-<?php
+﻿<?php
  
     $result = mysql_query("select ".TB_PREFIX."users.id, ".TB_PREFIX."users.username,".TB_PREFIX."users.alliance, ".TB_PREFIX."fdata.wwname, ".TB_PREFIX."fdata.f99, ".TB_PREFIX."vdata.name, ".TB_PREFIX."vdata.wref
                         FROM ".TB_PREFIX."users 
@@ -6,9 +6,9 @@
                         INNER JOIN ".TB_PREFIX."fdata ON ".TB_PREFIX."fdata.vref = ".TB_PREFIX."vdata.wref
                         WHERE ".TB_PREFIX."fdata.f99t = 40 ORDER BY ".TB_PREFIX."fdata.f99 Desc Limit 13");
 ?>
-<h4 class="round">شگفتی جهان</h4>
+<h4 class="round">Világcsoda</h4>
 <table cellpadding="1" cellspacing="1" id="wonder">
-		<thead><tr><td></td><td>بازیکن</td><td>نام</td><td>اتحاد</td><td>سطح</td></tr></thead>
+		<thead><tr><td></td><td>Játékosok</td><td>Név</td><td>Klán</td><td>Szint</td></tr></thead>
 	<tbody>
         <?php
         $cont = 1;
@@ -18,17 +18,11 @@
       ?>
 			<tr class="hover">
 				<td class="ra"><?php echo $cont; $cont++;?>.</td>
-				<td class="pla">
-                <?php
-                echo "<a href=\"karte.php?d=".$row['wref']."&amp;c=".$generator->getMapCheck($row['wref'])."\">";
-                ?>
-                <?php
-                if($row['username']==Natars){
-                echo "ناتارها";
-                }
-                ?>
-                </a>
-                </td>
+				<td class="pla"><a href="spieler.php?uid=<?php echo $row['id'];?>"><?php echo $row['username'];?></a></td>
+
+                
+                
+
 				<td class="nam"><?php echo $row['wwname'];?></td>
 				<td class="al">
                 

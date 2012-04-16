@@ -1,6 +1,6 @@
-<div id="messageNavigation">
+﻿<div id="messageNavigation">
 	<div id="backToInbox">
-		<a href="nachrichten.php">بازگشت به صندوق پیام</a>
+		<a href="nachrichten.php">Return to inbox</a>
 	</div>
 	<div class="clear"></div>
 </div>
@@ -17,22 +17,22 @@
 		</div>
 		<div class="paperContent">
 			<div id="recipient">
-				<div class="header label">گیرنده:</div>
+				<div class="header label">Recipient:</div>
 				<div class="header text">
 <input tabindex="1" class="text" type="text" name="an" id="receiver" value="<?php if(isset($id)) { echo $database->getUserField($id,'username',0); } ?>" maxlength="50" onkeyup="copyElement('receiver')" >
 
-<button title="دفترچه اسامی" type="button" value="adbook" id="adbook" class="icon" onclick="Travian.Game.Messages.Write.showAddressBook('adressbook');" tabindex="5">
+<button title="Address Book" type="button" value="adbook" id="adbook" class="icon" onclick="Travian.Game.Messages.Write.showAddressBook('adressbook');" tabindex="5">
 <img src="img/x.gif" class="adbook" alt="adbook"></button>
 <script>
 </script>
-<button title="برای اتحاد" type="button" value="ally" id="ally" class="icon" tabindex="6" onclick="this.form.receiver.value='[ally]';">
+<button title="Ally" type="button" value="ally" id="ally" class="icon" tabindex="6" onclick="this.form.receiver.value='[ally]';">
 <img src="img/x.gif" class="ally" alt="ally"></button>
 </div>
 
 				<div class="clear"></div>
 			</div>
 			<div id="subject">
-				<div class="header label">موضوع:</div>
+				<div class="header label">Suject</div>
 				<div class="header text"><input tabindex="2" class="text" name="be" id="subject" type="text" value="<?php if(isset($message->reply['topic'])) 
 { 
    if (preg_match("/re([0-9]+)/i",$message->reply['topic'],$c)) 
@@ -74,7 +74,7 @@ echo "RE:".$message->reply['topic']; }} ?>" name="be" onkeyup="copyElement('subj
 			</script>
 						</div>
                         			<div id="send">
-				<button type="submit" value="ارسال" name="s1" id="s1" tabindex="4"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">ارسال</div></div></button>
+				<button type="submit" value="Elküld" name="s1" id="s1" tabindex="4"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Send</div></div></button>
                 <input type="hidden" name="ft" value="m2" />
 							</div>
 

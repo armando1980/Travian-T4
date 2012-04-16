@@ -1,38 +1,38 @@
-<div class="contentNavi subNavi">
+﻿<div class="contentNavi subNavi">
 				<div class="container active">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="dorf3.php"><span class="tabItem">دید کلی</span></a></div>
+					<div class="content"><a href="dorf3.php"><span class="tabItem">Overview</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><span class="tabItem">منابع</span></div>
+					<div class="content"><span class="tabItem">Resource</span></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><span class="tabItem">انبار</span></div>
+					<div class="content"><span class="tabItem">Warehouse</span></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><span class="tabItem">امتیاز فرهنگی</span></div>
+					<div class="content"><span class="tabItem">Culture Points</span></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><span class="tabItem">لشکریان</span></div>
+					<div class="content"><span class="tabItem">Troops</span></div>
 				</div><div class="clear"></div>
 </div>
 <table cellpadding="1" cellspacing="1" id="overview">
 <thead>
 <tr>
-	<td>دهکده</td>
-	<td>حمله ها</td>
-	<td>ساختمان</td> 
-	<td>لشکریان</td>
-	<td>تاجرها</td>
+	<td>Village</td>
+	<td>Attacks</td>
+	<td>Building</td> 
+	<td>Troops</td>
+	<td>Merchants</td>
 </tr></thead><tbody>
 <?php
 $varray = $database->getProfileVillages($session->uid);  

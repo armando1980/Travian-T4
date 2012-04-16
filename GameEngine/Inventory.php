@@ -83,6 +83,7 @@ if($_POST && $_POST['a']=='inventory'){
 		}
 	}
 	
+	
 	/*elseif($data['btype']==7){
 		$database->editProcItem($data['id'], 1);
 		if($hero['bag']!=0){
@@ -115,6 +116,7 @@ if($_POST && $_POST['a']=='inventory'){
 			$database->modifyHeroFace($uid, 'bag', $data['type']);
 		}
 	}*/
+	
 	
 	elseif($data['btype']==10){
 		if($data['amount'] <= $itemData['num']){

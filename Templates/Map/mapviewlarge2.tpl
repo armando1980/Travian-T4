@@ -1,15 +1,22 @@
 <div id="map_content">
-<?php 
-if(isset($_GET['z'])) {
-    $currentcoor = $database->getCoor($_GET['z']);
-    $y = $currentcoor['y'];
-    $x = $currentcoor['x'];
-    $bigmid = $_GET['z'];
+<?php
+if(isset($_GET['d']) && isset($_GET['c'])) {
+    if($generator->getMapCheck($_GET['d']) == $_GET['c']) {
+        $wref = $_GET['d'];
+        $coor = $database->getCoor($wref);
+        $x = $coor['x'];
+        $y = $coor['y'];
+    }
+}
+else if(isset($_GET['x']) && isset($_GET['y'])) {
+    $x = $_GET['y'];
+    $y = $_GET['x'];
+    $bigmid = $generator->getBaseID($y,$x);
 }
 else if(isset($_POST['xp']) && isset($_POST['yp'])){
-    $x = $_POST['xp'];
-    $y = $_POST['yp'];
-    $bigmid = $generator->getBaseID($x,$y);
+    $x = $_POST['yp'];
+    $y = $_POST['xp'];
+    $bigmid = $generator->getBaseID($y,$x);
 }
 else {
     $y = $village->coor['y'];
@@ -58,22 +65,22 @@ $xcount +=1;
 }
 }
 ?>
-<div id="mbig"><div id="lightframe"><div id="darkframe"><a id="map_popclose" href="karte.php?z=<?php echo $_GET['z'];?>"><img src="img/x.gif" alt="بستن نقشه" title="بستن نقشه"></a><h1>نقشه(<span id="x"><?php echo $x;?></span>|<span id="y"><?php echo $y;?></span>)</h1><div id="map"><script type="text/javascript">
+<div id="mbig"><div id="lightframe"><div id="darkframe"><a id="map_popclose" href="karte.php?z=<?php echo $_GET['z'];?>"><img src="img/x.gif" alt="Térkép bezárása" title="Térkép bezárása"></a><h1>Koordináta(<span id="x"><?php echo $x;?></span>|<span id="y"><?php echo $y;?></span>)</h1><div id="map"><script type="text/javascript">
 
 <!--
 var text_k = {}
-text_k.details = 'جزئیات:';
-text_k.spieler = 'بازیکن:';
-text_k.einwohner = 'جمعیت:';
-text_k.allianz = 'اتحاد:';
-text_k.verlassenes_tal = 'سرزمین متروکه';
-text_k.besetztes_tal = 'آبادی تسخیر شده';
-text_k.freie_oase = 'آبادی تسخیر نشده';
+text_k.details = 'Részletek:';
+text_k.spieler = 'Játékos:';
+text_k.einwohner = 'Népesség:';
+text_k.allianz = 'Klán:';
+text_k.verlassenes_tal = 'Elhagyott oázis';
+text_k.besetztes_tal = 'Elfoglalt oázis';
+text_k.freie_oase = 'Elhagyott oázis';
 var text_x = {}
-text_x.r1 = 'چوب';
-text_x.r2 = 'خشت';
-text_x.r3 = 'آهن';
-text_x.r4 = 'گندم';
+text_x.r1 = 'Fa';
+text_x.r2 = 'Agyag';
+text_x.r3 = 'Vas';
+text_x.r4 = 'Búza';
 
 // -->
 </script>
@@ -248,14 +255,14 @@ for($h=0;$h<=12;$h++) {
                 
             <img id="map_navibox" src="img/x.gif" usemap="#map_navibox"/>
             <map name="map_navibox">
-            <area id="ma_n1p7" href="karte.php?z=<?php echo $generator->getBaseID($x,$yp7) ?>" coords="51,15,73,3,95,15,73,27" shape="poly" title="شمال"/>
-<area id="ma_n2p7" href="karte.php?z=<?php echo $generator->getBaseID($xm7,$y) ?>" coords="51,41,73,29,95,41,73,53" shape="poly" title="شرق"/>
-<area id="ma_n3p7" href="karte.php?z=<?php echo $generator->getBaseID($x,$ym7) ?>" coords="4,41,26,29,48,41,26,53" shape="poly" title="جنوب"/>
-<area id="ma_n4p7" href="karte.php?z=<?php echo $generator->getBaseID($xp7,$y) ?>" coords="4,15,26,3,48,15,26,27" shape="poly" title="غرب"/><!--z = baseid-->
+            <area id="ma_n1p7" href="karte.php?z=<?php echo $generator->getBaseID($x,$yp7) ?>" coords="51,15,73,3,95,15,73,27" shape="poly" title="Észak"/>
+<area id="ma_n2p7" href="karte.php?z=<?php echo $generator->getBaseID($xm7,$y) ?>" coords="51,41,73,29,95,41,73,53" shape="poly" title="Kelet"/>
+<area id="ma_n3p7" href="karte.php?z=<?php echo $generator->getBaseID($x,$ym7) ?>" coords="4,41,26,29,48,41,26,53" shape="poly" title="Dél"/>
+<area id="ma_n4p7" href="karte.php?z=<?php echo $generator->getBaseID($xp7,$y) ?>" coords="4,15,26,3,48,15,26,27" shape="poly" title="Nyugat"/><!--z = baseid-->
 </map><div id="map_coords"><form name="map_coords" method="post" action="karte.php">
-            <span>x </span><input id="mcx" class="text" name="xp" value="<?php echo $x ?>" maxlength="4"/>
-            <span>y </span><input id="mcy" class="text" name="yp" value="<?php echo $y ?>" maxlength="4"/>
+            <span>x </span><input id="mcx" class="text" name="xp" value="" maxlength="4"/>
+            <span>y </span><input id="mcy" class="text" name="yp" value="" maxlength="4"/>
             <input type="image" id="btn_ok" class="dynamic_img" value="ok" name="s1" src="img/x.gif" alt="OK" />
 
-            </form></div><table cellpadding="1" cellspacing="1" id="map_infobox" class="default"><thead><tr><th colspan="2">جزئیات:</th></tr></thead><tbody><tr><th>بازیکن:</th><td>-</td></tr><tr><th>جمعیت:</th><td>-</td></tr><tr><th>اتحاد:</th><td>-</td></tr></tbody></table></div>
+            </form></div><table cellpadding="1" cellspacing="1" id="map_infobox" class="default"><thead><tr><th colspan="2">Részlet:</th></tr></thead><tbody><tr><th>Játékos:</th><td>-</td></tr><tr><th>Népesség:</th><td>-</td></tr><tr><th>Klán:</th><td>-</td></tr></tbody></table></div>
 </div>

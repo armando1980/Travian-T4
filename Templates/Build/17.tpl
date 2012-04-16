@@ -1,10 +1,10 @@
-<h1 class="titleInHeader">بازار <span class="level">سطح <?php echo $village->resarray['f'.$id]; ?></span></h1>
+﻿<h1 class="titleInHeader">Market <span class="level"> Level <?php echo $village->resarray['f'.$id]; ?></span></h1>
 <div id="build" class="gid17">
 <div class="build_desc">
 <a href="#" onClick="return Travian.Game.iPopup(17,4);" class="build_logo"> 
-	<img class="building big white g17" src="img/x.gif" alt="بازار" title="بازار" /> 
+	<img class="building big white g17" src="img/x.gif" alt="Piac" title="Piac" /> 
 </a> 
-در بازار شما قادر به تجارت منابع با دیگر بازیکنان می باشید. هر قدر سطح آن بالا باشد، قادر به تجارت بیشتر منابع در هر تجارت خواهید بود.</div> 
+At the marketplace you can trade resources with other players. The higher its level, the more resources can be transported at the same time.</div> 
  
 <?php
 include("upgrade.tpl");
@@ -12,12 +12,10 @@ include("17_menu.tpl");
 ?>
 
 <script language="JavaScript"> 
-<!--
 var haendler = <?php echo $market->merchantAvail(); ?>;
 var carry = <?php echo $market->maxcarry; ?>;
-//-->
 </script>
-<div class="boxes boxesColor gray traderCount"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">تاجر ها <?php echo $market->merchantAvail(); ?> / <?php echo $market->merchant; ?></div>
+<div class="boxes boxesColor gray traderCount"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">Merchants <?php echo $market->merchant; ?> / <?php echo $market->merchantAvail(); ?></div>
 				</div><div class="clear"></div>
 <?php
 $allres = "".$_POST['r1']."+".$_POST['r2']."+".$_POST['r3']."+".$_POST['r4']."";
@@ -34,50 +32,52 @@ if(isset($_POST['ft'])=='check' && $allres!=0 && $_POST['x']!=0 && $_POST['y']!=
 <input type="hidden" name="y" value="<?php echo $_POST['y']; ?>">
 <table id="send_select" class="send_res" cellpadding="1" cellspacing="1">
 	<tr>
-		<td class="ico"><img class="r1" src="img/x.gif" alt="چوب" title="چوب" /></td> 
-		<td class="nam"> چوب</td> 
+		<td class="ico"><img class="r1" src="img/x.gif" alt="Fa" title="Fa" /></td> 
+		<td class="nam"> Wood</td> 
 		<td class="val"><input class="text disabled" type="text" name="r1" id="r1" value="<?php echo $_POST['r1']; ?>" readonly="readonly"></td> 
 		<td class="max"> / <span class="none"><B><?php echo $market->maxcarry; ?></B></span> </td> 
 	</tr>
     <tr> 
-		<td class="ico"><img class="r2" src="img/x.gif" alt="خشت" title="خشت" /></td> 
-		<td class="nam"> خشت</td> 
+		<td class="ico"><img class="r2" src="img/x.gif" alt="Agyag" title="Agyag" /></td> 
+		<td class="nam"> Clay</td> 
 		<td class="val"><input class="text disabled" type="text" name="r2" id="r2" value="<?php echo $_POST['r2']; ?>" readonly="readonly"></td> 
 		<td class="max"> / <span class="none"><b><?php echo$market->maxcarry; ?></b></span> </td> 
 	</tr>
     <tr> 
-		<td class="ico"><img class="r3" src="img/x.gif" alt="آهن" title="آهن" /></td> 
-		<td class="nam"> آهن</td> 
+		<td class="ico"><img class="r3" src="img/x.gif" alt="Vasérc" title="Vasérc" /></td> 
+		<td class="nam"> Iron</td> 
 		<td class="val"><input class="text disabled" type="text" name="r3" id="r3" value="<?php echo $_POST['r3']; ?>" readonly="readonly"> 
 		</td> 
 		<td class="max"> / <span class="none"><b><?php echo $market->maxcarry; ?></b></span> </td> 
 	</tr>
     <tr> 
-		<td class="ico"><img class="r4" src="img/x.gif" alt="گندم" title="گندم" /></td> 
-		<td class="nam"> گندم</td> 
+		<td class="ico"><img class="r4" src="img/x.gif" alt="Búza" title="Búza" /></td> 
+		<td class="nam"> Wheat</td> 
 		<td class="val"> <input class="text disabled" type="text" name="r4" id="r4" value="<?php echo $_POST['r4']; ?>" readonly="readonly"> 
 		</td> 
 		<td class="max"> / <span class="none"><B><?php echo $market->maxcarry; ?></B></span></td> 
 	</tr></table> 
 <table id="target_validate" class="res_target" cellpadding="1" cellspacing="1">
 	<tbody><tr>
-		<th>هدف:</th>
+		<th>Coordinates:</th>
         <?php
-        $getwref = $database->getVilWref($_POST['x'],$_POST['y']);
+
+        $getwref = $database->getVilWref($_POST['y'],$_POST['x']);
         $getvildata = $database->getVillage($getwref);
+
         ?>
-		<td class="vil"><a href="karte.php?x=<?php echo $_POST['y']; ?>&amp;y=<?php echo $_POST['x']; ?>"><span class="coordinates coordinatesWithText"><span class="coordText"><?php echo $getvildata['name']; ?></span><span class="coordinatesWrapper"><span class="coordinateY"><?php echo $_POST['x']; ?>)</span><span class="coordinatePipe">|</span><span class="coordinateX">(<?php echo $_POST['y']; ?></span></span></span><span class="clear">‎</span></a></td>
+		<td class="vil"><a href="karte.php?x=<?php echo $_POST['y']; ?>&amp;y=<?php echo $_POST['x']; ?>"><span class="coordinates coordinatesWithText"><span class="coordText"><?php echo $getvildata['name']; ?></span><span class="coordinatesWrapper"><span class="coordinateY">(<?php echo $_POST['y']; ?></span><span class="coordinatePipe">|</span><span class="coordinateX"><?php echo $_POST['x']; ?>)</span></span></span><span class="clear"></span></a></td>
 	</tr>
 	<tr>
-		<th>بازیکن:</th>
-		<td><a href="spieler.php?uid=<?php echo $getvildata['owner']; ?>"><?php echo $database->getUserField($getvildata['owner'],username,0); ?></a></td>
+		<th>Player:</th>
+		<td><a href="spieler.php?uid=<?php echo $getvildata; ?>"><?php echo $database->getUserField($getvildata,username,0); ?></a></td>
 	</tr>
 	<tr>
-		<th>مدت زمان:</th>
+		<th>duration:</th>
 		<td>-</td>
 	</tr>
 	<tr>
-		<th>تاجرها:</th>
+		<th>Merchants:</th>
 		<td><?php
         $resource = array($_POST['r1'],$_POST['r2'],$_POST['r3'],$_POST['r4']); 
         echo ceil((array_sum($resource)-0.1)/$market->maxcarry); ?></td>
@@ -91,7 +91,7 @@ if(isset($_POST['ft'])=='check' && $allres!=0 && $_POST['x']!=0 && $_POST['y']!=
 </tbody></table>
 <div class="clear"></div>
 <p>
-<button type="submit" value="ok" name="s1" id="btn_ok" class="dynamic_img" tabindex="8"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">تایید</div></div></button>
+<button type="submit" value="ok" name="s1" id="btn_ok" class="dynamic_img" tabindex="8"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Send</div></div></button>
 </p></form>
 <?php }else{ ?>
 <form method="POST" name="snd" action="build.php"> 
@@ -102,10 +102,10 @@ if(isset($_POST['ft'])=='check' && $allres!=0 && $_POST['x']!=0 && $_POST['y']!=
 <tr>
 
 		<td class="ico"> 
-			<a href="#" onClick="upd_res(1,1); return false;"><img class="r1" src="img/x.gif" alt="چوب" title="چوب" /></a> 
+			<a href="#" onClick="upd_res(1,1); return false;"><img class="r1" src="img/x.gif" alt="Fa" title="Wood" /></a> 
 		</td> 
 		<td class="nam"> 
-			چوب
+			Wood
 		</td> 
 		<td class="val"> 
 			<input class="text" type="text" name="r1" id="r1" value="<?php echo $_POST['r1']; ?>" maxlength="5" onKeyUp="upd_res(1)" tabindex="1"> 
@@ -115,10 +115,10 @@ if(isset($_POST['ft'])=='check' && $allres!=0 && $_POST['x']!=0 && $_POST['y']!=
 		</td> 
 	</tr><tr> 
 		<td class="ico"> 
-			<a href="#" onClick="upd_res(2,1); return false;"><img class="r2" src="img/x.gif" alt="خشت" title="خشت" /></a> 
+			<a href="#" onClick="upd_res(2,1); return false;"><img class="r2" src="img/x.gif" alt="Agyag" title="Agyag" /></a> 
 		</td> 
 		<td class="nam"> 
-			خشت
+			Clay
 		</td> 
 		<td class="val"> 
 			<input class="text" type="text" name="r2" id="r2" value="<?php echo $_POST['r2']; ?>" maxlength="5" onKeyUp="upd_res(2)" tabindex="2"> 
@@ -128,10 +128,10 @@ if(isset($_POST['ft'])=='check' && $allres!=0 && $_POST['x']!=0 && $_POST['y']!=
 		</td> 
 	</tr><tr> 
 		<td class="ico"> 
-			<a href="#" onClick="upd_res(3,1); return false;"><img class="r3" src="img/x.gif" alt="آهن" title="آهن" /></a> 
+			<a href="#" onClick="upd_res(3,1); return false;"><img class="r3" src="img/x.gif" alt="Vasérc" title="Vasérc" /></a> 
 		</td> 
 		<td class="nam"> 
-			آهن
+			Iron
 		</td> 
 		<td class="val"> 
 			<input class="text" type="text" name="r3" id="r3" value="<?php echo $_POST['r3']; ?>" maxlength="5" onKeyUp="upd_res(3)" tabindex="3"> 
@@ -141,10 +141,10 @@ if(isset($_POST['ft'])=='check' && $allres!=0 && $_POST['x']!=0 && $_POST['y']!=
 		</td> 
 	</tr><tr> 
 		<td class="ico"> 
-			<a href="#" onClick="upd_res(4,1); return false;"><img class="r4" src="img/x.gif" alt="گندم" title="گندم" /></a> 
+			<a href="#" onClick="upd_res(4,1); return false;"><img class="r4" src="img/x.gif" alt="Búza" title="Búza" /></a> 
 		</td> 
 		<td class="nam"> 
-			گندم
+			Wheat
 		</td> 
 		<td class="val"> 
 			<input class="text" type="text" name="r4" id="r4" value="<?php echo $_POST['r4']; ?>" maxlength="5" onKeyUp="upd_res(4)" tabindex="4"> 
@@ -159,7 +159,7 @@ if(isset($_POST['ft'])=='check' && $allres!=0 && $_POST['x']!=0 && $_POST['y']!=
 				<tbody>
 					<tr>
 						<td>
-							<span>دهکده:</span>
+							<span>Village Name:</span>
 						</td>
 						<td class="compactInput">
                         	<input class="text village" type="text" name="dname" value="<?php echo $_POST['dname']; ?>" maxlength="20" tabindex="5">
@@ -172,7 +172,7 @@ if(isset($_POST['ft'])=='check' && $allres!=0 && $_POST['x']!=0 && $_POST['y']!=
 				<tbody>
 					<tr>
 						<td>
-							<span class="or">یا</span>
+							<span class="or">Coordinates</span>
 <?php
 if(isset($_GET['z'])){
 $coor = $database->getCoor($_GET['z']);
@@ -184,11 +184,11 @@ $coor['y'] = "";
 ?>			<div class="coordinatesInput">
 				<div class="xCoord">
 					<label for="xCoordInput">X:</label>
-                    <input class="text coordinates x " type="text" name="y" value="<?php echo $coor['x']; ?>" maxlength="4" tabindex="6">
+                    <input class="text coordinates x " type="text" name="y" value="<?php echo $coor['y']; ?>" maxlength="4" tabindex="6">
 				</div>
 				<div class="yCoord">
 					<label for="yCoordInput">Y:</label>
-                    <input class="text coordinates y " type="text" name="x" value="<?php echo $coor['y']; ?>" maxlength="4" tabindex="7">
+                    <input class="text coordinates y " type="text" name="x" value="<?php echo $coor['x']; ?>" maxlength="4" tabindex="7">
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -200,10 +200,10 @@ $coor['y'] = "";
 								</div>
 				</div>	</div>
 <div class="clear"></div>
-<p>هر يك از تاجر‌های شما، توانايی حمل <b><?php echo $market->maxcarry; ?></b> واحد منابع را دارد.</p>
+<p>Too few merchants.You can only carry<b><?php echo $market->maxcarry; ?></b> resources</p>
 <p>
 
-<button type="submit" value="ok" name="s1" id="btn_ok" class="dynamic_img" tabindex="8"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">ارسال</div></div></button>
+<button type="submit" value="ok" name="s1" id="btn_ok" class="dynamic_img" tabindex="8"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Send</div></div></button>
 </p>
 </form>
 <?php
@@ -211,13 +211,13 @@ $error = '';
 if(isset($_POST['ft'])=='check'){
 
 	if(!$checkexist){
-		$error = '<span class="error"><b>در این مختصات دهکده ای وجود ندارد.</b></span>';
+		$error = '<span class="error"><b>No Coordinates selected</b></span>';
     }elseif($_POST['r1']==0){
-		$error = '<span class="error"><b>منابع انتخاب نشده.</b></span>';
+		$error = '<span class="error"><b>Resources not selected.</b></span>';
     }elseif(!$_POST['x'] && !$_POST['y']){
-		$error = '<span class="error"><b>مختصات را وارد کنید.</b></span>';
+		$error = '<span class="error"><b>Enter the coordinates.</b></span>';
     }elseif($_POST['x']==0 && $_POST['y']==0){
-		$error = '<span class="error"><b>مختصات را وارد کنید.</b></span>';
+		$error = '<span class="error"><b>Enter the coordinates.</b></span>';
     }
     echo $error;
 }
@@ -285,7 +285,7 @@ document.snd.r1.focus();
 <?php
 $timer = 1;
 if(count($market->recieving) > 0) { 
-echo "<h4>تاجران در حال آمدن:</h4>";
+echo "<h4>yok</h4>";
     foreach($market->recieving as $recieve) {
        echo "<table class=\"traders\" cellpadding=\"1\" cellspacing=\"1\">";
     $ownerid = $database->getVillageField($recieve['from'],"owner");
@@ -293,58 +293,58 @@ echo "<h4>تاجران در حال آمدن:</h4>";
     $sendtovil = $database->getVillage($recieve['from']);
 	$villageowner = $database->getVillageField($recieve['from'],"owner");
 	echo "<thead><tr><td><a href=\"spieler.php?uid=".$ownerid."\">".$ownername."</a></td>";
-    echo "<td class=\"dorf\">دریافت از <a href=\"karte.php?d=".$recieve['from']."&c=".$generator->getMapCheck($recieve['from'])."\">".$sendtovil['name']."</a></td>";
-    echo "</tr></thead><tbody><tr><th>زمان رسیدن</th><td>";
-    echo "<div class=\"in\"><span id=timer$timer>".$generator->getTimeFormat($recieve['endtime']-time())."</span> ساعت</div>";
+    echo "<td class=\"dorf\">Nyersanyag szállítás <a href=\"karte.php?d=".$recieve['from']."&c=".$generator->getMapCheck($recieve['from'])."\">".$sendtovil['name']."</a> faluból</td>";
+    echo "</tr></thead><tbody><tr><th>Érkezés</th><td>";
+    echo "<div class=\"in\"><span id=timer$timer>".$generator->getTimeFormat($recieve['endtime']-time())."</span> óra</div>";
     $datetime = $generator->procMtime($recieve['endtime']);
     echo "<div class=\"at\">";
 
-    echo "در ".$datetime[1]."</div>";
-    echo "</td></tr></tbody> <tr class=\"res\"> <th>منابع</th> <td colspan=\"2\"><span class=\"f10\">";
-    echo "<img class=\"r1\" src=\"img/x.gif\" alt=\"چوب\" title=\"چوب\" /> ".$recieve['wood']." <img class=\"r2\" src=\"img/x.gif\" alt=\"خشت\" title=\"خشت\" /> ".$recieve['clay']." <img class=\"r3\" src=\"img/x.gif\" alt=\"آهن\" title=\"آهن\" /> ".$recieve['iron']." <img class=\"r4\" src=\"img/x.gif\" alt=\"گندم\" title=\"گندم\" /> ".$recieve['crop']."</td></tr></tbody>";
+    echo $datetime[1]."</div>";
+    echo "</td></tr></tbody> <tr class=\"res\"> <th>Nyersanyagok</th> <td colspan=\"2\"><span class=\"f10\">";
+    echo "<img class=\"r1\" src=\"img/x.gif\" alt=\"Fa\" title=\"Fa\" /> ".$recieve['wood']." <img class=\"r2\" src=\"img/x.gif\" alt=\"Agyag\" title=\"Agyag\" /> ".$recieve['clay']." <img class=\"r3\" src=\"img/x.gif\" alt=\"Vasérc\" title=\"Vasérc\" /> ".$recieve['iron']." <img class=\"r4\" src=\"img/x.gif\" alt=\"Búza\" title=\"Búza\" /> ".$recieve['crop']."</td></tr></tbody>";
     echo "</table>";
     $timer +=1;
     }
 }
 if(count($market->sending) > 0) {
-	echo "<h4>تاجران در راه:</h4>";
+	echo "<h4>Kereskedők úton:</h4>";
     foreach($market->sending as $send) {
         $ownerid = $database->getVillageField($send['to'],"owner");
         $ownername = $database->getUserField($ownerid,"username",0);
         $sendtovil = $database->getVillage($send['to']);
         echo "<table class=\"traders\" cellpadding=\"1\" cellspacing=\"1\">";
         echo "<thead><tr> <td><a href=\"spieler.php?uid=".$ownerid."\">".$ownername."</a></td>";
-        echo "<td class=\"dorf\">ارسال به <a href=\"karte.php?d=".$send['to']."&c=".$generator->getMapCheck($send['to'])."\">".$sendtovil['name']."</a></td>";
-        echo "</tr></thead> <tbody><tr> <th>زمان رسیدن</th> <td>";
-        echo "<div class=\"in\"><span id=timer".$timer.">".$generator->getTimeFormat($send['endtime']-time())."</span> ساعت</div>";
+        echo "<td class=\"dorf\">Nyersanyag szállítás <a href=\"karte.php?d=".$send['to']."&c=".$generator->getMapCheck($send['to'])."\">".$sendtovil['name']."</a> faluba</td>";
+        echo "</tr></thead> <tbody><tr> <th>Érkezés</th> <td>";
+        echo "<div class=\"in\"><span id=timer".$timer.">".$generator->getTimeFormat($send['endtime']-time())."</span> óra</div>";
         $datetime = $generator->procMtime($send['endtime']);
         echo "<div class=\"at\">";
 
-        echo "در ".$datetime[1]."</div>";
-        echo "</td> </tr> <tr class=\"res\"> <th>منابع</th><td>";
-        echo "<img class=\"r1\" src=\"img/x.gif\" alt=\"چوب\" title=\"چوب\" /> ".$send['wood']." <img class=\"r2\" src=\"img/x.gif\" alt=\"خشت\" title=\"خشت\" /> ".$send['clay']." <img class=\"r3\" src=\"img/x.gif\" alt=\"آهن\" title=\"آهن\" /> ".$send['iron']." <img class=\"r4\" src=\"img/x.gif\" alt=\"گندم\" title=\"گندم\" /> ".$send['crop']."</td></tr></tbody>";
+        echo $datetime[1]."</div>";
+        echo "</td> </tr> <tr class=\"res\"> <th>Nyersanyagok</th><td>";
+        echo "<img class=\"r1\" src=\"img/x.gif\" alt=\"Fa\" title=\"Fa\" /> ".$send['wood']." <img class=\"r2\" src=\"img/x.gif\" alt=\"Agyag\" title=\"Agyag\" /> ".$send['clay']." <img class=\"r3\" src=\"img/x.gif\" alt=\"Vasérc\" title=\"Vasérc\" /> ".$send['iron']." <img class=\"r4\" src=\"img/x.gif\" alt=\"Búza\" title=\"Búza\" /> ".$send['crop']."</td></tr></tbody>";
         echo "</table>";
         $timer += 1;
     }
 }
 if(count($market->return) > 0) {
-	echo "<h4>برگشت تاجران:</h4>";
+	echo "<h4>Visszatérő kereskedők:</h4>";
     foreach($market->return as $return) {
         $villageowner = $database->getVillageField($return['from'],"owner");
         $ownername = $database->getUserField($villageowner,"username",0);
         echo "<table class=\"traders\" cellpadding=\"1\" cellspacing=\"1\">";
         echo "<thead><tr> <td></td>";
-        echo "<td class=\"dorf\">برگشت از <a href=\"karte.php?d=".$return['from']."&c=".$generator->getMapCheck($return['from'])."\">$ownername</a></td>";
-        echo "</tr></thead> <tbody><tr> <th>زمان رسیدن</th> <td>";
-        echo "<div class=\"in\"><span id=timer".$timer.">".$generator->getTimeFormat($return['endtime']-time())."</span> ساعت</div>";
+        echo "<td class=\"dorf\">Visszatérés <a href=\"karte.php?d=".$return['from']."&c=".$generator->getMapCheck($return['from'])." \">$ownername</a> faluból</td>";
+        echo "</tr></thead> <tbody><tr> <th>Érkezés</th> <td>";
+        echo "<div class=\"in\"><span id=timer".$timer.">".$generator->getTimeFormat($return['endtime']-time())."</span> óra</div>";
         $datetime = $generator->procMtime($return['endtime']);
         echo "<div class=\"at\">";
         if($datetime[0] != "today") {
-        echo "در ".$datetime[0]." ";
+        echo $datetime[0]." ";
         }
-        echo "در ".$datetime[1]."</div>";
-        echo "</td> </tr> <tr class=\"res\"> <th>منابع</th><td>";
-                echo "<img class=\"r1\" src=\"img/x.gif\" alt=\"چوب\" title=\"چوب\" />".$return['wood']." | <img class=\"r2\" src=\"img/x.gif\" alt=\"خشت\" title=\"خشت\" />".$return['clay']." | <img class=\"r3\" src=\"img/x.gif\" alt=\"آهن\" title=\"آهن\" />".$return['iron']." | <img class=\"r4\" src=\"img/x.gif\" alt=\"گندم\" title=\"گندم\" />".$return['crop']."</td></tr></tbody>";
+        echo $datetime[1]."</div>";
+        echo "</td> </tr> <tr class=\"res\"> <th>Nyersanyagok</th><td>";
+                echo "<img class=\"r1\" src=\"img/x.gif\" alt=\"Fa\" title=\"Fa\" />".$return['wood']." | <img class=\"r2\" src=\"img/x.gif\" alt=\"Agyag\" title=\"Agyag\" />".$return['clay']." | <img class=\"r3\" src=\"img/x.gif\" alt=\"Vasérc\" title=\"Vasérc\" />".$return['iron']." | <img class=\"r4\" src=\"img/x.gif\" alt=\"Búza\" title=\"Búza\" />".$return['crop']."</td></tr></tbody>";
 
         echo "</tbody></table>";
         $timer += 1;

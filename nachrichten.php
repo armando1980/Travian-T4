@@ -80,7 +80,7 @@ if($message->unread) {
 							<div class="contentTitle">&nbsp;</div>
 							<div class="contentContainer"> 
 								<div id="content" class="messages">
-<h1 class="titleInHeader">پیام ها</h1>
+<h1 class="titleInHeader">Üzenetek</h1>
 <?php 
 include("Templates/Message/menu.tpl");
 ?>

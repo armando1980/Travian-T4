@@ -2,22 +2,21 @@
 
        include ("GameEngine/Village.php");
        include ("GameEngine/Chat.php");
-       $start = $generator->pageLoadTimeStart();
-       $alliance->procAlliance($_GET);
+$start = $generator->pageLoadTimeStart();
+$alliance->procAlliance($_GET);
 include "Templates/html.tpl";
 ?>
 <body class="v35 webkit chrome alliance">
-	<div id="wrapper"> 
-		<img id="staticElements" src="img/x.gif" alt="" /> 
-		<div id="logoutContainer"> 
-			<a id="logout" href="logout.php" title="<?php echo LOGOUT; ?>">&nbsp;</a> 
-		</div> 
-		<div class="bodyWrapper"> 
-			<img style="filter:chroma();" src="img/x.gif" id="msfilter" alt="" /> 
-			<div id="header"> 
-				<div id="mtop">
-					<a id="logo" href="<?php echo HOMEPAGE; ?>" target="_blank" title="<?php echo SERVER_NAME ?>"></a>
-					<ul id="navigation">
+<div id="wrapper"> 
+<img id="staticElements" src="img/x.gif" alt="" /> 
+<div id="logoutContainer"> 
+<a id="logout" href="logout.php" title="<?php echo LOGOUT; ?>">&nbsp;</a> 
+</div> 
+<div class="bodyWrapper"> 
+<img style="filter:chroma();" src="img/x.gif" id="msfilter" alt="" /> 
+<div id="header"> 
+<div id="mtop">
+<a id="logo" href="<?php echo HOMEPAGE; ?>" target="_blank" title="<?php echo SERVER_NAME ?>"></a>					<ul id="navigation">
 						<li id="n1" class="resources">
 							<a class="" href="dorf1.php" accesskey="1" title="<?php echo HEADER_DORF1; ?>"></a>
 						</li>

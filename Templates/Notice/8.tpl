@@ -50,8 +50,8 @@ if(isset($_GET['aid']) && $_GET['aid']==$session->alliance){
     <div class="boxes boxesColor gray trade"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">
     
     <div class="headline"><?php echo REPORT_SENDER; ?></div>
-    <a href="spieler.php?uid=<?php echo $database->getUserField($dataarray[1],"id",0); ?>"><?php echo ($dataarray[1] == 0)? "کاردان" : $database->getUserField($dataarray[1],"username",0); ?></a> <?php echo REPORT_FROM_VIL; ?><br>
-    <?php echo ($dataarray[0] == 0)? "بزرگان" : "<a href='karte.php?d=".$dataarray[0]."&amp;c=".$generator->getMapCheck($dataarray[0])."'>".$database->getVillageField($dataarray[0],name)."</a>"; ?>
+    <a href="spieler.php?uid=<?php echo $database->getUserField($dataarray[1],"id",0); ?>"><?php echo ($dataarray[1] == 0)? "Leleményes" : $database->getUserField($dataarray[1],"username",0); ?></a> <?php echo REPORT_FROM_VIL; ?><br>
+    <?php echo ($dataarray[0] == 0)? "Nagy" : "<a href='karte.php?d=".$dataarray[0]."&amp;c=".$generator->getMapCheck($dataarray[0])."'>".$database->getVillageField($dataarray[0],name)."</a>"; ?>
     </div>
 </div></td><td class="f16"><img src="img/x.gif" class="bigArrow" alt=""></td><td class="s7"><div class="boxes boxesColor gray trade"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">
 

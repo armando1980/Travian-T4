@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     for($i=1;$i<=0;$i++) {
     echo "Row ".$i;
     }
@@ -14,30 +14,30 @@
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="statistiken.php?tid=4"><span class="tabItem">دیدکلی</span></a></div>
+					<div class="content"><a href="statistiken.php?tid=4"><span class="tabItem">Overview</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="statistiken.php?tid=41"><span class="tabItem">مهاجم</span></a></div>
+					<div class="content"><a href="statistiken.php?tid=41"><span class="tabItem">Attacker</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="statistiken.php?tid=42"><span class="tabItem">مدافع</span></a></div>
+					<div class="content"><a href="statistiken.php?tid=42"><span class="tabItem">Defender</span></a></div>
 				</div>
 				<div class="container active">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="statistiken.php?tid=43"><span class="tabItem">تاپ 10</span></a></div>
+					<div class="content"><a href="statistiken.php?tid=43"><span class="tabItem">Top 10</span></a></div>
 				</div><div class="clear"></div>
 </div>
 <div id="statLeft" class="top10Wrapper">
-<h4 class="round small  top10_offs">مهاجمین هفته</h4>
+<h4 class="round small  top10_offs">Top Attackers</h4>
 
 <table cellpadding="1" cellspacing="1" id="top10_offs" class="top10 row_table_data">
 	<thead>
-	<tr><td>رتبه</td><td>اتحاد</td><td>امتیاز</td></tr>
+	<tr><td>Rank</td><td>Alliances</td><td>Points</td></tr>
 	</thead>
 <tbody>
 <?php
@@ -85,10 +85,10 @@
     $result = mysql_query("SELECT * FROM ".TB_PREFIX."alidata ORDER BY dp DESC, id ASC Limit 10");
     $result2 = mysql_query("SELECT * FROM ".TB_PREFIX."alidata WHERE id = '".$session->alliance."' ORDER BY dp DESC, id ASC Limit 1");
 ?>
-<h4 class="round small spacer top10_defs">مدافعین هفته</h4>
+<h4 class="round small spacer top10_defs">Top Defenders</h4>
 <table cellpadding="1" cellspacing="1" id="top10_defs" class="top10 row_table_data">
 	<thead>
-	<tr><td>رتبه</td><td>اتحاد</td><td>امتیاز</td></tr>
+	<tr><td>Rank</td><td>Alliance</td><td>Points</td></tr>
 	</thead>
 <tbody>
 <?php
@@ -141,10 +141,10 @@
     $result = mysql_query("SELECT * FROM ".TB_PREFIX."alidata ORDER BY clp DESC, id ASC Limit 10");
     $result2 = mysql_query("SELECT * FROM ".TB_PREFIX."alidata WHERE id = '".$session->alliance."' ORDER BY clp DESC, id ASC Limit 1");
 ?>
-<h4 class="round small  top10_climbers">پیشرفت کننده های هفته</h4>
+<h4 class="round small  top10_climbers">Top Climbers</h4>
 <table cellpadding="1" cellspacing="1" id="top10_climbers" class="top10 row_table_data">
 	<thead>
-	<tr><td>رتبه</td><td>اتحاد</td><td>جمعیت</td></tr>
+	<tr><td>Rank</td><td>Alliances</td><td>Population</td></tr>
 	</thead>
 <tbody>
 <?php
@@ -192,11 +192,11 @@
     $result = mysql_query("SELECT * FROM ".TB_PREFIX."alidata ORDER BY RR DESC, id ASC Limit 10");
     $result2 = mysql_query("SELECT * FROM ".TB_PREFIX."alidata WHERE id = '".$session->alliance."' ORDER BY RR DESC, id ASC Limit 1");
 ?>
-<h4 class="round small spacer top10_raiders">دزدان هفته</h4>
+<h4 class="round small spacer top10_raiders">Top Raiders</h4>
 
 <table cellpadding="1" cellspacing="1" id="top10_raiders" class="top10 row_table_data">
 	<thead>
-	<tr><td>رتبه</td><td>اتحاد</td><td>منابع</td></tr>
+	<tr><td>Rang</td><td>alliance</td><td>reasources</td></tr>
 	</thead>
 <tbody>
 <?php

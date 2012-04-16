@@ -1,6 +1,6 @@
 <?php
 unset($_SESSION['aerror']);
 ?>
-یا رمز عبور غلط است.
+Rosz jelszót adtál meg.
 <br>
-یا ثبت نام قبلاً لغو شده است.
+Vagy a regisztrációdat már előzőleg törölték

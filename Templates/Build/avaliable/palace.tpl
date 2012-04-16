@@ -1,9 +1,9 @@
-<h2>قصر</h2>
+﻿<h2>Palace</h2>
 <div class="build_desc">
 	<a href="#" onclick="return Travian.Game.iPopup(26,4);" class="build_logo">
 		<img class="building big white g26" src="img/x.gif" alt="قصر">
 	</a>
-	در قصر شاه و ملکه امپراطوری زندگی می کنند. شما در کل امپراطوری فقط یک قصر می توانید داشته باشید. فقط دهکده ای که قصر شما در آن است را می توانید به پایتخت خود تبدیل کنید (شما نمی توانید در یک دهکده قصر و اقامتگاه را با هم داشته باشید).</div>
+	The nation's king lives in the palace. A village which has a palace can be named the capital. A capital cannot be conquered. A palace and residence may not be built in the same village. Only one palace is allowed per account.</div>
 		<?php
         $_GET['bid'] = 26;
         include("availupgrade.tpl");

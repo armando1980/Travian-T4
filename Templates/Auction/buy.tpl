@@ -1,4 +1,4 @@
-<span class="error"><?php echo $bidError; ?></span>
+﻿<span class="error"><?php echo $bidError; ?></span>
 <div id="auction">
 <div id="filter">
 	<div class="boxes boxesColor gray"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">
@@ -185,7 +185,7 @@ $typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","ba
 $outputList = '';
 $timer = 1;
 if($query == 0) {        
-    $outputList .= "<td colspan=\"6\" class=\"none\"><center>حراجی پیدا نشد.</center></td>";
+    $outputList .= "<td colspan=\"6\" class=\"none\"><center>No Items Available.</center></td>";
 }else{
 while($row = mysql_fetch_array($sql2)){ 
 $id = $row["id"];$owner = $row["owner"];$btype = $row["btype"];$type = $row["type"];$num = $row["num"];$uid = $row["uid"];$bids = $row["bids"];$silver = $row["silver"];$time = $row["time"];
@@ -220,7 +220,7 @@ include "Templates/Auction/alt.tpl";
    
     	$outputList .= "<td class=\"bid".$sStyle."\"><a class=\"bidButton openedClosedSwitch switch".$switchStyle."\" href=\"?action=buy".$pURL."".$fURL."&a=".$id."\">".$bidd."</a></td>";
     }else{
-    	$outputList .= "<td class=\"notEnoughSilver".$sStyle."\">کمبود نقره</td>";
+    	$outputList .= "<td class=\"notEnoughSilver".$sStyle."\">Silver Shortage</td>";
     }
 	$outputList .= "</tr>";
     
@@ -234,12 +234,12 @@ include "Templates/Auction/alt.tpl";
     $outputList .= "<input type=\"hidden\" name=\"silver\" value=\"".$silver."\">";
     $outputList .= "<input type=\"hidden\" name=\"a\" value=\"".$_GET['a']."\">";
     $outputList .= "<div class=\"bidHeadline\">پیشنهاد برای ".$num." × ".$name."</div><div>";
-    $outputList .= "پیشنهاد فعلی: <img title=\"سکۀ نقرۀ تراوین\" class=\"silver\" src=\"img/x.gif\"> <span>".$silver."</span><br>بیشترین پیشنهاد دهنده: ";
+    $outputList .= "پیشنهاد فعلی: <img title=\"سکۀ نقرۀ تراوین\" class=\"silver\" src=\"img/x.gif\"> <span>".$silver."</span><br>The highest bidder: ";
     if($uid!=0){ $outputList .= "".$database->getUserField($uid,username,0).""; }
     if($session->uid == $uid){ $bidvalue = $silver; }else{ $bidvalue = ""; }
     $outputList .= "<span></span><br>حداکثر پیشنهاد:<input class=\"maxBid text\" type=\"text\" name=\"maxBid\" value=\"".$bidvalue."\">";
     $outputList .= "<span> (حداقل <img title=\"سکۀ نقرۀ تراوین\" class=\"silver\" src=\"img/x.gif\"> ".$silver.")</span>";
-    $outputList .= '<div class="submitBid"><button type="submit" value="پیشنهاد"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">پیشنهاد</div></div></button></div></div></form></td></tr>';
+    $outputList .= '<div class="submitBid"><button type="submit" value="پیشنهاد"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Bid</div></div></button></div></div></form></td></tr>';
 	}
     
     $timer++;
@@ -252,11 +252,11 @@ include "Templates/Auction/alt.tpl";
 <table cellspacing="1" cellpadding="1">
 	<thead>
 		<tr>
-			<th class="name" colspan="2">توضیحات</th>
+			<th class="name" colspan="2">Description</th>
 			<th class="bids"><img title="پیشنهاد‌ها" class="bids" src="img/x.gif"></th>
 			<th class="silver"><img title="سکۀ نقرۀ تراوین" class="silver" src="img/x.gif"></th>
 			<th class="time"><img title="زمان" class="clock" src="img/x.gif"></th>
-			<th class="bid">حراجی‌ها</th>
+			<th class="bid">Auctions</th>
 		</tr>
 	</thead>
     

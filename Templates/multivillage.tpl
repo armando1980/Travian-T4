@@ -1,6 +1,6 @@
 ﻿<div id="villageList" class="listing">
 <div class="head">
-	<a href="dorf3.php" accesskey="9" title="دیدکلی دهکده"><?php echo MULTI_V_HEADER; ?>:</a> 
+	<a href="dorf3.php" accesskey="9" title="Village Overview"><?php echo MULTI_V_HEADER; ?>:</a> 
 </div> 
 <div class="list"> 
 	<ul>        
@@ -14,7 +14,7 @@
                 }
 				if($aantal > 0){
 					$village_attack = "attack ";
-					$village_title = "حمله های در حال انجام به این دهکده: ".$aantal;
+					$village_title = "A falu támadás alatt áll: ".$aantal;
 				} else {
 					$village_attack = "";
 					$village_title = htmlspecialchars($returnVillageArray[$i-1]['name']);

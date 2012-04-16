@@ -7,11 +7,11 @@ for($y=0;$y < $total_for;$y++){
 $timer += 1;
 if ($units[$y]['sort_type']==3){
 	if ($units[$y]['attack_type']==3){
-		$actionType = "در حال حمله به ";
+		$actionType = "Támadás ";
 	} else if ($units[$y]['attack_type']==4){
-		$actionType = "در حال غارت ";
+		$actionType = "Fosztogatás ";
 	} else if ($units[$y]['attack_type']==2){
-		$actionType = "نیروی کمکی به ";
+		$actionType = "Támogatás ";
 	}
 
 	if($units[$y]['attack_type'] != 1){
@@ -23,23 +23,23 @@ if ($units[$y]['sort_type']==3){
                   <td colspan=\"11\" class=\"troopHeadline\">";
                   echo "<a href=\"spieler.php?uid=".$database->getVillageField($units[$y]['to'],"owner")."\">";
                   echo $actionType ." ". $village->vname;
-                  echo "</a></td></tr></thead><tbody class=\"units\">";
+                  echo " faluba</a></td></tr></thead><tbody class=\"units\">";
                   $tribe = $database->getUserField($database->getVillageField($units[$y]['from'],"owner"),"tribe",0);
                   $start = ($tribe-1)*10+1;
                   $end = ($tribe*10);
                   $coor = $database->getCoor($units[$y]['from']);
                   echo "<tr><th class=\"coords\">
 					<span class=\"coordinates coordinatesAligned\">
-                    <span class=\"coordinateY\">".$coor['x'].")</span>
+                    <span class=\"coordinateY\">(".$coor['y']."</span>
                     <span class=\"coordinatePipe\">|</span>
-                    <span class=\"coordinateX\">(".$coor['y']."</span>
+                    <span class=\"coordinateX\">".$coor['x'].")</span>
                     </span>
-                    <span class=\"clear\">‎</span></th>";
+                    <span class=\"clear\">a</span></th>";
                   for($i=$start;$i<=$end;$i++) {
                   	echo "<td><img src=\"img/x.gif\" class=\"unit u$i\" title=\"".$technology->getUnitName($i)."\" alt=\"".$technology->getUnitName($i)."\" /></td>";	
                   }
                   echo "<td><img src=\"img/x.gif\" class=\"unit uhero\" title=\"".$technology->getUnitName(51)."\" alt=\"".$technology->getUnitName(51)."\" /></td>";	
-                  echo "</tr><tr><th>لشگریان</th>";
+                  echo "</tr><tr><th>Egységek</th>";
                   
                   
 
@@ -63,12 +63,12 @@ if($village->resarray['f39'] >= 5){
                   echo '
                   <tbody class="infos">
 									<tr>
-										<th>زمان رسیدن</th>
+										<th>Érkezés</th>
 										<td colspan="11">
-										<div class="in small">تا <span id=timer'.$timer.'>'.$generator->getTimeFormat($units[$y]['endtime']-time()).'</span> ساعت.</div>';
+										<div class="in small"><span id=timer'.$timer.'>'.$generator->getTimeFormat($units[$y]['endtime']-time()).'</span> óra.</div>';
 										    $datetime = $generator->procMtime($units[$y]['endtime']);
 										    echo "<div class=\"at small\">";
-										    echo "در ".$datetime[1]." ساعت</div>
+										    echo " ".$datetime[1]." óra</div>
 											</div>
 										</td>
 									</tr>
@@ -78,13 +78,13 @@ if($village->resarray['f39'] >= 5){
 	} 
 }elseif ($units[$y]['sort_type']==4){
 	if ($units[$y]['attack_type']==1){
-		$actionType = "بازگشت به ";
+		$actionType = "Visszatérés ";
 	} else if ($units[$y]['attack_type']==2){
-		$actionType = "نیروی کمکی به ";
+		$actionType = "Visszatérés ";
 	} else if ($units[$y]['attack_type']==3){
-		$actionType = "بازگشت به ";
+		$actionType = "Visszatérés ";
 	} else if ($units[$y]['attack_type']==4){
-		$actionType = "بازگشت به ";
+		$actionType = "Visszatérés ";
 	}
 
 $to = $database->getMInfo($units[$y]['vref']);
@@ -94,7 +94,7 @@ $to = $database->getMInfo($units[$y]['vref']);
 		<tr>
 			<td class="role"><a href="karte.php?d=<?php echo $village->wid."&c=".$generator->getMapCheck($village->wid); ?>"><?php echo $village->vname; ?></a></td>
             <?php if($units[$y]['t11']!=0){ $colspan = '11'; }else{ $colspan = '10'; } ?>
-			<td colspan="<?php echo $colspan; ?>" class="troopHeadline"><a href="karte.php?d=<?php echo $to['wref']."&c=".$generator->getMapCheck($to['wref']); ?>"><?php echo $actionType ." ". $to['name']; ?></a></td>
+			<td colspan="<?php echo $colspan; ?>" class="troopHeadline"><a href="karte.php?d=<?php echo $to['wref']."&c=".$generator->getMapCheck($to['wref']); ?>"><?php echo $actionType ." ". $to['name']; ?> faluba</a></td>
 		</tr>
 	</thead>
 	<tbody class="units">
@@ -105,11 +105,11 @@ $to = $database->getMInfo($units[$y]['vref']);
                   $coor = $database->getCoor($units[$y]['vref']);
                   echo "<tr><th class=\"coords\">
 					<span class=\"coordinates coordinatesAligned\">
-                    <span class=\"coordinateY\">".$coor['x'].")</span>
+                    <span class=\"coordinateY\">(".$coor['y']."</span>
                     <span class=\"coordinatePipe\">|</span>
-                    <span class=\"coordinateX\">(".$coor['y']."</span>
+                    <span class=\"coordinateX\">".$coor['x'].")</span>
                     </span>
-                    <span class=\"clear\">‎</span></th>";
+                    <span class=\"clear\"></span></th>";
                   for($i=$start;$i<=($end);$i++) {
                   	echo "<td><img src=\"img/x.gif\" class=\"unit u$i\" title=\"".$technology->getUnitName($i)."\" alt=\"".$technology->getUnitName($i)."\" /></td>";	
                   }
@@ -118,7 +118,7 @@ $to = $database->getMInfo($units[$y]['vref']);
                   }	
 			?>
 			</tr>
- <tr><th>لشگریان</th>
+ <tr><th>Egységek</th>
             <?php
             for($i=1;$i<=10;$i++) {
             	if($units[$y]['t'.$i] == 0) {
@@ -146,13 +146,13 @@ $to = $database->getMInfo($units[$y]['vref']);
         $dataarray = explode(",",$units[$y]['data']);
         
         ?>
-    <tr><th>غنائم</th>
+    <tr><th>Zsákmány</th>
     <td colspan="<?php echo $colspan; ?>">
     <div class="res">
-    <span class="resource" title="چوب"><img class="r1" src="img/x.gif" alt="چوب"><?php echo $dataarray['0']; ?></span>
-    <span class="resource" title="خشت"><img class="r2" src="img/x.gif" alt="خشت"><?php echo $dataarray['1']; ?></span>
-    <span class="resource" title="آهن"><img class="r3" src="img/x.gif" alt="آهن"><?php echo $dataarray['2']; ?></span>
-    <span class="resource" title="گندم"><img class="r4" src="img/x.gif" alt="گندم"><?php echo $dataarray['3']; ?></span>
+    <span class="resource" title="Fa"><img class="r1" src="img/x.gif" alt="Fa"><?php echo $dataarray['0']; ?></span>
+    <span class="resource" title="Agyag"><img class="r2" src="img/x.gif" alt="Agyag"><?php echo $dataarray['1']; ?></span>
+    <span class="resource" title="Vasérc"><img class="r3" src="img/x.gif" alt="Vasérc"><?php echo $dataarray['2']; ?></span>
+    <span class="resource" title="Búza"><img class="r4" src="img/x.gif" alt="Búza"><?php echo $dataarray['3']; ?></span>
     </div>
     <div class="carry">
     <?php
@@ -176,14 +176,14 @@ $to = $database->getMInfo($units[$y]['vref']);
     </tr>
     <?php } ?>
 			<tr>
-				<th>زمان رسیدن</th>
+				<th>Érkezés</th>
 				<td colspan="<?php echo $colspan; ?>">
 				<?php
                 
-				    echo "<div class=\"in small\">تا <span id=timer".$timer.">".$generator->getTimeFormat($units[$y]['endtime']-time())."</span> ساعت.</div>";
+				    echo "<div class=\"in small\"><span id=timer".$timer.">".$generator->getTimeFormat($units[$y]['endtime']-time())."</span> óra.</div>";
 				    $datetime = $generator->procMtime($units[$y]['endtime']);
 				    echo "<div class=\"at small\">";
-				    echo "در ".$datetime[1]."</div>";
+				    echo " ".$datetime[1]."</div>";
     		?>
 					</div>
 				</td>

@@ -37,11 +37,11 @@ class Generator {
    
    public function procDistanceTime($coor,$thiscoor,$ref,$mode) {
 		global $bid28,$bid14,$building;
-		$xdistance = ABS($thiscoor['x'] - $coor['x']);
+		$xdistance = ABS($thiscoor['y'] - $coor['x']);
 		if($xdistance > WORLD_MAX) {
 			$xdistance = (2 * WORLD_MAX + 1) - $xdistance;
 		}
-		$ydistance = ABS($thiscoor['y'] - $coor['y']);
+		$ydistance = ABS($thiscoor['x'] - $coor['y']);
 		if($ydistance > WORLD_MAX) {
 			$ydistance = (2 * WORLD_MAX + 1) - $ydistance;
 		}
@@ -64,9 +64,9 @@ class Generator {
 			}
 		}
 		else {
-			$speed = $ref;
-			if($building->getTypeLevel(14) != 0) {
-				$speed = $distance <= TS_THRESHOLD ? $speed : $speed * ( ( TS_THRESHOLD + ( $distance - TS_THRESHOLD ) * $bid14[$this->getsort_typeLevel(14,$resarray)]['attri'] / 100 ) / $distance ) ;
+				$speed = $ref;
+				if($building->getTypeLevel(14) != 0) {
+					//$speed = $distance <= TS_THRESHOLD ? $speed : $speed * ( ( TS_THRESHOLD + ( $distance - TS_THRESHOLD ) * $bid14[$this->getsort_typeLevel(14,$resarray)]['attri'] / 100 ) / $distance ) ;
 			}
 		}
 		return round(($distance/$speed) * 3600 / INCREASE_SPEED);
@@ -119,11 +119,11 @@ class Generator {
 		
 		if (date('Y/m/d',time()) == date('Y/m/d',$time)) {
 		//if ((time()-$time) < 24*60*60 && (time()-$time) > 0) {
-			$day = "امروز";
+			$day = "Ma";
 		}elseif($today == date('d',$time)){
-			$day = "دیروز";
+			$day = "Tegnap";
 		}elseif($todayy == date('d',$time)){
-			$day = "پریروز";
+			$day = "Tegnapelőtt";
 		}
 		else {
 			$pref = 3;

@@ -48,7 +48,7 @@ foreach ($database->getJobs($_SESSION['wid']) as $bdata) {
     $$UnderConstruction = ($$UnderConstruction == 0 ? -1 : $$UnderConstruction);
 }
 ?>
-<h1 class="titleInHeader">احداث ساختمان جدید</h1>
+<h1 class="titleInHeader">Construction of new building</h1>
 <div id="build" class="gid0">
 <?php
 if($mainbuilding == 0 && !$database->getBuildList(15) && $id != 39  && $id != 40) {
@@ -169,7 +169,7 @@ if($greatworkshop == 0 && !$database->getBuildList(42) && $workshop == 20 && $vi
 }
 if($id != 39 && $id != 40) {
 ?>
-<div class="switch"><a id="soon_link" class="openedClosedSwitch switchClosed" href="javascript:show_build_list('soon');">نمایش ساختمانهایی که بزودی قابل احداث خواهند بود</a></div>
+<div class="switch"><a id="soon_link" class="openedClosedSwitch switchClosed" href="javascript:show_build_list('soon');">View constructions available soon</a></div>
 <div id="build_list_soon" class="hide">
 <?php
 if($rallypoint == 0 && $session->tribe == 3) {
@@ -255,7 +255,7 @@ if($greatworkshop == 0 && $workshop >= 15 && $village->capital == 0 && GREAT_WKS
 }
    ?>
     </div>
-<div class="switch"><a id="all_link" class="openedClosedSwitch switchClosed hide" href="#">جزئیات بیشتر</a></div>
+<div class="switch"><a id="all_link" class="openedClosedSwitch switchClosed hide" href="#">More</a></div>
     
     <div id="build_list_all" class="hide">
     <?php

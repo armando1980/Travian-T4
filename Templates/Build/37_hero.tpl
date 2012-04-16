@@ -2,15 +2,15 @@
 <div id="attributes">
 	<div class="boxes boxesColor gray"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">
     	<div class="attribute headline">
-			<div class="attributesHeadline">خصوصیات</div>
-			<div class="pointsHeadline">امتیازها</div>
+			<div class="attributesHeadline">Specifikációk</div>
+			<div class="pointsHeadline">Pontok</div>
 			<div class="clear"></div>
 		</div>
 
 		<div class="clear"></div>
 
-  <div class="attribute power tooltip" title="قدرت هجومی||قدرت هجومی قهرمان ترکیبی از قدرت حمله و دفاع او می‌باشد. به هر اندازه که قدرت هجومی قهرمان بیشتر باشد به همان اندازه صدمه کمتری در ماجراجویی‌های خود خواهد دید.<br><font color='#5dcbfb'>قدرت هجومی: <?php echo $hero_info['attack']; ?> از قهرمان</font>">
-			<div class="element attribName">قدرت هجومی</div>
+  <div class="attribute power tooltip" title="Támadó erő||A hős támadási ereje a védelmi erejének és a támadó erejének kombinációja. Minnél több ez az erő annál kevesebb sérülést kap a kalandnál a hős.<br><font color='#5dcbfb'>Támadási erő: <?php echo $hero_info['attack']; ?></font>">
+			<div class="element attribName">Támadási erő</div>
 			<div class="element current power"><?php echo $hero_info['attack']; ?></div>
 			<div class="element progress">
 				<div class="bar-bg">
@@ -30,8 +30,8 @@
 		</div>
 
 		<div class="clear"></div>
-  <div class="attribute offBonus tooltip" title="<font color=white><b>امتیاز هجومی</b></font><br>باعث افزایش قدرت هجومی تمامی لشکریانی خواهد شد که همراه قهرمان می‌باشند.<br><font color='#5dcbfb'>امتیاز هجومی: <?php echo ($hero_info['attackbonus']/200); ?>%</font>">
-			<div class="element attribName">امتیاز هجومی</div>
+  <div class="attribute offBonus tooltip" title="<font color=white><b>Támadó pont</b></font><br>A támadópont növeli a hős életben maradási esélyeit<br><font color='#5dcbfb'>Támadó bónusz: <?php echo ($hero_info['attackbonus']/200); ?>%</font>">
+			<div class="element attribName">Támadó bónusz</div>
 			<div class="element current power"><span class="value"><?php echo ($hero_info['attackbonus']/200); ?></span>%</div>
 			<div class="element progress">
 				<div class="bar-bg">
@@ -169,7 +169,7 @@
   </div>
 	<div class="boxes boxesColor gray"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">
     
-<div class="attribute experience tooltip" title="<font color=white><b>تجربه <?php echo floor($hero_info['level']/2); ?>%</b></font><br>برای رسیدن به سطح <?php echo ($hero_info['experience']+1); ?> قهرمان شما به <?php echo (150-$hero_info['level']); ?> تجربه نیاز دارد.">
+<div class="attribute experience tooltip" title="<font color=white><b>تجربه <?php echo floor($hero_info['level']/2); ?>%</b></font><br>برای رسیدن به Szint <?php echo ($hero_info['experience']+1); ?> قهرمان شما به <?php echo (150-$hero_info['level']); ?> تجربه نیاز دارد.">
 			<div class="element attribName">تجربه</div>
 			<div class="element current power"><?php echo $hero_info['level']; ?></div>
 			<div class="element progress">
@@ -186,8 +186,8 @@
 
 
 
-  <div class="attribute level tooltip" title="<font color=white><b>سطح قهرمان</b></font><br>سطح قهرمان شما<br><font color='#5dcbfb'>قدرت هجومی قهرمان شما برای هر امتیازی که به آن داده می‌شود به جای اینکه به میزان 80 افزایش یابد به میزان 100 افزایش خواهد یافت.</font>">
-			<div class="element attribName">سطح قهرمان</div>
+  <div class="attribute level tooltip" title="<font color=white><b>Szint قهرمان</b></font><br>Szint قهرمان شما<br><font color='#5dcbfb'>قدرت هجومی قهرمان شما برای هر امتیازی که به آن داده می‌شود به جای اینکه به میزان 80 افزایش یابد به میزان 100 افزایش خواهد یافت.</font>">
+			<div class="element attribName">Szint قهرمان</div>
 			<div class="element current power"><?php echo $hero_info['experience']; ?></div>
 			<div class="element progress">
 				<div class="bar-bg">

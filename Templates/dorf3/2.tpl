@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 include('menu.tpl');
 ?>
 <table id="ressources" cellpadding="1" cellspacing="1">
 <thead>
 <tr>
-<td> دهکده </td><td><img class="r1" src="img/x.gif" title="" alt=""></td><td><img class="r2" src="img/x.gif" title="" alt=""></td><td><img class="r3" src="img/x.gif" title="" alt=""></td><td><img class="r4" src="img/x.gif" title="" alt=""></td><td> تجار </td>
+<td> Village </td><td><img class="r1" src="img/x.gif" title="" alt=""></td><td><img class="r2" src="img/x.gif" title="" alt=""></td><td><img class="r3" src="img/x.gif" title="" alt=""></td><td><img class="r4" src="img/x.gif" title="" alt=""></td><td> Merchants </td>
 </tr></thead><tbody>
 <?php
 $varray = $database->getProfileVillages($session->uid);  
@@ -36,7 +36,7 @@ foreach($varray as $vil){
 ?>
 
 <tr><td colspan="6" class="empty"></td></tr>
-<tr class="sum"><th> مجموع </th><td class="lum"><?php echo number_format(round($woodSUM));?></td>
+<tr class="sum"><th> Total </th><td class="lum"><?php echo number_format(round($woodSUM));?></td>
 <td class="clay"><?php echo number_format(round($claySUM));?></td>
 <td class="iron"><?php echo number_format(round($ironSUM));?></td>
 <td class="crop"><?php echo number_format(round($cropSUM));?></td>

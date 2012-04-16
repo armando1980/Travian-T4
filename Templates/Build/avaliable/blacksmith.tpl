@@ -1,9 +1,9 @@
-<h2>آهنگری</h2>
+﻿<h2>Smithy</h2>
 <div class="build_desc">
 	<a href="#" onclick="return Travian.Game.iPopup(12,4);" class="build_logo">
 		<img class="building big white g13" src="img/x.gif" alt="آهنگری">
 	</a>
-	در آهنگری اسلحه ها و تجهیزات جنگی لشکریان شما ارتقاء داده می شود. هر قدر سطح آن بالا باشد بیشتر قادر به ارتقاء بیشتر اسلحه و تجهیزات خواهید بود.</div>
+	The smithy improves the weapons and armour of your troops. By increasing its level, you can order the fabrication of even better weapons and armour..</div>
 		<?php
         $_GET['bid'] = 12;
         include("availupgrade.tpl");

@@ -1,4 +1,4 @@
- <?php
+﻿ <?php
 if(isset($aid)) {
 $aid = $aid;
 }
@@ -6,7 +6,7 @@ else {
 $aid = $session->alliance;
 }
 $allianceinfo = $database->getAlliance($aid);
-echo "<h1>اتحاد - ".$allianceinfo['tag']."</h1>";
+echo "<h1>Alliance - ".$allianceinfo['tag']."</h1>";
 include("alli_menu.tpl");
 ?>
 <div class="boxes boxesColor gray reportFilter offDef"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">
@@ -15,7 +15,7 @@ include("alli_menu.tpl");
 </div>
 				</div>
                 <div class="clear"></div>
-<h4 class="chartHeadline">رویدادهای نظامی</h4>
+<h4 class="chartHeadline">Attacks</h4>
 <?php
 	if($_GET['f']==31){
 		include "Templates/Alliance/attack-attacker.tpl";
@@ -33,7 +33,7 @@ $noticeClass = array("گزارش جاسوسی","پیروزی در حمله بد�
 $outputList = '';
 $name = 1;
 if($query == 0) {        
-    $outputList .= "<td colspan=\"4\" class=\"none\">هیچ رویدادی وجود ندارد.</td>";
+    $outputList .= "<td colspan=\"4\" class=\"none\">No Attacks</td>";
 }else{
 while($row = mysql_fetch_array($sql)){ 
 	$dataarray = explode(",",$row['data']);
@@ -95,9 +95,9 @@ if($ntype==4 || $ntype==5 || $ntype==6 || $ntype==7){
 <table cellpadding="1" cellspacing="1" id="offs">
 <thead>
 <tr>
-<td>بازیکن</td>
-<td>اتحاد</td>
-<td>تاریخ</td>
+<td>Player</td>
+<td>Alliance</td>
+<td>Date</td>
 </tr>
 </thead>
 

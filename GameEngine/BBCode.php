@@ -100,8 +100,8 @@ $pattern[85] = "/\*tongue\*/";
 $pattern[86] = "/\*veryangry\*/";
 $pattern[87] = "/\*veryhappy\*/";
 $pattern[88] = "/\;\)/";
-$pattern[89] = "/\[بازیکن\](.*?)\[\/بازیکن\]/is";
-$pattern[90] = "/\[بازیکن\](.*?)\[\/بازیکن\]/is";
+$pattern[89] = "/\[játékos\](.*?)\[\/játékos\]/is";
+$pattern[90] = "/\[játékos\](.*?)\[\/játékos\]/is";
 
 
 $replace= array();

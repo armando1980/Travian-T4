@@ -19,7 +19,7 @@ mysql_connect(SQL_SERVER, SQL_USER, SQL_PASS);
 
 mysql_select_db(SQL_DB);
 
-if (mysql_num_rows(mysql_query("SELECT id FROM ".TB_PREFIX."users WHERE access = 9 AND id = ".$session->uid)) != '1') die("Hacking attempt!");
+if (mysql_num_rows(mysql_query("SELECT id FROM ".TB_PREFIX."users WHERE access = 9 AND id = ".$session->uid)) != '1') die("Betörési kisérlet!");
 
 
 
@@ -40,7 +40,7 @@ if(isset($_GET['del'])){
 }
 
 
-if (@$_POST['submit'] == "Send")
+if (@$_POST['submit'] == "Küldés")
 
 {
 
@@ -72,7 +72,7 @@ if (@isset($_POST['confirm']))
 
 		$myFile = "Templates/text.tpl";
 
-		$fh = fopen($myFile, 'w') or die("<br/><br/><br/>Can't open file: templates/text.tpl");
+		$fh = fopen($myFile, 'w') or die("<br/><br/><br/>Nem tudjuk megnyitni: templates/text.tpl");
 
 		$text = file_get_contents("Templates/text_format.tpl");
 
@@ -96,7 +96,7 @@ if (@isset($_POST['confirm']))
 
 		$done = true;
 
-		} else { die("<br/><br/><br/>wrong"); }
+		} else { die("<br/><br/><br/>hibás"); }
 
 }}
 
@@ -176,7 +176,7 @@ if (@isset($_POST['confirm']))
 
 			    <tr>	
 
-			      <td class="rbg" style="font-size: 10pt; text-align:center;">System Message</td>    
+			      <td class="rbg" style="font-size: 10pt; text-align:center;">Rendszerüzenet</td>    
 
 			    </tr>
 
@@ -190,7 +190,7 @@ if (@isset($_POST['confirm']))
 
 			    <tr>	
 
-			      <td style="text-align:center;">All fields required</td>    
+			      <td style="text-align:center;">Minden mezőt ki kell tölteni!</td>    
 
 			    </tr>
 
@@ -198,7 +198,7 @@ if (@isset($_POST['confirm']))
 
 			      <td style="text-align:center;">
 
-			        <input type="submit" value="Send" name="submit" />    </td>
+			        <input type="submit" value="Küldés" name="submit" />    </td>
 
 			    </tr>
 
@@ -208,7 +208,7 @@ if (@isset($_POST['confirm']))
 
 			</form>
 
-<a href="sysmsg.php?del">Delete old System Message</a>
+<a href="sysmsg.php?del">Régi rendszerüzenet törlése</a>
 
 <?php }elseif (@$NextStep){?>
 
@@ -220,13 +220,13 @@ if (@isset($_POST['confirm']))
 
 			    <tr>	
 
-			      <td class="rbg" colspan="2">Confirmation</td>    
+			      <td class="rbg" colspan="2">Elfogadás</td>    
 
 			    </tr>
 
 			    <tr>	
 
-			      <td style="text-align: left; width: 200px;">Do you really want to send System Message?</td>
+			      <td style="text-align: left; width: 200px;">Biztos el akarod küldeni a rendszerüzenetet?</td>
 
 			      <td style="text-align: left;">
 
@@ -242,7 +242,7 @@ if (@isset($_POST['confirm']))
 
 </form>
 
-Example: (BBCode doesn't work over here!)
+Example: (BBCode - itt nem müködik!)
 
 <?php
 
@@ -274,7 +274,7 @@ echo ($txt);
 
 System Message was sent
 
-<?php }else{die("Something is wrong");}?>
+<?php }else{die("Hiba történt");}?>
 
 </div>
 

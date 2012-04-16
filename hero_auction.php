@@ -71,28 +71,28 @@ if($message->unread) {
 							<div class="contentTitle">&nbsp;</div> 
 
 <div class="contentContainer">
-								<div id="content" class="hero_auction"><h1 class="titleInHeader">قهرمان</h1>
+								<div id="content" class="hero_auction"><h1 class="titleInHeader">Hero</h1>
 
 <div class="contentNavi subNavi">
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="hero_inventory.php"><span class="tabItem">خصوصیات</span></a></div>
+					<div class="content"><a href="hero_inventory.php"><span class="tabItem">Attributes</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="hero.php"><span class="tabItem">ظاهر</span></a></div>
+					<div class="content"><a href="hero.php"><span class="tabItem">Appearance</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="hero_adventure.php"><span class="tabItem">ماجراجویی‌ها</span></a></div>
+					<div class="content"><a href="hero_adventure.php"><span class="tabItem">Adventures</span></a></div>
 				</div>
 				<div class="container active">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="hero_auction.php"><span class="tabItem">حراجی‌ها</span></a></div>
+					<div class="content"><a href="hero_auction.php"><span class="tabItem">Auction</span></a></div>
 				</div><div class="clear"></div>
 		</div><script type="text/javascript">
 					window.addEvent('domready', function()

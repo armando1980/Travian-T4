@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 	include('menu.tpl');
 ?>
 <table id="overview" cellpadding="1" cellspacing="1">
 <thead>
-<tr><td> دهکده </td><td> حمله </td><td> ساختمان </td><td> لشکریان </td><td> تجار </td></tr>
+<tr><td> Village </td><td> Attacks </td><td> building </td><td> troops </td><td> Merchants </td></tr>
 </thead>
 <tbody>
 <?php

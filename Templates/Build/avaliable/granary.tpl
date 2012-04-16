@@ -1,9 +1,9 @@
-<h2>انبار غذا</h2>
+﻿<h2>Granary</h2>
 <div class="build_desc">
 	<a href="#" onclick="return Travian.Game.iPopup(11,4);" class="build_logo">
 		<img class="building big white g11" src="img/x.gif" alt="انبار غذا">
 	</a>
-	گندم حاصل از مزارع شما، در اينجا ذخيره مي‌شود و با افزايش ظرفيت انبار غذا مي توانيد گندم بيشتري را ذخيره كنيد.</div>
+	The wheat from the wheat fields is stored in the granary. The higher its level, the more wheat can be stored. At level 20, it is possible to build additional granaries.</div>
 		<?php
         $_GET['bid'] = 11;
         include("availupgrade.tpl");

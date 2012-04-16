@@ -63,7 +63,7 @@ for($i=0;$i<=8;$i++) {
     	}
 	}
 }
-echo "<h1 dir=\"rtl\">نقشه (<span id=\"x\">".$x."</span>|<span id=\"y\">".$y."</span>)</h1>";
+echo "<h1 dir=\"rtl\">Térkép</h1>";
 $row = 0;
 $coorindex = 0;
 ?>
@@ -77,7 +77,7 @@ $coorindex = 0;
 		<div class="mr">
 			<div class="mc">
 				<div class="contents">
-                	<a href="cropfinder.php"><div class="iconButton linkCropfinder" title="مرکز تحقیق 15گندمی"></div></a>
+                	<a href="cropfinder.php"><div class="iconButton linkCropfinder" title="15 búzás falu kereső"></div></a>
 				</div>
 			</div>
 		</div>
@@ -148,38 +148,38 @@ break;
 case 0:
 switch($maparray[$index]['oasistype']) {
 case 1:
-$tt =  "<img class='r1' src='img/x.gif' /> چوب 25%";
+$tt =  "<img class='r1' src='img/x.gif' /> Fa 25%";
 break;
 case 2:
-$tt =  "<img class='r1' src='img/x.gif' /> چوب 50%";
+$tt =  "<img class='r1' src='img/x.gif' /> Fa 50%";
 break;
 case 3:
-$tt =  "<img class='r1' src='img/x.gif' /> چوب 25%<br><img class='r4' src='img/x.gif' /> گندم 25%";
+$tt =  "<img class='r1' src='img/x.gif' /> Fa 25%<br><img class='r4' src='img/x.gif' /> Búza 25%";
 break;
 case 4:
-$tt =  "<img class='r2' src='img/x.gif' /> خشت 25%";
+$tt =  "<img class='r2' src='img/x.gif' /> Agyag 25%";
 break;
 case 5:
-$tt =  "<img class='r2' src='img/x.gif' /> خشت 50%";
+$tt =  "<img class='r2' src='img/x.gif' /> Agyag 50%";
 break;
 case 6:
-$tt =  "<img class='r2' src='img/x.gif' /> خشت 25%<br><img class='r4' src='img/x.gif' /> گندم 25%";
+$tt =  "<img class='r2' src='img/x.gif' /> Agyag 25%<br><img class='r4' src='img/x.gif' /> Búza 25%";
 break;
 case 7:
-$tt =  "<img class='r3' src='img/x.gif' /> آهن 25%";
+$tt =  "<img class='r3' src='img/x.gif' /> Vasérc 25%";
 break;
 case 8:
-$tt =  "<img class='r3' src='img/x.gif' /> آهن 50%";
+$tt =  "<img class='r3' src='img/x.gif' /> Vasérc 50%";
 break;
 case 9:
-$tt =  "<img class='r3' src='img/x.gif' /> آهن 25%<br><img class='r4' src='img/x.gif' /> گندم 25%";
+$tt =  "<img class='r3' src='img/x.gif' /> Vasérc 25%<br><img class='r4' src='img/x.gif' /> Búza 25%";
 break;
 case 10:
 case 11:
-$tt =  "<img class='r4' src='img/x.gif' /> گندم 25%";
+$tt =  "<img class='r4' src='img/x.gif' /> Búza 25%";
 break;
 case 12:
-$tt =  "<img class='r4' src='img/x.gif' /> گندم 50%";
+$tt =  "<img class='r4' src='img/x.gif' /> Búza 50%";
 break;
 }
 break;
@@ -191,29 +191,29 @@ break;
     	$allyname = $database->getAllianceName($targetalliance);
     	}
     if($tribe==1) {
-    	$tribename = "رومی ها";
+    	$tribename = "Római";
     }elseif($tribe==2) {
-    	$tribename = "توتن ها";
+    	$tribename = "Germán";
     }elseif($tribe==3) {
-    	$tribename = "گول ها";
+    	$tribename = "Gall";
     }elseif($tribe==5) {
-    	$tribename = "ناتارها";
+    	$tribename = "Natar";
         }
         
     $odata = $database->getOMInfo($maparray[$index]['id']);
     $uinfo = $database->getUserField($odata['owner'],'username',0);
     
     if($maparray[$index]['fieldtype'] > 0 && $maparray[$index]['occupied'] == 1) {
-    $targettitle = "<font color='white'><b>دهکده ".$maparray[$index]['name']."</b></font><br>(".$maparray[$index]['x']."|".$maparray[$index]['y'].")<br>بازیکن ".$username."<br>جمعیت ".$maparray[$index]['pop']."<br>اتحاد ".$allyname."<br>نژاد ".$tribename."";
+    $targettitle = "<font color='white'><b>Falu ".$maparray[$index]['name']."</b></font><br>(".$maparray[$index]['y']."|".$maparray[$index]['x'].")<br>Játékos: ".$username."<br>Népesség: ".$maparray[$index]['pop']."<br>Klán ".$allyname."<br>Nép ".$tribename."";
     }
     if($maparray[$index]['oasistype'] == 0 && $maparray[$index]['occupied'] == 0) {
-    $targettitle = "<font color='white'><b>سرزمین متروکه ".$tt."</b></font><br>(".$maparray[$index]['x']."|".$maparray[$index]['y'].")";
+    $targettitle = "<font color='white'><b>Elhagyott oázis ".$tt."</b></font><br>(".$maparray[$index]['y']."|".$maparray[$index]['x'].")";
     }
     
     if($maparray[$index]['fieldtype'] == 0 && $maparray[$index]['oasistype'] > 0 && $maparray[$index]['occupied'] == 0) {
-    $targettitle = "<font color='white'><b>آبادی تسخیر نشده</b></font><br /> (".$maparray[$index]['x']."|".$maparray[$index]['y'].")<br />".$tt."";
+    $targettitle = "<font color='white'><b>Szabad oázis</b></font><br /> (".$maparray[$index]['y']."|".$maparray[$index]['x'].")<br />".$tt."";
     }elseif($maparray[$index]['fieldtype'] == 0 && $maparray[$index]['oasistype'] > 0 && $maparray[$index]['occupied'] > 0) {
-    $targettitle = "<font color='white'><b>آبادی تسخیر شده</b></font><br /> (".$maparray[$index]['x']."|".$maparray[$index]['y'].")<br />".$tt."<br>بازیکن ".$uinfo."<br>اتحاد ".$allyname."<br>نژاد ".$tribename."";
+    $targettitle = "<font color='white'><b>Elfoglalt oázis</b></font><br /> (".$maparray[$index]['y']."|".$maparray[$index]['x'].")<br />".$tt."<br>Játékos: ".$uinfo."<br>Klán: ".$allyname."<br>Nép: ".$tribename."";
     }
     
     
@@ -261,12 +261,12 @@ break;
 </div>
 </div>
 		<div class="navigation">
-			<a href="karte.php?x=<?php echo $y-1; ?>&y=<?php echo $x; ?>" id="navigationMoveLeft" class="moveLeft"><img src="img/x.gif" title="حرکت به طرف غرب"></a>
-            <a href="karte.php?x=<?php echo $y+1; ?>&y=<?php echo $x; ?>" id="navigationMoveRight" class="moveRight"><img src="img/x.gif" title="حرکت به طرف شرق"></a>
-			<a href="karte.php?x=<?php echo $y; ?>&y=<?php echo $x+1; ?>" id="navigationMoveUp" class="moveUp"><img src="img/x.gif" title="حرکت به طرف شمال"></a>
-			<a href="karte.php?x=<?php echo $y; ?>&y=<?php echo $x-1; ?>" id="navigationMoveDown" class="moveDown"><img src="img/x.gif" title="حرکت به طرف جنوب"></a>
+			<a href="karte.php?x=<?php echo $y-1; ?>&y=<?php echo $x; ?>" id="navigationMoveLeft" class="moveLeft"><img src="img/x.gif" title="balra mozgatás"></a>
+            <a href="karte.php?x=<?php echo $y+1; ?>&y=<?php echo $x; ?>" id="navigationMoveRight" class="moveRight"><img src="img/x.gif" title="jobbra mozgatás"></a>
+			<a href="karte.php?x=<?php echo $y; ?>&y=<?php echo $x+1; ?>" id="navigationMoveUp" class="moveUp"><img src="img/x.gif" title="felfelé mozgatás"></a>
+			<a href="karte.php?x=<?php echo $y; ?>&y=<?php echo $x-1; ?>" id="navigationMoveDown" class="moveDown"><img src="img/x.gif" title="lefelé mozgatás"></a>
             <?php if($session->plus) { ?>
-            <a href="karte2.php?z=<?php echo $bigmid; ?>" id="navigationFullScreen" class="viewFullScreen full"><img src="img/x.gif" alt="تمام صفحه"></a>
+            <a href="karte2.php?x=<?php echo $y ?>&y=<?php echo $x; ?>" id="navigationFullScreen" class="viewFullScreen full"><img src="img/x.gif" alt="Nagy térkép" title="nagy térkép"></a>
             <?php } ?>
 		</div>
 		<form id="mapCoordEnter" name="map_coords" method="post" action="karte.php" class="toolbar ">
@@ -280,20 +280,20 @@ break;
             	$x = $_GET['x'];
                 $y = $_GET['y'];
                 }else{
-                $x = "0";
-                $y = "0";
+                //$x = "0";
+                //$y = "0";
                 }
             ?>
 				<div class="xCoord">
 					<label for="xCoordInputMap">X:</label>
-                    <input id="mcx" class="text" name="xp" value="<?php echo $x; ?>" maxlength="4"/>
+                    <input id="mcx" class="text" name="xp" value="" maxlength="4"/>
 				</div>
 				<div class="yCoord">
 					<label for="yCoordInputMap">Y:</label>
-					<input id="mcy" class="text" name="yp" value="<?php echo $y; ?>" maxlength="4"/>
+					<input id="mcy" class="text" name="yp" value="" maxlength="4"/>
 				</div>
 			</div>
-			<button type="submit" value="تایید" class="small"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">تایید</div></div></button>					<div class="clear"></div>
+			<button type="submit" value="OK" class="small"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">OK</div></div></button>					<div class="clear"></div>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,5 @@
 ﻿<?php
-date_default_timezone_set('Asia/Tehran');
+date_default_timezone_set('Europe/Budapest');
 
 include("GameEngine/Account.php");
 include "Templates/html.tpl";
@@ -71,9 +71,9 @@ Element.implement({
 });
 </script>
 <?php
-if(START_DATE > date('m/d/Y')){
+if(START_DATE > date('Y.m.d.')){
 	$loginform = "hide";
-}elseif(START_DATE == date('m/d/Y')){
+}elseif(START_DATE == date('Y.m.d.')){
 	
 	if(START_TIME > date('H:i')){
 	$loginform = "hide";

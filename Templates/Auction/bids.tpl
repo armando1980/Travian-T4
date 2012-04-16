@@ -1,4 +1,4 @@
-<span class="error"><?php echo $bidError; ?></span>
+﻿<span class="error"><?php echo $bidError; ?></span>
 <div id="auction">
 <div id="filter">
 	<div class="boxes boxesColor gray"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">
@@ -55,7 +55,7 @@ $typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","ba
 $outputList = '';
 $timer = 1;
 if($query == 0) {        
-    $outputList .= "<td colspan=\"7\" class=\"none\"><center>حراجی پیدا نشد.</center></td>";
+    $outputList .= "<td colspan=\"7\" class=\"none\"><center>Items not found.</center></td>";
 }else{
 while($row = mysql_fetch_array($sql2)){ 
 $id = $row["id"];$owner = $row["owner"];$btype = $row["btype"];$type = $row["type"];$num = $row["num"];$uid = $row["uid"];$bids = $row["bids"];$silver = $row["silver"];$time = $row["time"];
@@ -90,7 +90,7 @@ include "Templates/Auction/alt.tpl";
    
     	$outputList .= "<td class=\"bid".$sStyle."\"><a class=\"bidButton openedClosedSwitch switch".$switchStyle."\" href=\"?action=bids".$pURL."".$fURL."&a=".$id."\">".$bidd."</a></td>";
     }else{
-    	$outputList .= "<td class=\"notEnoughSilver".$sStyle."\">کمبود نقره</td>";
+    	$outputList .= "<td class=\"notEnoughSilver".$sStyle."\">Silver Shortage</td>";
     }
 	$outputList .= "</tr>";
     
@@ -121,11 +121,11 @@ include "Templates/Auction/alt.tpl";
 <table class="currentBid" cellspacing="1" cellpadding="1">
 	<thead>
 		<tr>
-			<th class="name" colspan="3">توضیحات</th>
+			<th class="name" colspan="3">Description</th>
 			<th class="bids"><img alt="پیشنهاد‌ها" class="bids" src="img/x.gif"></th>
 			<th class="silver"><img alt="سکۀ نقرۀ تراوین" class="silver" src="img/x.gif"></th>
 			<th class="time"><img alt="زمان" class="clock" src="img/x.gif"></th>
-			<th class="bid">حراجی‌ها</th>
+			<th class="bid">Auction</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -274,7 +274,7 @@ $typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","ba
 $outputList = '';
 $idd = 1;
 if($query == 0) {        
-    $outputList .= "<td colspan=\"7\" class=\"none\"><center>حراجی پیدا نشد.</center></td>";
+    $outputList .= "<td colspan=\"7\" class=\"none\"><center>No Bids Found.</center></td>";
 }else{
 while($row = mysql_fetch_array($sql2)){ 
 $id = $row["id"];$owner = $row["owner"];$btype = $row["btype"];$type = $row["type"];$num = $row["num"];$uid = $row["uid"];$bids = $row["bids"];$silver = $row["silver"];$time = $row["time"];
@@ -286,8 +286,8 @@ include "Templates/Auction/alt.tpl";
 	$outputList .= "<td class=\"name\">".$num." x ".$name."</td>";
 	$outputList .= "<td class=\"bids\">".$bids."</td>";
 	$outputList .= "<td class=\"silver win\">".$silver."</td>";
-	$outputList .= "<td class=\"time\">تمام شده</td>";
-	$outputList .= "<td class=\"bid win\">برنده</td></tr>";
+	$outputList .= "<td class=\"time\">Time</td>";
+	$outputList .= "<td class=\"bid win\">Won</td></tr>";
     $idd++;
 }
  }
@@ -295,15 +295,15 @@ include "Templates/Auction/alt.tpl";
 
 ?>
 <form method="post" action="hero_auction.php">
-	<h4 class="auctionEnded">حراجی‌های تمام شده</h4>
+	<h4 class="auctionEnded">Finished auctions</h4>
 	<table cellspacing="1" cellpadding="1">
 		<thead>
 			<tr>
-				<th class="name" colspan="3">توضیحات</th>
+				<th class="name" colspan="3">Description</th>
 				<th class="bids"><img alt="پیشنهاد‌ها" class="bids" src="img/x.gif"></th>
 				<th class="silver"><img alt="سکۀ نقرۀ تراوین" class="silver" src="img/x.gif"></th>
 				<th class="time"><img alt="زمان" class="clock" src="img/x.gif"></th>
-				<th class="bid">حراجی‌ها</th>
+				<th class="bid">Auctions</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -321,13 +321,13 @@ include "Templates/Auction/alt.tpl";
 					element.checked = this.checked;
 				}, this);
 			">
-			<span><label for="sAll">انتخاب همه</label></span>
+			<span><label for="sAll">Select all</label></span>
 		</div>
 		<div class="paginator"><?php echo $paginationDisplay; ?></div>		<div class="clear"></div>
 	</div>
 
 	<div>
-		<button type="submit" value="حذف" name="del" id="del"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">حذف</div></div></button>
+		<button type="submit" value="حذف" name="del" id="del"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Del</div></div></button>
         <input type="hidden" name="action" value="bids">
 		<input type="hidden" name="page" value="<?php echo $_GET['page']; ?>">
 		<input type="hidden" name="filter" value="<?php echo $_GET['filter']; ?>">

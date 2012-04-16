@@ -75,7 +75,7 @@ if($message->unread) {
 </div> 
 </div>
 					<div id="mid">
-						<a id="ingameManual" href="help.php" title="راهنما">
+						<a id="ingameManual" href="help.php" title="hi">
 							<img src="img/x.gif" class="question" alt="راهنما"/>
 						</a>
 

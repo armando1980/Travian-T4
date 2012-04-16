@@ -1,9 +1,9 @@
-<div id="auction">
+﻿<div id="auction">
 <div class="silverAmount">
 <div id="filter">
 	<div class="boxes boxesColor gray"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents cf">		<div class="wrapper">
 			<div class="silver">
-				<img title="سکۀ نقرۀ تراوین" class="silver" src="img/x.gif"> <?php $now = $database->getAuctionSilver($session->uid); echo ($session->silver - $now['silver']); ?> / <?php echo $session->silver; ?> </div>
+				<img title="Silver" class="silver" src="img/x.gif"> <?php $now = $database->getAuctionSilver($session->uid); echo ($session->silver - $now['silver']); ?> / <?php echo $session->silver; ?> </div>
 
 						<div class="clear"></div>
 		</div>
@@ -22,7 +22,7 @@ $typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","ba
 $outputList = '';
 $timer = 1;
 if($query == 0) {        
-    $outputList .= "<td colspan=\"6\" class=\"none\"><center>حراجی پیدا نشد.</center></td>";
+    $outputList .= "<td colspan=\"6\" class=\"none\"><center>No Items</center></td>";
 }else{
 	while($row = mysql_fetch_array($sql)){ 
 $id = $row["id"];$owner = $row["owner"];$btype = $row["btype"];$type = $row["type"];$num = $row["num"];$uid = $row["uid"];$bids = $row["bids"];$silver = $row["silver"];$time = $row["time"];
@@ -49,7 +49,7 @@ include "Templates/Auction/alt.tpl";
 <table class="sellings" cellspacing="1" cellpadding="1">
 	<thead>
 		<tr>
-			<th class="name" colspan="3">توضیحات</th>
+			<th class="name" colspan="3">Description</th>
 			<th class="bids"><img title="پیشنهاد‌ها" class="bids" src="img/x.gif"></th>
 			<th class="silver"><img title="سکۀ نقرۀ تراوین" class="silver" src="img/x.gif"></th>
 			<th class="time"><img title="زمان" class="clock" src="img/x.gif"></th>
@@ -70,7 +70,7 @@ $query2 = mysql_num_rows($sql2);
 
 $outputList = '';
 if($query2==0){
-	$outputList .= "<span class='none'>در انبار اجناس خود هیچ جنسی ندارید.</span>";
+	$outputList .= "<span class='none'>Finished auctions.</span>";
 }else{
 while($row = mysql_fetch_array($sql2)){ 
 $id = $row["id"];$uid = $row["uid"];$btype = $row["btype"];$type = $row["type"];$num = $row["num"];$proc = $row["proc"];
@@ -240,7 +240,7 @@ $typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","ba
 $outputList = '';
 $timer = 1;
 if($query == 0) {        
-    $outputList .= "<td colspan=\"6\" class=\"none\"><center>حراجی پیدا نشد.</center></td>";
+    $outputList .= "<td colspan=\"6\" class=\"none\"><center>No sales found.</center></td>";
 }else{
 	while($row = mysql_fetch_array($sql2)){ 
 $id = $row["id"];$owner = $row["owner"];$btype = $row["btype"];$type = $row["type"];$num = $row["num"];$uid = $row["uid"];$bids = $row["bids"];$silver = $row["silver"];$time = $row["time"];
@@ -263,11 +263,11 @@ include "Templates/Auction/alt.tpl";
 
 
 ?>
-<h4 class="auctionEnded spacer">حراجی‌های تمام شده</h4>
+<h4 class="auctionEnded spacer">Finished Auctions</h4>
 <table cellspacing="1" cellpadding="1">
 	<thead>
 		<tr>
-			<th class="name" colspan="2">توضیحات</th>
+			<th class="name" colspan="2">Description</th>
 			<th class="bids"><img title="پیشنهاد‌ها" class="bids" src="img/x.gif"></th>
 			<th class="silver"><img title="سکۀ نقرۀ تراوین" class="silver" src="img/x.gif"></th>
 			<th class="time"><img title="زمان" class="clock" src="img/x.gif"></th>

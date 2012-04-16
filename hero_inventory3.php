@@ -50,10 +50,10 @@ $start = $generator->pageLoadTimeStart();
 <script type="text/javascript">
 Travian.Translation.add(
 {
-	'allgemein.anleitung':	'دستورالعمل',
-	'allgemein.cancel':	'لغو',
-	'allgemein.ok':	'تایید',
-	'cropfinder.keine_ergebnisse': 'چیزی مطابق جستجوی شما پیدا نشد.'
+	'allgemein.anleitung':	'Instructions',
+	'allgemein.cancel':	'Cancel',
+	'allgemein.ok':	'OK',
+	'cropfinder.keine_ergebnisse': 'Your search did not find anything matching.'
 });
 Travian.applicationId = 'T4.0 Game';
 Travian.Game.version = '4.0';

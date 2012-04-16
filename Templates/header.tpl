@@ -1,8 +1,8 @@
 ﻿<?php
-if (date('H')>=18 or date('H')<6){
+if (date('H')>=20 or date('H')<6){
 $hclass = "night";
 $htitle = HEADER_NIGHT;
-} elseif (date('H')<18 or date('H')>=6){
+} elseif (date('H')<20 or date('H')>=6){
 $hclass = "day";
 $htitle = HEADER_DAY;
 }
@@ -21,7 +21,7 @@ $htitle = HEADER_DAY;
 			<a href="plus.php?id=3" title="<?php echo HEADER_GOLD; ?>"><img src="img/x.gif" alt="<?php echo HEADER_GOLD; ?>" class="gold" /><br><?php echo "$session->gold"; ?></a>
 		</p>
 <p class="silver">
-			<a href="plus.php?id=6" title="<?php echo HEADER_SILVER; ?>"><img src="img/x.gif" alt="<?php echo HEADER_SILVER; ?>" class="silver"><br><?php echo "$session->silver"; ?></a>
+			<a href="hero_auction.php" title="<?php echo HEADER_SILVER; ?>"><img src="img/x.gif" alt="<?php echo HEADER_SILVER; ?>" class="silver"><br><?php echo "$session->silver"; ?></a>
 		</p>
         <div class="clear"></div>
 	</div>

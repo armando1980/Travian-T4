@@ -15,8 +15,8 @@
 					<tr>
 						<th colspan="4"><?php echo BUILDING_UPGRADING;?>
 			<?php if($session->gold >= 2) { ?> 
-            <div class="finishNow"><a class="arrow" href="?cmd=buildingFinish" onclick="return confirm('تمامی ساخت ها و تحقیقات در این دهکده را با 2 سکۀ طلای تراوین به پایان برسان؟');">اتمام سریع ساخت </a>
-             (هزینه: <img src="img/x.gif" class="gold" alt="سکۀ طلای تراوین"> <b>2</b> )</div>
+            <div class="finish Now"><a class="arrow" href="?cmd=buildingFinish" onclick="return confirm('Complete instantly with </a>
+             <b>2 gold</b> <img src="img/x.gif" class="gold" alt="Arany"></div>
 		<?php
             }
             ?></th>
@@ -34,16 +34,16 @@
         }
         foreach($building->buildArray as $jobs) {
         	echo "<tr><td class=\"ico\"><a href=\"?d=".$jobs['id']."&a=0&c=$session->checker\">";
-            echo "<img src=\"img/x.gif\" class=\"del\" title=\"لغو\" alt=\"لغو\" /></a></td><td>";
-			echo $building->procResType($jobs['type'])." <span class=\"lvl\">سطح ".($village->resarray['f'.$jobs['field']]+($jobs['field']==$BuildFirst?2:1 ))."</span>";
+            echo "<img src=\"img/x.gif\" class=\"del\" title=\"megszakít\" alt=\"megszakít\" /></a></td><td>";
+			echo $building->procResType($jobs['type'])." <span class=\"lvl\"> Level ".($village->resarray['f'.$jobs['field']]+($jobs['field']==$BuildFirst?2:1 ))."</span>";
 			if($jobs['loopcon'] == 0) { $BuildFirst = $jobs['field']; }
             if($jobs['loopcon'] == 1) {
             	echo "";
             }
             echo "</td><td colspan=\"2\" class=\"buildingTime\"><span id=\"timer".$timer."\">";
             echo $generator->getTimeFormat($jobs['timestamp']-time());
-            echo "</span> ساعت. ";
-            echo "زمان تکمیل ".date('H:i', $jobs['timestamp'])."</td></tr>";
+            echo "</span> óra. ";
+            echo "Time ".date('H:i', $jobs['timestamp'])."</td></tr>";
             $timer +=1;
       	}
         ?>

@@ -28,47 +28,47 @@ class Automation {
         public function procResType($ref) {
         global $session;
         switch($ref) {
-            case 1: $build = "هیزم شکن"; break;
-            case 2: $build = "آجر سازی"; break;
-            case 3: $build = "معدن آهن"; break;
-            case 4: $build = "گندم زار"; break;
-            case 5: $build = "چوب بری"; break;
-            case 6: $build = "آجرپزی"; break;
-            case 7: $build = "ذوب آهن"; break;
-            case 8: $build = "آسیاب"; break;
-            case 9: $build = "نانوایی"; break;
-            case 10: $build = "انبار"; break;
-            case 11: $build = "انبار غذا"; break;
-            case 12: $build = "آهنگری"; break;
-            case 14: $build = "میدان تمرین"; break;
-            case 15: $build = "ساختمان اصلی"; break;
-            case 16: $build = "اردوگاه"; break;
-            case 17: $build = "بازار"; break;
-            case 18: $build = "سفارت"; break;
-            case 19: $build = "سربازخانه"; break;
-            case 20: $build = "اصطبل"; break;
-            case 21: $build = "کارگاه"; break;
-            case 22: $build = "دارالفنون"; break;
-            case 23: $build = "مخفیگاه"; break;
-            case 24: $build = "تالار"; break;
-            case 25: $build = "اقامتگاه"; break;
-            case 26: $build = "قصر"; break;
-            case 27: $build = "خزانه"; break;
-            case 28: $build = "تجارت خانه"; break;
-            case 29: $build = "پادگان بزرگ"; break;
-            case 30: $build = "اصطبل بزرگ"; break;
-            case 31: $build = "دیوار شهر"; break;
-            case 32: $build = "دیوار گلی"; break;
-            case 33: $build = "پرچین"; break;
-            case 34: $build = "سنگ تراشی"; break;
-            case 35: $build = "آبجوسازی"; break;
-            case 36: $build = "تله سازی"; break;
-            case 37: $build = "عمارت قهرمان"; break;
-            case 38: $build = "انبار بزرگ"; break;
-            case 39: $build = "انبار غذای بزرگ"; break;
-            case 40: $build = "شگفتی های جهان"; break;
-            case 41: $build = "آبخوری اسب ها"; break;
-            case 42: $build = "کارگاه بزرگ"; break;
+            case 1: $build = "Favágó"; break;
+            case 2: $build = "Agyagbánya"; break;
+            case 3: $build = "Vasércbánya"; break;
+            case 4: $build = "Búzafarm"; break;
+            case 5: $build = "Fűrészüzem"; break;
+            case 6: $build = "Agyagégető"; break;
+            case 7: $build = "Vasöntöde"; break;
+            case 8: $build = "Malom"; break;
+            case 9: $build = "Pékség"; break;
+            case 10: $build = "Raktár"; break;
+            case 11: $build = "Magtár"; break;
+            case 12: $build = "Kovács"; break;
+            case 14: $build = "Gyakorlótér"; break;
+            case 15: $build = "Főépület"; break;
+            case 16: $build = "Gyülekezőtér"; break;
+            case 17: $build = "Piac"; break;
+            case 18: $build = "Követség"; break;
+            case 19: $build = "Kaszárnya"; break;
+            case 20: $build = "Istálló"; break;
+            case 21: $build = "Műhely"; break;
+            case 22: $build = "Akadémia"; break;
+            case 23: $build = "Rejtekhely"; break;
+            case 24: $build = "Fórum"; break;
+            case 25: $build = "Rezidencia"; break;
+            case 26: $build = "Palota"; break;
+            case 27: $build = "Kincstár"; break;
+            case 28: $build = "Kereskedelmi központ"; break;
+            case 29: $build = "Nagy kaszárnya"; break;
+            case 30: $build = "Nagy istálló"; break;
+            case 31: $build = "Kőfal"; break;
+            case 32: $build = "Földfal"; break;
+            case 33: $build = "Cölöpfal"; break;
+            case 34: $build = "Kőfaragó"; break;
+            case 35: $build = "Sörfőzde"; break;
+            case 36: $build = "tele döntéshozatali"; break;
+            case 37: $build = "Hősök háza"; break;
+            case 38: $build = "Nagy raktár"; break;
+            case 39: $build = "Nagy magtár"; break;
+            case 40: $build = "Világcsoda"; break;
+            case 41: $build = "Lóitató"; break;
+            case 42: $build = "Műhely2"; break;
             default: $build = "Error"; break;
         }
         return $build;
@@ -1224,7 +1224,7 @@ class Automation {
                 $needed_cata = round((($battlepart[5] * (pow($tblevel,2) + $tblevel + 1)) / (8 * (round(200 * pow(1.0205,$battlepart[6]))/200) / (1 * $bid34[$stonemason]['attri']/100))) + 0.5);
                 if ($battlepart[4]>$needed_cata)
                 {
-                        $info_cat = "".$catp_pic.",".$this->procResType($tbgid)." <b>تخریب شد</b>.";
+                        $info_cat = "".$catp_pic.",".$this->procResType($tbgid)." <b>Was destroyed</b>.";
 						
 				$database->setVillageLevel($data['to'],"f".$tbid."",'0');
                     if($tbid>=19) { $database->setVillageLevel($data['to'],"f".$tbid."t",'0'); }
@@ -1282,14 +1282,14 @@ class Automation {
                 }
                 elseif ($battlepart[4]==0)
                 {    
-					$info_cat = "".$catp_pic.",به ".$this->procResType($tbgid)." آسیبی نرسید.";
+					$info_cat = "".$catp_pic.",To ".$this->procResType($tbgid)." Did not harm.";
 					}
                 else
                 {   
 					$demolish=$battlepart[4]/$needed_cata;
                     $totallvl = round(sqrt(pow(($tblevel+0.5),2)-($battlepart[4]*8)));
                     if ($tblevel==$totallvl) 
-                        $info_cata=" آسیبی نرسید.";
+                        $info_cata=" did not harm.";
                     else
                     {
 					
@@ -1297,7 +1297,7 @@ class Automation {
 					
                                
             
-                    $info_cata= " از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آسیب دید.";
+                    $info_cata= " Of <b>".$tblevel."</b> Level <b>".$totallvl."</b> Demaged.";
                   $buildarray = $GLOBALS["bid".$tbgid];
                         if ($tbgid==10 || $tbgid==38) {
                             $tsql=mysql_query("select `maxstore`,`maxcrop` from ".TB_PREFIX."vdata where wref=".$data['to']."");
@@ -1378,7 +1378,7 @@ class Automation {
                 $needed_cata = round((($battlepart[5] * (pow($tblevel,2) + $tblevel + 1)) / (8 * (round(200 * pow(1.0205,$battlepart[6]))/200) / (1 * $bid34[$stonemason]['attri']/100))) + 0.5);
                 if (($battlepart[4]/2)>$needed_cata)
                 {
-					$info_cat = "".$catp_pic.", ".$this->procResType($tbgid)." <b>تخریب شد</b>.";
+					$info_cat = "".$catp_pic.", ".$this->procResType($tbgid)." <b>Was destroyed</b>.";
                     $database->setVillageLevel($data['to'],"f".$tbid."",'0');
                     if($tbid>=19) { $database->setVillageLevel($data['to'],"f".$tbid."t",'0'); }
                     $buildarray = $GLOBALS["bid".$tbgid];
@@ -1435,7 +1435,7 @@ class Automation {
                 }
                 elseif ($battlepart[4]==0)
                 {                        
-                    $info_cat = "".$catp_pic.",به ".$this->procResType($tbgid)." آسیبی نرسید.";
+                    $info_cat = "".$catp_pic.",To ".$this->procResType($tbgid)." did not harm.";
                 }
                 else
                 {                
@@ -1524,8 +1524,8 @@ class Automation {
                 $needed_cata = round((($battlepart[5] * (pow($tblevel,2) + $tblevel + 1)) / (8 * (round(200 * pow(1.0205,$battlepart[6]))/200) / (1 * $bid34[$stonemason]['attri']/100))) + 0.5);
                 if (($battlepart[4]/2)>$needed_cata)
                 {
-					$info_cat .= "<br><tbody class=\"goods\"><tr><th>اطلاعات</th><td colspan=\"11\">
-                    <img class=\"unit u".$catp_pic."\" src=\"img/x.gif\" alt=\"منجنیق\" title=\"منجنیق\" /> ".$this->procResType($tbgid)." <b>تخریب شد</b>.</td></tr></tbody>";
+					$info_cat .= "<br><tbody class=\"goods\"><tr><th>Information</th><td colspan=\"11\">
+                    <img class=\"unit u".$catp_pic."\" src=\"img/x.gif\" alt=\"Katapult\" title=\"Katapult\" /> ".$this->procResType($tbgid)." <b>Was destroyed</b>.</td></tr></tbody>";
                     $database->setVillageLevel($data['to'],"f".$tbid."",'0');
                     if($tbid>=19) { $database->setVillageLevel($data['to'],"f".$tbid."t",'0'); }
                     $buildarray = $GLOBALS["bid".$tbgid];
@@ -1583,8 +1583,8 @@ class Automation {
                 }
                 elseif ($battlepart[4]==0)
                 {                        
-                    $info_cat .= "<br><tbody class=\"goods\"><tr><th>اطلاعات</th><td colspan=\"11\">
-                    <img class=\"unit u".$catp_pic."\" src=\"img/x.gif\" alt=\"Catapult\" title=\"Catapult\" /> به ".$this->procResType($tbgid)." آسیبی نرسید.</td></tr></tbody>";
+                    $info_cat .= "<br><tbody class=\"goods\"><tr><th>Information</th><td colspan=\"11\">
+                    <img class=\"unit u".$catp_pic."\" src=\"img/x.gif\" alt=\"Catapult\" title=\"Catapult\" /> To ".$this->procResType($tbgid)." آسیبی نرسید.</td></tr></tbody>";
                 }
                 else
                 {                

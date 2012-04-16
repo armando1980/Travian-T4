@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $prefix = "".TB_PREFIX."mdata";
 $sql = mysql_query("SELECT * FROM $prefix WHERE target = $session->uid AND archived = 1 ORDER BY time DESC");
 $query = mysql_num_rows($sql); // دریافت تعداد کوئری ها از دیتابیس
@@ -138,7 +138,7 @@ $paginationDisplay .=  '<img alt="صفحه آخر" src="img/x.gif" class="last d
 $outputList = '';
 $name = 1;
 if($query == 0) {        
-    $outputList .= "<td colspan=\"4\" class=\"none\">هیچ پیغامی در آرشیو ذخیره نشده.</td>";
+    $outputList .= "<td colspan=\"4\" class=\"none\">No Archieved Messages</td>";
 }else{
 while($row = mysql_fetch_array($sql2)){ 
     $id = $row["id"];
@@ -176,9 +176,9 @@ while($row = mysql_fetch_array($sql2)){
 <table cellpadding="1" cellspacing="1" id="overview" class="inbox">
 		<thead>
 			<tr>
-				<th colspan="2">موضوع</th>
-				<th class="send">فرستنده</th>
-				<th class="dat"><b>فرستاده شده</b></th>
+				<th colspan="2">Subject</th>
+				<th class="send">Sender</th>
+				<th class="dat"><b>Sent</b></th>
 			</tr>
 		</thead>
 <tbody>
@@ -209,7 +209,7 @@ while($row = mysql_fetch_array($sql2)){
 					element.checked = this.checked;
 				}, this);
 			">
-			<span><label for="sAll">انتخاب همه</label></span>
+			<span><label for="sAll">Check All</label></span>
             </div>
 <?php } ?>
 
@@ -219,7 +219,7 @@ while($row = mysql_fetch_array($sql2)){
     <div class="clear"></div>
 </div><p>
 <button name="delmsg" type="submit" value="del" id="del" class="delete">
-<div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">حذف</div></div>
+<div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Delete</div></div>
 </button>
                     
 <input name="ft" value="m3" type="hidden" />

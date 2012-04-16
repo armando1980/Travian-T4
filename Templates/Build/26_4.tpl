@@ -1,24 +1,23 @@
-<h1 class="titleInHeader">قصر <span class="level">سطح <?php echo $village->resarray['f'.$id]; ?></span></h1>
+﻿<h1 class="titleInHeader">Palace <span class="level">Level <?php echo $village->resarray['f'.$id]; ?></span></h1>
 <div id="build" class="gid26">
 <div class="build_desc">
 	<a href="#" onClick="return Travian.Game.iPopup(26,4, 'gid');" class="build_logo"> 
-    <img class="building big white g26" src="img/x.gif" alt="قصر" title="قصر" /> </a>
-	در قصر شاه و ملکه امپراطوری زندگی می کنند. شما در کل امپراطوری فقط یک قصر می توانید داشته باشید. فقط دهکده ای که قصر شما در آن است را می توانید به پایتخت خود تبدیل کنید (شما نمی توانید در یک دهکده قصر و اقامتگاه را با هم داشته باشید).</div>
+    <img class="building big white g26" src="img/x.gif" alt="Palota" title="Palota" /> </a>
+	The king of the nation lives in the palace. The higher the level, the more difficult it is for enemies to conquer the village. Only a palace may be used to set a village as the capital. A palace and residence may not be built in the same village. Only one palace is allowed per account.</div>
 
 <?php 
 include("upgrade.tpl");
 include("26_menu.tpl"); 
 ?>
-<h4>دهکده های بنا یا تسخیر شده توسط این دهکده</h4>
-
+<h4>Expansions</h4>
 <table cellpadding="1" cellspacing="1" id="expansion">
 <thead>
 <tr>
-	<td colspan="2">دهکده</td>
-	<td>بازیکن</td>
-	<td>جمعیت</td>
-	<td>مختصات</td>
-	<td>تاریخ</td>
+	<td colspan="2">Village</td>
+	<td>Player</td>
+	<td>Population</td>
+	<td>Coordinates</td>
+	<td>Date</td>
 </tr></thead>
 <tbody>
 <?php
@@ -41,14 +40,14 @@ echo '
 <td class="vil"><a href="karte.php?d='.${'slot'.$i}.'&c='.$generator->getMapCheck(${'slot'.$i}).'">'.$vname.'</a></td>
 <td class="pla"><center><a href="spieler.php?uid='.$owner.'">'.$ownername.'</a></center></td>
 <td class="ha"><center>'.$pop.'</center></td>
-<td class="aligned_coords"><center><a href="karte.php?d='.${'slot'.$i}.'&c='.$generator->getMapCheck(${'slot'.$i}).'">('.$coor['x'].'|'.$coor['y'].')</center></a></td>
-<td class="dat"><center>'.date('d/m/Y',$vcreated).'</center></td>
+<td class="aligned_coords"><center><a href="karte.php?d='.${'slot'.$i}.'&c='.$generator->getMapCheck(${'slot'.$i}).'">('.$coor['y'].'|'.$coor['x'].')</center></a></td>
+<td class="dat"><center>'.date('Y.m.d.',$vcreated).'</center></td>
 </tr>';
 		}
 	}
 }
 else{
-echo '<tr><td colspan="6" class="none">هیچ دهکدۀ دیگری توسط این دهکده تسخیر و یا بنا نشده است.</td></tr>';
+echo '<tr><td colspan="6" class="none">This village has not established any new villages.</td></tr>';
 }
 ?>
 </tbody></table></div>

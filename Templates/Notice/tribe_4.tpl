@@ -9,12 +9,12 @@ $start=31;
             <?php
             if($targettribe=='4'){
             echo '<a href="spieler.php?uid='.$database->getUserField($dataarray[30],"id",0).'">';
-            echo "<span class=\"none2\">طبیعت</span>";
+            echo "<span class=\"none2\">Természet</span>";
             $coor = $database->getCoor($dataarray[31]);
-            echo '</a> از روستای <a href="karte.php?d='.$dataarray[31].'&amp;c='.$generator->getMapCheck($dataarray[31]).'">
+            echo '</a> Falu <a href="karte.php?d='.$dataarray[31].'&amp;c='.$generator->getMapCheck($dataarray[31]).'">
             '.stripslashes($dataarray[32]).' ('.$coor[x].'|'.$coor[y].')</a>';
             } else {
-            echo "نیروی کمکی";
+            echo "Egység szorzó";
             }
             ?>
             </td>
@@ -31,7 +31,7 @@ for($i=$start;$i<=($start+9);$i++) {
 if($dataarray[116]){
 	echo "<td class=\"uniticon last\"><img src=\"img/x.gif\" class=\"unit uhero\" title=\"".$technology->getUnitName(51)."\" alt=\"".$technology->getUnitName(51)."\" /></td>";
 }
-echo "</tr></tbody><tbody class=\"units\"><tr><th>لشکریان</th>";
+echo "</tr></tbody><tbody class=\"units\"><tr><th>Egységek</th>";
 for($i=106;$i<=115;$i++) {
 	if($i==115 && !$dataarray[116]){ $last = ' last'; }else{ $last = ''; }
 	if($dataarray[$i] == 0) {
@@ -45,7 +45,7 @@ for($i=106;$i<=115;$i++) {
     }
 echo "</tr></tbody>";
 
-echo "<tbody class=\"units last\"><th>تلفات</th>";
+echo "<tbody class=\"units last\"><th>Veszteség</th>";
 for($i=117;$i<=126;$i++) {
 	if($i==126 && !$dataarray[116]){ $last2 = ' last'; }else{ $last2 = ''; }
 	if($dataarray[$i] == 0) {

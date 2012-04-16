@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if(isset($aid)) {
 $aid = $aid;
 }
@@ -12,11 +12,11 @@ $noticeArray = $database->readAlliNotice($aid);
 echo "<h1>".$allianceinfo['tag']." - ".$allianceinfo['name']."</h1>";
 include("alli_menu.tpl"); 
 ?>
-<h4 class="chartHeadline">رویدادهای اتحاد</h4>
+<h4 class="chartHeadline">Events</h4>
 <table cellpadding="1" cellspacing="1" id="events"><thead>
 <tr>
-<td>رویداد</td>
-<td>تاریخ</td>
+<td>Event</td>
+<td>Date</td>
 </tr>
 </thead>
 <tbody>

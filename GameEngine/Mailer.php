@@ -14,23 +14,23 @@ class Mailer {
 	
 	function sendActivate($email,$username,$pass,$act) {
 		
-	$subject = "خوش آمدید ".SERVER_NAME." به";
-	$message = "سلام ".$username."
+	$subject = "Üdvözöljük a  ".SERVER_NAME." világban";
+	$message = "Szia ".$username."
 
-بخاطر عضویت شما متشکریم
+Köszönjük a regisztrációját
 
 ----------------------------
-نام: ".$username."
-رمز عبور: ".$pass."
-کد فعالسازی: ".$act."
+Név: ".$username."
+Jelszó: ".$pass."
+Aktivációs kód: ".$act."
 ----------------------------
 
-برای فعال کردن اکانت خود لطفا روی این لینک کلیک کنید:
+Kattintson ide, hogy aktiválja az accountját:
 ".HOMEPAGE."activate.php?code=".$act."
 
-با تشکر، ".SERVER_NAME;
+Köszönjük, ".SERVER_NAME;
 				
-	$headers = "From: ".ADMIN_EMAIL."\n";
+	$headers = "Feladó: ".ADMIN_EMAIL."\n";
 		
 	mail($email, $subject, $message, $headers);
 	}
@@ -38,21 +38,21 @@ class Mailer {
 	
 	function sendPassword($email, $npw, $act, $username) {
 		
-	$subject = "رمز عبور را فراموش کردید؟";
-	$message = "سلام ".$username."
+	$subject = "Elfelejtett jelszó";
+	$message = "Szia ".$username."
 
-این ایمیل بخاطر درخواست شما برای رمز عبور جدید ارسال شده است!
-اگر شما این درخواست را کردید با دقت ادامه دهید
+Ezt az email-t azért kaptad, mert új jelszót kértél!
+Ha te kértél új jelszót:
 
 ----------------------------
-نام اکانت: ".$username."
-رمز عبور جدید: ".$npw."
+Név: ".$username."
+Jelszó: ".$npw."
 ----------------------------
 
-برای فعال کردن رمز جدید لطفا روی این لینک کلیک کنید:
+Az új jelszót a linkre kattintás után kapod meg:
 ".HOMEPAGE."password.php?user=".$username."&npw=".$npw."&code=".$act."
 
-با تشکر، ".SERVER_NAME;
+Köszönettel: ".SERVER_NAME;
 				
 	$headers = "From: ".ADMIN_EMAIL."\n";
 		

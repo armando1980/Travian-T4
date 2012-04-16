@@ -46,7 +46,7 @@ for($i=0;$i<=12;$i++) {
         }
     }
 }
-echo "{\"lm\":\"<div id=\\\"mbig\\\"><div id=\\\"lightframe\\\"><div id=\\\"darkframe\\\"><a id=\\\"map_popclose\\\" href=\\\"karte.php?z=2356\\\"><img src=\\\"img\\/x.gif\\\" alt=\\\"بستن\\\" title=\\\"بستن\\\" \\/><\\/a><h1>نقشه (<span id=\\\"x\\\">";
+echo "{\"lm\":\"<div id=\\\"mbig\\\"><div id=\\\"lightframe\\\"><div id=\\\"darkframe\\\"><a id=\\\"map_popclose\\\" href=\\\"karte.php?z=2356\\\"><img src=\\\"img\\/x.gif\\\" alt=\\\"Bezárás\\\" title=\\\"Bezárás\\\" \\/><\\/a><h1>Bezárás (<span id=\\\"x\\\">";
 echo $x;
 echo "<\\/span>|<span id=\\\"y\\\">";
 echo $y;

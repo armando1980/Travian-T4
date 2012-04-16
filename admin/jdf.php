@@ -70,14 +70,14 @@ function jdate($type,$maket="now")
                                 break;
                         case "D":
                                 $result1=date("D",$need);
-                                if($result1=="Thu") $result1="&#1662;";
-                                else if($result1=="Sat") $result1="&#1588;";
-                                else if($result1=="Sun") $result1="&#1609;";
-                                else if($result1=="Mon") $result1="&#1583;";
-                                else if($result1=="Tue") $result1="&#1587;";
-                                else if($result1=="Wed") $result1="&#1670;";
-                                else if($result1=="Thu") $result1="&#1662;";
-                                else if($result1=="Fri") $result1="&#1580;";
+                                if($result1=="Cs") $result1="&#1662;";
+                                else if($result1=="Szo") $result1="&#1588;";
+                                else if($result1=="V") $result1="&#1609;";
+                                else if($result1=="H") $result1="&#1583;";
+                                else if($result1=="K") $result1="&#1587;";
+                                else if($result1=="Sze") $result1="&#1670;";
+                                else if($result1=="Cs") $result1="&#1662;";
+                                else if($result1=="P") $result1="&#1580;";
                                 $result.=$result1;
                                 break;
                         case"F":
@@ -115,13 +115,13 @@ function jdate($type,$maket="now")
                                 break;
                         case "l":
                                 $result1=date("l",$need);
-                                if($result1=="Saturday") $result1="&#1588;&#1606;&#1576;&#1607;";
-                                else if($result1=="Sunday") $result1="&#1610;&#1603;&#1588;&#1606;&#1576;&#1607;";
-                                else if($result1=="Monday") $result1="&#1583;&#1608;&#1588;&#1606;&#1576;&#1607;";
-                                else if($result1=="Tuesday") $result1="&#1587;&#1607;&#32;&#1588;&#1606;&#1576;&#1607;";
-                                else if($result1=="Wednesday") $result1="&#1670;&#1607;&#1575;&#1585;&#1588;&#1606;&#1576;&#1607;";
-                                else if($result1=="Thursday") $result1="&#1662;&#1606;&#1580;&#1588;&#1606;&#1576;&#1607;";
-                                else if($result1=="Friday") $result1="&#1580;&#1605;&#1593;&#1607;";
+                                if($result1=="Szombat") $result1="&#1588;&#1606;&#1576;&#1607;";
+                                else if($result1=="Vasárnap") $result1="&#1610;&#1603;&#1588;&#1606;&#1576;&#1607;";
+                                else if($result1=="Hétfő") $result1="&#1583;&#1608;&#1588;&#1606;&#1576;&#1607;";
+                                else if($result1=="Kedd") $result1="&#1587;&#1607;&#32;&#1588;&#1606;&#1576;&#1607;";
+                                else if($result1=="Szerda") $result1="&#1670;&#1607;&#1575;&#1585;&#1588;&#1606;&#1576;&#1607;";
+                                else if($result1=="Csütörtök") $result1="&#1662;&#1606;&#1580;&#1588;&#1606;&#1576;&#1607;";
+                                else if($result1=="Péntek") $result1="&#1580;&#1605;&#1593;&#1607;";
                                 $result.=$result1;
                                 break;
                         case "m":

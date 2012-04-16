@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if(isset($_GET['aid'])) {
 $aid = $_GET['aid'];
 }
@@ -15,7 +15,7 @@ $totalpop = 0;
 foreach($memberlist as $member) {
     $totalpop += $database->getVSumField($member['id'],"pop");
 }
-echo "<h1 class=\"titleInHeader\">اتحاد - ".$allianceinfo['tag']."</h1>";
+echo "<h1 class=\"titleInHeader\">Alliance - ".$allianceinfo['tag']."</h1>";
 
 $profiel="".$allianceinfo['notice']."".md5(skJkev3)."".$allianceinfo['desc']."";
 require("medal.php");
@@ -25,29 +25,29 @@ include("alli_menu.tpl");
 
 ?>
 <div id="details">
-			<h4 class="round small">جزئیات</h4>
+			<h4 class="round small">Details:</h4>
 			<table cellpadding="1" cellspacing="1" class="transparent">
 				<tbody>
 					<tr>
-						<th>علامت:</th>
+						<th>Tag:</th>
 						<td><?php echo $allianceinfo['tag']; ?></td>
 					</tr>
 					<tr>
-						<th>نام:</th>
+						<th>Name:</th>
 						<td><?php echo $allianceinfo['name']; ?></td>
 					</tr>
 					<tr>
-						<th>رتبه</th>
+						<th>Rank</th>
 						<td><?php echo $ranking->getAllianceRank($aid); ?></td>
 					</tr>
 
 					<tr>
-						<th>امتیاز</th>
+						<th>Points</th>
 						<td><?php echo $totalpop; ?></td>
 					</tr>
 
 					<tr>
-						<th>اعضا</th>
+						<th>Members</th>
 						<td><?php echo count($memberlist); ?></td>
 					</tr>
 					
@@ -55,7 +55,7 @@ include("alli_menu.tpl");
 			</table>
 		</div>
         <div id="memberTitles">
-				<h4 class="round small">موقعیت</h4>
+				<h4 class="round small">Position</h4>
 				<table cellpadding="1" cellspacing="1" class="transparent">
 					<tbody>
                 <?php
@@ -85,7 +85,7 @@ include("alli_menu.tpl");
 				</table>
 </div>
             <div class="clear"></div>
-            <h4 class="round">توضیحات</h4>
+            <h4 class="round">Description</h4>
             <div class="description description1">
 <?php echo nl2br($profiel[1]); ?>
 		</div>
@@ -93,13 +93,13 @@ include("alli_menu.tpl");
 <?php echo nl2br($profiel[0]); ?>
 		</div>
         <div class="clear"></div>
-<h4 class="round">اعضا</h4>
+<h4 class="round">Members</h4>
         <table cellpadding="1" cellspacing="1" id="member">
 			<thead>
 				<tr>
-					<th>بازیکن</th>
-					<th>جمعيت</th>
-                    <th>دهکده ها</th>
+					<th>Name</th>
+					<th>Population</th>
+                    <th>Villages</th>
 				</tr>
 			</thead>
 			<tbody>

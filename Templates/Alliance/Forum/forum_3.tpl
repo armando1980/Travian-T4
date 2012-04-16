@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 //////////////// made by TTMTT ////////////////
 
 $topic_id = $_GET['idt'];
@@ -14,15 +14,15 @@ foreach($show_topic as $topi) {
 
 	<table cellpadding="1" cellspacing="1" id="edit_topic"><thead>
 		<tr>
-	        <th colspan="2">ویرایش فروم</tr>
+	        <th colspan="2">Editing forum</tr>
 		</thead><tbody>
 		<tr>
-			<th>موضوع:</th>
+			<th>Subject:</th>
 
 			<td><input class="text" type="Text" name="thema" value="<?php echo $title; ?>" maxlength="35"></td>
 		</tr>
 		<tr>
-			<th>انتقال تاپیک به </td>
+			<th>Transfer Thread </td>
 			<td><select class="dropdown" name="fid">
 <?php
 $show_cat = $database->ForumCat();

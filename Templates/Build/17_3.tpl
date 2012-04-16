@@ -1,12 +1,10 @@
-<h1 class="titleInHeader">بازار <span class="level">سطح <?php echo $village->resarray['f'.$id]; ?></span></h1>
+﻿<h1 class="titleInHeader">Market <span class="level"> Level <?php echo $village->resarray['f'.$id]; ?></span></h1>
 <div id="build" class="gid17">
 <div class="build_desc">
 <a href="#" onClick="return Travian.Game.iPopup(17,4);" class="build_logo"> 
-	<img class="building big white g17" src="img/x.gif" alt="بازار" title="بازار" /> 
+	<img class="building big white g17" src="img/x.gif" alt="Piac" title="Piac" /> 
 </a> 
-در بازار شما قادر به تجارت منابع با دیگر بازیکنان می باشید. هر قدر سطح آن بالا باشد، قادر به تجارت بیشتر منابع در هر تجارت خواهید بود.
-</div> 
- 
+At the marketplace you can trade resources with other players. The higher its level, the more resources can be transported at the same time.</div>  
 <?php
 include("upgrade.tpl");
 include("17_menu.tpl"); 
@@ -15,13 +13,12 @@ include("17_menu.tpl");
 if(isset($_GET['c'])){
 ?>
 
-<p><b>منابع تعدیل شد.</b> هزینه: <b>3</b><img src="img/x.gif" class="gold" alt="سکۀ طلای تراوین" title="سکۀ طلای تراوین" /></p>
-<a href="javascript: history.go(-2)">بازگشت به ساختمان</a> 
+<p><b>Raw Materials Distributed.</b> Cost: <b>3 </b><img src="img/x.gif" class="gold" alt="Arany" title="Gold" /></p>
+<a href="javascript: history.go(-2)">Back to the building</a> 
 
 <?php } else { ?>
 
-<p>با تاجرهای تعدیل منابع، شما قادر به تجارت منابع در انبار خود به هر نحوی که دوست دارید هستید. <br /><br />
-در خط اول منابع موجود فعلی نمایش داده می شود و در خط دوم شما قادر به نوشتن نسبت دلخواه خود با توجه به منابع موجود می باشید. در خط سوم تفاضل میان مقادیر قبلی و جدید نمایش داده می شود.</p>
+<p>You can redistribute the resources in your warehouse with the NPC merchants.<br><br>The first row shows the current warehouse contents. In the second, you can specify a different distribution. The third shows the difference between the new and old proportions.</p>
 
 
 <script language="JavaScript"> 
@@ -156,7 +153,7 @@ function portionOut() {
  
 function testSum() {
 	if (document.getElementById("remain").innerHTML!=0) {
-		document.getElementById("submitText").innerHTML="<p id='submitText' style='display: block; '><button type='submit' value='منابع را تعدیل کن (مرحله 1 از 2)' onclick='javascript:portionOut();'><div class='button-container'><div class='button-position'><div class='btl'><div class='btr'><div class='btc'></div></div></div><div class='bml'><div class='bmr'><div class='bmc'></div></div></div><div class='bbl'><div class='bbr'><div class='bbc'></div></div></div></div><div class='button-contents'>منابع را تعدیل کن (مرحله 1 از 2)</div></div></button></p>";
+		document.getElementById("submitText").innerHTML="<p id='submitText' style='display: block; '><button type='submit' value='(1/2) nyersanyag elosztás' onclick='javascript:portionOut();'><div class='button-container'><div class='button-position'><div class='btl'><div class='btr'><div class='btc'></div></div></div><div class='bml'><div class='bmr'><div class='bmc'></div></div></div><div class='bbl'><div class='bbr'><div class='bbc'></div></div></div></div><div class='button-contents'>Redistribute resources (1/2)</div></div></button></p>";
 		document.getElementById("submitText").style.display="block";
 		document.getElementById("submitButton").style.display="none";
 	} else {
@@ -177,26 +174,26 @@ function testSum() {
 				<tr> 
 	
 			<td class="all"> 
-				<a href="javascript:fillup(0);"><img class="r1" src="img/x.gif" alt="چوب" title="چوب" /></a> 
+				<a href="javascript:fillup(0);"><img class="r1" src="img/x.gif" alt="Wood" title="Wood" /></a> 
 				<span id="org0"><?php echo floor($village->awood); ?></span> 
 			</td> 
 		
 			<td class="all"> 
-				<a href="javascript:fillup(1);"><img class="r2" src="img/x.gif" alt="خشت" title="خشت" /></a> 
+				<a href="javascript:fillup(1);"><img class="r2" src="img/x.gif" alt="Clay" title="Clay" /></a> 
 				<span id="org1"><?php echo floor($village->aclay); ?></span> 
 			</td> 
 		
 			<td class="all"> 
-				<a href="javascript:fillup(2);"><img class="r3" src="img/x.gif" alt="آهن" title="آهن" /></a> 
+				<a href="javascript:fillup(2);"><img class="r3" src="img/x.gif" alt="Iron" title="Iron" /></a> 
 				<span id="org2"><?php echo floor($village->airon); ?></span> 
 			</td> 
 		
 			<td class="all"> 
-				<a href="javascript:fillup(3);"><img class="r4" src="img/x.gif" alt="گندم" title="گندم" /></a> 
+				<a href="javascript:fillup(3);"><img class="r4" src="img/x.gif" alt="Wheat" title="Wheat" /></a> 
 				<span id="org3"><?php echo floor($village->acrop); ?></span> 
 			</td> 
 		
-				<td class="sum">مجموع:&nbsp;<span id="org4"><?php echo floor($village->awood+$village->acrop+$village->airon+$village->aclay); ?></span></td> 
+				<td class="sum">Total:&nbsp;<span id="org4"><?php echo floor($village->awood+$village->acrop+$village->airon+$village->aclay); ?></span></td> 
 			</tr> 
 		</thead> 
 		<tbody> 
@@ -222,7 +219,7 @@ function testSum() {
 				<input type="hidden" name="m1[]" value="<?php echo floor($village->acrop); ?>" /> 
 			</td> 
 		
-			<td class="sum">مجموع:&nbsp;<span id="newsum"><?php if(isset($_GET['r1']) && isset($_GET['r2']) && isset($_GET['r3']) && isset($_GET['r4'])) { echo $_GET['r1']+$_GET['r2']+$_GET['r3']+$_GET['r4']; } else { echo 0; } ?></span></td> 
+			<td class="sum">Total:&nbsp;<span id="newsum"><?php if(isset($_GET['r1']) && isset($_GET['r2']) && isset($_GET['r3']) && isset($_GET['r4'])) { echo $_GET['r1']+$_GET['r2']+$_GET['r3']+$_GET['r4']; } else { echo 0; } ?></span></td> 
 		</tr> 
 		<tr> 
 	
@@ -242,7 +239,7 @@ function testSum() {
 				<span id="diff3"><?php echo 0-floor($village->acrop); ?></span> 
 			</td> 
 		
-					<td class="sum">باقی مانده:&nbsp;<span id="remain">
+					<td class="sum">Remainder&nbsp;<span id="remain">
                     <?php if(isset($_GET['r1']) && isset($_GET['r2']) && isset($_GET['r3']) && isset($_GET['r4'])) { 
                     echo floor($village->awood+$village->acrop+$village->airon+$village->aclay)-($_GET['r1']+$_GET['r2']+$_GET['r3']+$_GET['r4']); 
                     } else { echo floor($village->awood+$village->acrop+$village->airon+$village->aclay); } ?></span></td> 
@@ -251,9 +248,9 @@ function testSum() {
 		</table>
         <p id="submitButton" style="display: block; ">
         <?php if($session->userinfo['gold'] > 3) { ?>
-        <button type="submit" value="منابع را معامله کن. (مرحله 2 از 2)" id="npc_market_button" onclick="$('npc_market_button').addClass('disabled').disabled = true;document.snd.submit();"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">منابع را معامله کن. (مرحله 2 از 2)
-</div></div></button><span class="npc_price">(هزینه: <b>3</b><img src="img/x.gif" class="gold" />)</span></p>
-		<?php } else { echo"<a href=\"plus.php\"><span class=\"none\">طلای کافی ندارید</span></a>"; }?></p>
+        <button type="submit" value="Trade resources (2/2)" id="npc_market_button" onclick="$('npc_market_button').addClass('disabled').disabled = true;document.snd.submit();"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Trade resources (2/2)
+</div></div></button><span class="npc_price"><b>3</b><img src="img/x.gif" class="gold" /> Gold</span></p>
+		<?php } else { echo"<a href=\"plus.php\"><span class=\"none\">Not enough Gold</span></a>"; }?></p>
 		<p id="submitText"></p> 
 		</form> 
 		<script> 

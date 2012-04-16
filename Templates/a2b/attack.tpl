@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 
 
@@ -44,13 +44,13 @@ $process['c'] = 1;
 $id = $database->addA2b($ckey,time(),$process['0'],$t1,$t2,$t3,$t4,$t5,$t6,$t7,$t8,$t9,$t10,$t11,$process['c']);
 
 if ($process['c']==1){
-$actionType = "شناسایی";
+$actionType = "Scouting ~ ";
 }else if ($process['c']==2){
-$actionType = "نیروی کمکی به";
+$actionType = "Reinforcement ~ ";
 }elseif ($process['c']==3){
-$actionType = "حمله به";
+$actionType = "Normal Attack ~ ";
 }else{
-$actionType = "غارت";
+$actionType = "Raid ~ ";
 }
 
 
@@ -71,23 +71,23 @@ $end = ($tribe*10);
 
                     <tr>
 
-                        <th>هدف:</th>
+                        <th>Location</th>
 
-                        <td><a href="karte.php?d=&amp;c="><?php echo $process[1]; ?> (<?php echo $coor['x']; ?>|<?php echo $coor['y']; ?>)</a></td>
+                        <td><a href="karte.php?d=&amp;c="><?php echo $process[1]; ?> (<?php echo $coor['y']; ?>|<?php echo $coor['x']; ?>)</a></td>
 
                     </tr>
 
                     <tr>
 
-                        <th>بازیکن:</th>
+                        <th>Player</th>
 
                         <td>
                         <?php if($process['2'] == 3){ ?>
-                        <font class="none"><b>طبیعت</b></font>
+                        <font class="none"><b>Természet</b></font>
                         <?php } else { ?>
                         <a href="spieler.php?uid=<?php echo $process['2']; ?>">
                         <?php if($process['2'] == 2){
-                        	echo "ناتارها";
+                        	echo "Natar";
                             	} else {
                        				echo $database->getUserField($process['2'],'username',0);
                         		} ?>
@@ -111,7 +111,7 @@ $end = ($tribe*10);
 
                         <td><?php echo $village->vname; ?></td>
 
-                        <td colspan="<?php if($process['t11'] != ''){ echo"11"; }else{ echo"10"; } ?>"><?php echo $actionType." ".$process['1']; ?> (<?php echo $coor['x']; ?>|<?php echo $coor['y']; ?>)</td>
+                        <td colspan="<?php if($process['t11'] != ''){ echo"11"; }else{ echo"10"; } ?>"><?php echo $actionType." ".$process['1']; ?> (<?php echo $coor['y']; ?>|<?php echo $coor['x']; ?>)</td>
 
                     </tr>
 
@@ -126,7 +126,7 @@ $end = ($tribe*10);
                 for($i=$start;$i<=($end);$i++) {
                       echo "<td><img src=\"img/x.gif\" class=\"unit u$i\" title=\"".$technology->getUnitName($i)."\" alt=\"".$technology->getUnitName($i)."\" /></td>";    
                   } if ($process['t11'] != ''){
-                  echo "<td><img src=\"img/x.gif\" class=\"unit uhero\" title=\"قهرمان\" alt=\"قهرمان\" /></td>";    
+                  echo "<td><img src=\"img/x.gif\" class=\"unit uhero\" title=\"Hős\" alt=\"Hős\" /></td>";    
                   
                   }?>
                         
@@ -134,7 +134,7 @@ $end = ($tribe*10);
 
                     <tr>
 
-                        <th>لشکریان</th>
+                        <th>Units</th>
 
                         <td <?php if (!isset($process['t1']) || $process['t1'] == ''){ echo "class=\"none\">0"; }else{ echo ">".$process['t1'];} ?></td>
 
@@ -165,9 +165,9 @@ $end = ($tribe*10);
                 <tbody class="options">
                 
                 <tr>
-            <th>تنظيمات</th>
-            <td colspan="11"><input class="radio" name="spy" value="1" checked="checked" type="radio">شناسایی منابع و لشکریان<br>
-            <input class="radio" name="spy" value="2" type="radio">شناسایی عوامل مدافع و لشکریان                                            </td>
+            <th>options</th>
+            <td colspan="11"><input class="radio" name="spy" value="1" checked="checked" type="radio">Nyersanyagok és egységek kikémlelése<br>
+            <input class="radio" name="spy" value="2" type="radio">Védelmi berendezések és egységek kikémlelése                                            </td>
         </tr>
     </tbody>
     <?php } ?>
@@ -177,56 +177,56 @@ $end = ($tribe*10);
 
             <?php if($process['c']=='3'){ ?><tbody class="cata">
                 <tr>
-                    <th>هدف:</th>
+                    <th>Catapults</th>
                     <td colspan="10">
                     
                         <select name="ctar1" class="dropdown">
-                            <option value="0">تصادفی</option>
+                            <option value="0">Random</option>
                             <?php if($building->getTypeLevel(16) >= 5) { ?>
-                			<optgroup label="منابع">
-                                <option value="1">هیزم شکن</option>
-                                <option value="2">آجر سازی</option>
-                                <option value="3">معدن آهن</option>
-                                <option value="4">گندم زار</option>
-                                <option value="5">چوب بری</option>
-                                <option value="6">آجرپزی</option>
-                                <option value="7">ذوب آهن</option>
-                                <option value="8">آسیاب</option>
-                                <option value="9">نانوایی</option>
+                			<optgroup label="Resource">
+                                <option value="1">Lumber</option>
+                                <option value="2">Clay Pit</option>
+                                <option value="3">Iron Mine</option>
+                                <option value="4">Cropland</option>
+                                <option value="5">Sawmill</option>
+                                <option value="6">Brickworks</option>
+                                <option value="7">Iron foundry</option>
+                                <option value="8">Flour Mill</option>
+                                <option value="9">Bakery</option>
                             </optgroup>
                             <?php } ?>
                             
                             <?php if($building->getTypeLevel(16) >= 3) { ?>
-                            <optgroup label="زیر ساخت ها">
-                                <option value="10">انبار</option>
-                                <option value="11">انبار غذا</option>
+                            <optgroup label="Infranstructer">
+                                <option value="10">warehouse</option>
+                                <option value="11">granary</option>
                                 <?php if($building->getTypeLevel(16) >= 10) { ?>
-                                <option value="15">ساختمان اصلی</option>
-                                <option value="17">بازار</option>
-                                <option value="18">سفارت</option>
-                                <option value="24">تالار شهر</option>
-                                <option value="25">اقامتگاه</option>
-                                <option value="26">قصر</option>
-                                <option value="27">خزانه</option>
-                                <option value="28">تجارت خانه</option>
+                                <option value="15">main Building</option>
+                                <option value="17">market</option>
+                                <option value="18">embassy</option>
+                                <option value="24">town hall</option>
+                                <option value="25">Residence</option>
+                                <option value="26">Palace</option>
+                                <option value="27">treasury</option>
+                                <option value="28">Trade center</option>
                                 <?php } ?>
-                                <option value="38">انبار بزرگ</option>
-                                <option value="39">انبار غذای بزرگ</option>
+                                <option value="38">Great Warehouse</option>
+                                <option value="39">Great Granary</option>
                             </optgroup>
                             <?php } ?>
                             <?php if($building->getTypeLevel(16) >= 10) { ?>
-                            <optgroup label="نظامی">
-                                <option value="12">آهنگری</option>
-                                <option value="13">زره سازی</option>
-                                <option value="14">میدان تمرین</option>
-                                <option value="16">اردوگاه</option>
- 								<option value="19">سربازخانه</option>
- 								<option value="20">اصطبل</option>
- 								<option value="21">کارگاه</option>
-                                <option value="22">دارالفنون</option>
- 								<option value="29">سربازخانه بزرگ</option>
-  								<option value="30">اصطبل بزرگ</option>
-  								<option value="37">عمارت قهرمان</option>
+                            <optgroup label="Katonai">
+                                <option value="12">smithy</option>
+                                <option value="13">Armoury</option>
+                                <option value="14">Tournament Square</option>
+                                <option value="16">Rally Point</option>
+ 								<option value="19">barrack</option>
+ 								<option value="20">stable</option>
+ 								<option value="21">workshop</option>
+                                <option value="22">Akadémia</option>
+ 								<option value="29">Great Barracks</option>
+  								<option value="30">Great Stable</option>
+  								<option value="37">Heros Mansion</option>
                             </optgroup>
                             <?php } ?>
                         </select>
@@ -234,58 +234,58 @@ $end = ($tribe*10);
             <?php if($building->getTypeLevel(16) == 20) { ?>
                      <select name="ctar2" class="dropdown">
                 <option value="0">-</option>
-                <option value="99">تصادفی</option>
+                <option value="0">Random</option>
                             <?php if($building->getTypeLevel(16) >= 5) { ?>
-                            <optgroup label="منابع">
-                           		<option value="1">هیزم شکن</option>
-                                <option value="2">آجر سازی</option>
-                                <option value="3">معدن آهن</option>
-                                <option value="4">گندم زار</option>
-                                <option value="5">چوب بری</option>
-                                <option value="6">آجر پزی</option>
-                            
-                                <option value="7">ذوب آهن</option>
-                                <option value="8">آسیاب</option>
-                                <option value="9">نانوایی</option>
+                            <optgroup label="Nyersanyagok">
+                                <option value="1">lumber</option>
+                                <option value="2">clay Pit</option>
+                                <option value="3">Iron Mine</option>
+                                <option value="4">Cropland</option>
+                                <option value="5">Sawmill</option>
+                                <option value="6">Brickworks</option>
+                                <option value="7">iron foundry</option>
+                                <option value="8">Flour Mill</option>
+                                <option value="9">bakery</option>
                             </optgroup>
                             <?php } ?>
+                            
                             <?php if($building->getTypeLevel(16) >= 3) { ?>
-                            <optgroup label="زیر ساخت ها">
-                                <option value="10">انبار</option>
-                                <option value="11">انبار غذا</option>
+                            <optgroup label="Infrastruktúra">
+                                <option value="10">warehouse</option>
+                                <option value="11">granary</option>
                                 <?php if($building->getTypeLevel(16) >= 10) { ?>
-                                <option value="15">ساختمان اصلی</option>
-                                <option value="17">بازار</option>
-                                <option value="18">سفارت</option>
-                                <option value="24">تالار شهر</option>
-                                <option value="25">اقامتگاه</option>
-                                <option value="26">قصر</option>
-                                <option value="27">خزانه</option>
-                                <option value="28">تجارت خانه</option>
+                                <option value="15">main Building</option>
+                                <option value="17">market</option>
+                                <option value="18">Embassy</option>
+                                <option value="24">town hall</option>
+                                <option value="25">residence</option>
+                                <option value="26">Palace</option>
+                                <option value="27">treasury</option>
+                                <option value="28">Trade center</option>
                                 <?php } ?>
-                                <option value="38">انبار بزرگ</option>
-                                <option value="39">انبار غذای بزرگ</option>
+                                <option value="38">Great Warehouse</option>
+                                <option value="39">Great Granary</option>
                             </optgroup>
                             <?php } ?>
                             <?php if($building->getTypeLevel(16) >= 10) { ?>
-                            <optgroup label="نظامی">
-                                <option value="12">آهنگری</option>
-                                <option value="13">زره سازی</option>
-                                <option value="14">میدان تمرین</option>
-                                <option value="16">اردوگاه</option>
- 								<option value="19">سربازخانه</option>
- 								<option value="20">اصطبل</option>
- 								<option value="21">کارگاه</option>
-                                <option value="22">دارالفنون</option>
- 								<option value="29">سربازخانه بزرگ</option>
-  								<option value="30">اصطبل بزرگ</option>
-  								<option value="37">عمارت قهرمان</option>
+                            <optgroup label="Katonai">
+                                <option value="12">smithy</option>
+                                <option value="13">Armoury</option>
+                                <option value="14">Tournament Square</option>
+                                <option value="16">Rally Point</option>
+                                <option value="19">barrack</option>
+                                <option value="20">stable</option>
+                                <option value="21">workshop</option>
+                                <option value="22">academy</option>
+                                <option value="29">Great Barracks</option>
+                                <option value="30">Great Stable</option>
+                                <option value="37">Heros Mansion</option>
                             </optgroup>
                             <?php } ?>
                         </select>
                     <?php }?>
 
-                    <span class="info">(مورد حمله منجنیق قرار خواهد گرفت)</span>
+                    <span class="info">(Katapultos támadás)</span>
                      </td>
                 </tr>
             </tbody><?PHP  
@@ -293,12 +293,12 @@ $end = ($tribe*10);
             else if($process['c']=='4')
             {
                 ?><tbody class="infos">  
-                <th>هدف:</th>
+                <th>Cél:</th>
 
             <td colspan="10">
                 <?PHP
                 
-                echo"نکته: منجنیق <b>فقط</b> در حالت حمله عادی عمل میکند";
+                echo"Notice : Catapulats only hit things in <b>normális támadásban</b> ";
                 ?>
                 </td>
 
@@ -314,7 +314,7 @@ $end = ($tribe*10);
              <tbody class="infos">
     <tr>
 
-   <th>زمان رسیدن:</th>
+   <th>Arrival</th>
 
             
 
@@ -352,9 +352,9 @@ $end = ($tribe*10);
 
             <td colspan="<?php if($process['t11'] != ''){ echo"11"; }else{ echo"10"; } ?>">
 
-            <div class="in">تا <?php echo $generator->getTimeFormat($time); ?> ساعت.</div>
+            <div class="in">In <?php echo $generator->getTimeFormat($time); ?> hour</div>
 
-            <div class="at">در <span id="tp2"> <?php echo date("H:i:s",time()+$time)?></span></div>
+            <div class="at"><span id="tp2"> <?php echo date("H:i:s",time()+$time)?></span> Hour</div>
 
             </td>
 
@@ -379,14 +379,14 @@ $end = ($tribe*10);
 $attacker = $database->getUserField($session->uid,'alliance',0);
 $defender = $database->getUserField($process['2'],'alliance',0);
 		if($attacker!=0 && $attacker==$defender){
-			echo "<div class=\"alert\">اخطار! آیا مطمئن هستید که می‌خواهید به دوست خود حمله کنید؟</div>";
+			echo "<div class=\"alert\">Warning! Are you sure you want to attack this player</div>";
 		}
 
     if($database->hasBeginnerProtection($process['0'])==1) {  
-        echo"<div class=\"alert\"><b>بازیکن تحت حمایت تازه واردین است.</b></div>"; 
+        echo"<div class=\"alert\"><b>Cannot attack, in begginers protection.</b></div>"; 
     } else { 
 ?> 
-<button type="submit" value="ok" name="s1" id="btn_ok"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">تایید</div></div></button>
+<button type="submit" value="ok" name="s1" id="btn_ok"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">confirm</div></div></button>
 
 <?php } ?>
 </form>

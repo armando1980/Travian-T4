@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 include('menu.tpl');
 ?>
 <table id="warehouse" cellpadding="1" cellspacing="1">
 <thead>
-<tr><td> دهکده </td>
+<tr><td> Village </td>
 <td><img class="r1" src="img/x.gif" title="چوب" alt="چوب"></td>
 <td><img class="r2" src="img/x.gif" title="خشت" alt="خشت"></td>
 <td><img class="r3" src="img/x.gif" title="آهن" alt="آهن"></td>

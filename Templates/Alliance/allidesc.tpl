@@ -1,4 +1,4 @@
-<?php  
+﻿<?php  
 
 if(isset($aid)) {
 $aid = $aid;
@@ -14,11 +14,11 @@ foreach($memberlist as $member) {
 	$totalpop += $database->getVSumField($member['id'],"pop");
 }
 
-echo "<h1>اتحاد - ".$allianceinfo['tag']."</h1>";
+echo "<h1>Alliance - ".$allianceinfo['tag']."</h1>";
 include("alli_menu.tpl");  
   
 ?>
-<h4 class="round">تغییر توضیحات اتحاد</h4>
+<h4 class="round">Description</h4>
 <form method="post" action="allianz.php">
 <input type="hidden" name="a" value="3">
 <input type="hidden" name="o" value="3">
@@ -41,16 +41,16 @@ include("alli_menu.tpl");
 
 </script>
 				<div class="switchWrap">
-			<div class="openedClosedSwitch switchClosed" id="switchMedals">مدال ها</div>
+			<div class="openedClosedSwitch switchClosed" id="switchMedals">Medals</div>
 			<div class="clear"></div>
 		</div>
 <br />
         <table cellpadding="1" cellspacing="1" id="medals" class="hide">
 				<tr>
-					<td>دسته</td>
-					<td>رتبه</td>
-					<td>هفته</td>
-					<td>کد بی بی (BB)</td>
+					<td>Category</td>
+					<td>Rank</td>
+					<td>Week</td>
+					<td>(BB) Code </td>
 				</tr>
                 <?php
 /******************************
@@ -118,7 +118,7 @@ INDELING CATEGORIEEN:
                  </table></p>
 
 	<p class="btn">
-		<button type="submit" value="ذخیره" name="s1" id="btn_save" tabindex="3"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">ذخیره</div></div></button>
+		<button type="submit" value="ذخیره" name="s1" id="btn_save" tabindex="3"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Save</div></div></button>
 		</p>
 	</form>
 

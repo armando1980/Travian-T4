@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 #################################################################################
 ##              -= YOU MAY NOT REMOVE OR CHANGE THIS NOTICE =-                 ##
 ## --------------------------------------------------------------------------- ##
@@ -80,14 +80,14 @@ while($data = mysql_fetch_assoc($query)) {
 <form action="spieler.php?s=2" method="POST">
   <input type="hidden" name="ft" value="p2">
   <input type="hidden" name="uid" value="<?php echo $session->uid; ?>" />
-			<h4 class="round spacer">لینک مستقیم</h4>
+			<h4 class="round spacer">Direct Link</h4>
 
 		<table class="transparent" cellpadding="1" cellspacing="1" id="links">
 			<thead>
 				<tr>
-					<td>شماره</td>
-					<td>نام لینک</td>
-					<td>مسیر لینک</td>
+					<td>No.</td>
+					<td>Link Name</td>
+					<td>Link Address</td>
 					<td></td>
 				</tr>
 			</thead>
@@ -150,7 +150,7 @@ while($data = mysql_fetch_assoc($query)) {
 	
 	
 	<div class="submitButtonContainer">
-		<button type="submit" value="ذخیره" name="s1" id="btn_ok"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">ذخیره</div></div></button>
+		<button type="submit" value="Mentés" name="s1" id="btn_ok"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Save</div></div></button>
         </div>
 </form>
 

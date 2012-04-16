@@ -1,4 +1,4 @@
-<h1>لشکرکشی</h1>
+<h1>Kampány</h1>
 <?php
 if(isset($_GET['bid'])) {
 	$bid = $_GET['bid'];
@@ -120,7 +120,7 @@ if(isset($_GET['bid'])) {
 		}
         ?>
 						<td class="line-last regular"></td>
-						<td class="line-last column-last small"><img class="unit u<?php echo hero; ?>" src="img/x.gif" onclick="document.snd.t11.value=''; return false;" alt="قهرمان" title="قهرمان"> <input <?php if ($village->unitarray['hero']<=0) {echo 'class="text disabled" disabled="disabled"';} else {echo 'class="text"'; } ?> type="text" name="t11" value="" maxlength="1">
+						<td class="line-last column-last small"><img class="unit u<?php echo hero; ?>" src="img/x.gif" onclick="document.snd.t11.value=''; return false;" alt="Hős" title="Hős"> <input <?php if ($village->unitarray['hero']<=0) {echo 'class="text disabled" disabled="disabled"';} else {echo 'class="text"'; } ?> type="text" name="t11" value="" maxlength="1">
 		<?php 
         if ($village->unitarray['hero']>0){
               echo "/ <a href=\"#\" onclick=\"document.snd.t11.value=".$village->unitarray['hero']."; return false;\">".$village->unitarray['hero']."</a></td>";

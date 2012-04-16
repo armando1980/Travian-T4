@@ -2,7 +2,6 @@
 
 include("GameEngine/database.php");
 include("GameEngine/config.php");
-include("GameEngine/lang/fa.php");
 include "Templates/html.tpl";
 ?>
 <body class="v35 webkit chrome support">
@@ -21,23 +20,23 @@ include "Templates/html.tpl";
 <div id="side_navi">
 	<ul>
 		<li>
-			<a href="<?php echo HOMEPAGE; ?>" title="<?php echo HOME; ?>"><?php echo HOME; ?></a>
+			<a href="<?php echo HOMEPAGE; ?>" title="<?php echo Főoldal; ?>"><?php echo FŐOLDAL; ?></a>
 		</li>
 
 		<li>
-			<a href="login.php" title="<?php echo LOGIN; ?>"><?php echo LOGIN; ?></a>
+			<a href="login.php" title="<?php echo Bejelentkezés; ?>"><?php echo LOGIN; ?></a>
 		</li>
 
 		<li>
-			<a href="anmelden.php" title="<?php echo REG; ?>"><?php echo REG; ?></a>
+			<a href="anmelden.php" title="<?php echo Regisztráció; ?>"><?php echo REGISZTRÁCIÓ; ?></a>
 		</li>
 
 		<li>
-			<a href="#" target="_blank" title="<?php echo FORUM; ?>"><?php echo FORUM; ?></a>
+			<a href="#" target="_blank" title="<?php echo Fórum; ?>"><?php echo FÓRUM; ?></a>
 		</li>
 		
 		<li class="support active">
-			<a href="contact.php" title="<?php echo SUPPORT; ?>"><?php echo SUPPORT; ?></a>
+			<a href="contact.php" title="<?php echo Support; ?>"><?php echo SUPPORT; ?></a>
 		</li>
 	</ul>
 </div>
@@ -45,8 +44,8 @@ include "Templates/html.tpl";
 <div id="contentOuterContainer">
 							<div class="contentTitle">&nbsp;</div>
 							<div class="contentContainer">
-								<div id="content" class="support"><h1 class="titleInHeader"><?php echo SUPPORT; ?></h1>
-<div class="supportDescription"><?php echo CONTACT_DESC; ?></div>
+								<div id="content" class="support"><h1 class="titleInHeader"><?php echo Szupport; ?></h1>
+<div class="supportDescription"><?php echo "A következő form segítségével léphetsz kapcsolatba a segítséggel (adminnal pl). Lehetőleg minél több mezőt tölts ki, hogy kérdésed/kérésed mihamarabb feldolgozzuk és megválaszolni tudjuk. Fontos az érvényes email cím, annak hiányában a kérdést/kérést nem vagyunk képesek megválaszolni"; ?></div>
 <div class="supportForm">
 <?php
 if($_POST){
@@ -85,13 +84,13 @@ $message = "[b]".CONTACT_SUPPORT."[/b]
 <div id="group_support_category">
 <table class="form_table form_tablel_support" width="100%"><tbody><tr>
 	<td class="form_table_label form_table_label_support_category">
-		<label class="form_label" for="category"><?php echo CONTACT_CATEGORY; ?></label></td>
+		<label class="form_label" for="category"><?php echo Kategória; ?></label></td>
 	<td class="form_table_element form_table_element_support_category">
 		<select id="support_category" name="category">
-			<option value="please_select"><?php echo CONTACT_SELECT_SUBJECT; ?></option>
-			<option value="1"><?php echo CONTACT_SUBJECT1; ?></option>
-			<option value="2"><?php echo CONTACT_SUBJECT2; ?></option>
-			<option value="3"><?php echo CONTACT_SUBJECT3; ?></option>
+			<option value="please_select"><?php echo válassz; ?></option>
+			<option value="1"><?php echo "Általános kérdések"; ?></option>
+			<option value="2"><?php echo "Nem tudok bejelentkezni"; ?></option>
+			<option value="3"><?php echo "Nem tudok regisztrálni"; ?></option>
 		</select>
 	</td></tr></tbody>
 </table>
@@ -103,10 +102,10 @@ $message = "[b]".CONTACT_SUPPORT."[/b]
 	<tbody>
 		<tr>
 			<td class="form_table_label form_table_label_support_username">
-				<label class="form_label" for="username"><?php echo CONTACT_USERNAME; ?></label>
+				<label class="form_label" for="username"><?php echo "Felhasználói név"; ?></label>
 			</td>
 			<td class="form_table_element form_table_element_support_username">
-				<input type="text" id="support_username" name="username" label="<?php echo CONTACT_USERNAME; ?>" value="<?php echo $_POST['username']; ?>">
+				<input type="text" id="support_username" name="username" label="<?php echo "Felhasználói név"; ?>" value="<?php echo $_POST['username']; ?>">
                 <?php
 				if($_POST && $_POST['username']==''){
 					echo '<span class="error">'.USRNM_EMPTY.'</span>';
@@ -125,10 +124,10 @@ $message = "[b]".CONTACT_SUPPORT."[/b]
 	<tbody>
     	<tr>
         <td class="form_table_label form_table_label_support_email">
-        	<label class="form_label" for="email"><?php echo CONTACT_EMAIL; ?></label>
+        	<label class="form_label" for="email"><?php echo Email; ?></label>
         </td>
         <td class="form_table_element form_table_element_support_email">
-        	<input type="text" id="support_email" name="email" label="<?php echo CONTACT_EMAIL; ?>" value="<?php echo $_POST['email']; ?>">
+        	<input type="text" id="support_email" name="email" label="<?php echo Email; ?>" value="<?php echo $_POST['email']; ?>">
                 <?php if($_POST && $_POST['email']==''){ echo '<span class="error">'.USRNM_EMPTY.'</span>';} ?>
         </td>
         </tr>
@@ -141,10 +140,10 @@ $message = "[b]".CONTACT_SUPPORT."[/b]
 	<tbody>
     	<tr>
         <td class="form_table_label form_table_label_support_message">
-        	<label class="form_label" for="message"><?php echo CONTACT_MESSAGE; ?></label>
+        	<label class="form_label" for="message"><?php echo Üzenet; ?></label>
         </td>
         <td class="form_table_element form_table_element_support_message">
-        	<textarea name="message" cols="43" rows="7" label="<?php echo CONTACT_MESSAGE; ?>" helper=""><?php echo $_POST['message']; ?></textarea>
+        	<textarea name="message" cols="43" rows="7" label="<?php echo Üzenet; ?>" helper=""><?php echo $_POST['message']; ?></textarea>
                 <?php if($_POST && $_POST['message']==''){ echo '<p class="error">'.USRNM_EMPTY.'</p>';} ?>
 		</td>
         </tr>
@@ -160,8 +159,8 @@ $message = "[b]".CONTACT_SUPPORT."[/b]
         	<label class="form_label" for="submit"></label>
 		</td>
         <td class="form_table_element form_table_element_support_submit">
-        	<button type="submit" value="<?php echo CONTACT_SEND; ?>" name="submit" id="submit" submit="1">
-        	<div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents"><?php echo CONTACT_SEND; ?></div></div>
+        	<button type="submit" value="<?php echo Küldés; ?>" name="submit" id="submit" submit="1">
+        	<div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents"><?php echo Küldés; ?></div></div>
             </button>
 		</td>
         </tr>

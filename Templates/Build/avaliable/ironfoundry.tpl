@@ -1,9 +1,9 @@
-<h2>ذوب آهن</h2>
+﻿<h2>Iron Foundry</h2>
 <div class="build_desc">
 	<a href="#" onclick="return Travian.Game.iPopup(7,4);" class="build_logo">
 		<img class="building big white g7" src="img/x.gif" alt="ذوب آهن">
 	</a>
-	در ذوب آهن، آهن تولید شده در معدن‌های آهن شما ذوب شده و راحت‌تر قابل استفاده در دهکده خواهد بود. بسته به سطح آن این ساختمان قادر به افزایش تولید آهن تا 25% می‌باشد.</div>
+	Iron is smelted in the iron foundry. Every level raises iron production up to a maximum of 25 percent.</div>
 		<?php
         $_GET['bid'] = 7;
         include("availupgrade.tpl");

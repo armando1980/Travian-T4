@@ -16,7 +16,7 @@ if ($enforce['hero']>0){ $colspan = 11; }else{ $colspan = 10; }
 	<thead>
 		<tr>
 			<td class="role"><a href="karte.php?d=<?php echo $generator->getBaseID($fromcoor['x'],$fromcoor['y']); ?>&amp;c=<?php echo $generator->getMapCheck($generator->getBaseID($fromcoor['x'],$fromcoor['y'])); ?>"><?php echo $to['name']; ?></a></td>
-            <td colspan="<?php echo $colspan; ?>"><a href="spieler.php?uid=<?php echo $to['owner']; ?>">لشکريان خودی</a></td>
+            <td colspan="<?php echo $colspan; ?>"><a href="spieler.php?uid=<?php echo $to['owner']; ?>">Saját csapatok</a></td>
         </tr>
     </thead>
     <tbody class="units">
@@ -32,7 +32,7 @@ if ($enforce['hero']>0){ $colspan = 11; }else{ $colspan = 10; }
         ?>
         </tr>
         <tr>
-        <th>لشکر</th>
+        <th>Egységek</th>
         <?php
         $t = 1;
         for($i=$start;$i<=$end;$i++) {
@@ -76,11 +76,11 @@ if ($enforce['hero']>0){ $colspan = 11; }else{ $colspan = 10; }
 			?>
    <tbody class="infos">
 		<tr>
-			<th>زمان رسیدن</th>
+			<th>Érkezés</th>
             
             <td colspan="<?php echo $colspan; ?>">
-			<div class="in">تا <?php echo $generator->getTimeFormat($time); ?> ساعت</div>
-			<div class="at">در <span id="tp2"><?php echo date("H:i:s",time()+$time)?></span><span> ساعت</span></div>
+			<div class="in">időtartam <?php echo $generator->getTimeFormat($time); ?> óra</div>
+			<div class="at"><span id="tp2"><?php echo date("H:i:s",time()+$time)?></span><span> óra</span></div>
 			<div class="clear"></div>
 			</td>
 		</tr>
@@ -92,6 +92,6 @@ if ($enforce['hero']>0){ $colspan = 11; }else{ $colspan = 10; }
 <input name="c" value="8" type="hidden">
 
 		<p class="button">
-			<button type="submit" value="ok" name="s1" id="btn_ok" onclick="if (this.disabled==false) {document.getElementsByTagName('form')[0].submit();} this.disabled=true;"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">تایید</div></div></button>
+			<button type="submit" value="ok" name="s1" id="btn_ok" onclick="if (this.disabled==false) {document.getElementsByTagName('form')[0].submit();} this.disabled=true;"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Megerősítés</div></div></button>
             </p>
 </form>

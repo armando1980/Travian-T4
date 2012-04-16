@@ -2,82 +2,82 @@
 	if($btype==1){
     
     	if($type==1){
-        	$name = "کلاه خود هشیاری";
-        	$title = "%15+ تجربه‌ی بیشتر";
+        	$name = "A felismerés sisakja";
+        	$title = "+15 százalékkal több tapasztalat a hősnek.";
             $item = "1";
             $effect = "15";
 		}elseif($type==2){
-        	$name = "کلاه خود روشنگری";
-        	$title = "%20+ تجربه‌ی بیشتر";
+        	$name = "A megvilágosodás sisakja";
+        	$title = "+20 százalékkal több tapasztalat a hősnek.";
             $item = "2";
             $effect = "20";
 		}elseif($type==3){
-        	$name = "کلاه خود دانش";
-        	$title = "%25+ تجربه‌ی بیشتر";
+        	$name = "A bölcsesség sisakja";
+        	$title = "+25% százalékkal több tapasztalat a hősnek.";
             $item = "3";
             $effect = "25";
 		}
         if($type==4){
-        	$name = "کلاه خود بازسازی";
-        	$title = "10+ سلامتی در هر روز";
+        	$name = "A regeneráció sisakja";
+        	$title = "+10 egészség pont naponta";
             $item = "4";
             $effect = "10";
         }elseif($type==5){
-        	$name = "کلاه خود سلامتی";
-        	$title = "15+ سلامتی در هر روز";
+        	$name = "Az egészség sisakja";
+        	$title = "15+ egészség pont naponta";
             $item = "5";
             $effect = "15";
         }elseif($type==6){
-        	$name = "کلاه خود شفا";
-        	$title = "20+ سلامتی در هر روز";
+        	$name = "A gyógyulás sisakja";
+        	$title = "20+ egészség pont naponta";
             $item = "6";
             $effect = "20";
         }
         if($type==7){
-        	$name = "کلاه خود گلادیاتورها";
-			$title = "100+ امتیاز فرهنگی در هر روز";
+        	$name = "A Gladiátor sisakja";
+			$title = "+100 kulturális pont naponta";
             $item = "7";
             $effect = "100";
 		}elseif($type==8){
-        	$name = "کلاه خود تریبون";
-			$title = "400+ امتیاز فرهنگی در هر روز";
+        	$name = "A szószék sisakja";
+			$title = "+400 kulturális pont naponta";
             $item = "8";
             $effect = "400";
 		}elseif($type==9){
-        	$name = "کلاه خود کنسول";
-			$title = "800+ امتیاز فرهنگی در هر روز";
+        	$name = "A Konzul sisakja";
+			$title = "+800 kulturális pont naponta";
             $item = "9";
             $effect = "800";
 		}
         if($type==10){
-        	$name = "کلاه خود سوارکار";
-			$title = "زمان تربیت در اصطبل به میزان 10% کاهش خواهد یافت.";
+        	$name = "A lovaglás sisakja";
+			$title = "10%-al rövidebb kiképzési idő az istállóban az adott faulban";
             $item = "10";
             $effect = "10";
 		}elseif($type==11){
-        	$name = "کلاه خود سواره نظام";
-			$title = "زمان تربیت در اصطبل به میزان 15% کاهش خواهد یافت.";
+        	$name = "A lovasság sisakja";
+			$title = "15%-al rövidebb kiképzési idő az istállóban az adott faulban";
             $item = "11";
             $effect = "15";
 		}elseif($type==12){
-        	$name = "کلاه خود سواره نظام عالی رتبه";
-			$title = "زمان تربیت در اصطبل به میزان 20% کاهش خواهد یافت.";
+        	$name = "A nehézlovasság sisakja";
+			$title = "20%-al rövidebb kiképzési idő az istállóban az adott faulban";
             $item = "12";
             $effect = "20";
 		}
         if($type==13){
-        	$name = "کلاه خود سربازها";
-			$title = "زمان تربیت در سربازخانه به میزان 10% کاهش خواهد یافت.";
+        	$name = "A Zsoldos sisakja";
+			$title = "10%-al rövidebb kiképzési idő a kaszárnyában az adott faulban";
             $item = "13";
             $effect = "10";
 		}elseif($type==14){
-        	$name = "کلاه خود جنگجویان";
-			$title = "زمان تربیت در سربازخانه به میزان 15% کاهش خواهد یافت.";
+        	$name = "A Harcos sisakja";
+			$title = "15%-al rövidebb kiképzési idő a kaszárnyában az adott faulban";
             $item = "14";
             $effect = "15";
 		}elseif($type==15){
-        	$name = "کلاه خود فرمانروا";
-			$title = "زمان تربیت در سربازخانه به میزان 20% کاهش خواهد یافت.";
+        	$name = "A Vezér sisakja";
+			$title = "20%-al rövidebb kiképzési idő a kaszárnyában az adott faulban";
             $item = "15";
             $effect = "20";
 		}
@@ -85,66 +85,66 @@
 	}elseif($btype==2){
     
 		if($type==82){
-        	$name = "زره بازسازی";
-        	$title = "20+ سلامتی در هر روز";
+        	$name = "A Regeneráció könnyű vértje";
+        	$title = "20+ egészség pont naponta";
             $item = "82";
             $effect = "20";
 		}elseif($type==83){
-        	$name = "زره سلامتی";
-        	$title = "30+ سلامتی در هر روز";
+        	$name = "A Regeneráció vértje";
+        	$title = "30+ egészség pont naponta";
             $item = "83";
             $effect = "30";
 		}elseif($type==84){
-        	$name = "زره تندرستی";
-        	$title = "40+ سلامتی در هر روز";
+        	$name = "A Regeneráció nehéz páncélja";
+        	$title = "40+ egészség pont naponta";
             $item = "84";
             $effect = "40";
 		}
         if($type==85){
-        	$name = "زره سبک";
-        	$title = "خسارت وارده بر سلامتی به میزان 4 کاهش خواهد یافت.&lt;br /&gt;10+ سلامتی در هر روز";
+        	$name = "Könnyű pikkelypáncél ";
+        	$title = "Az életerő veszteség 4 ponttal csökken +10 egészségpont naponta";
             $item = "85";
             $effect = "10";
         }elseif($type==86){
-        	$name = "زره";
-        	$title = "خسارت وارده بر سلامتی به میزان 6 کاهش خواهد یافت.&lt;br /&gt;15+ سلامتی در هر روز";
+        	$name = "Pikkelypáncél";
+        	$title = "Az életerő veszteség 6 ponttal csökken +15 egészségpont naponta";
             $item = "86";
             $effect = "15";
         }elseif($type==87){
-        	$name = "زره سنگین";
-        	$title = "خسارت وارده بر سلامتی به میزان 8 کاهش خواهد یافت.&lt;br /&gt;20+ سلامتی در هر روز";
+        	$name = "Nehéz pikkelypáncél";
+        	$title = "Az életerő veszteség 8 ponttal csökken +20 egészségpont naponta";
             $item = "87";
             $effect = "20";
         }
         if($type==88){
-        	$name = "سپر سینه‌ی سبک";
-			$title = "500+ قدرت هجومی برای قهرمان";
+        	$name = "Könnyű mellvért";
+			$title = "+500 harci erő a hősnek";
             $item = "88";
             $effect = "500";
 		}elseif($type==89){
-        	$name = "سپر سینه‌";
-			$title = "1000+ قدرت هجومی برای قهرمان";
+        	$name = "Mellvért";
+			$title = "+1000 harci erő a hősnek";
             $item = "89";
             $effect = "1000";
 		}elseif($type==90){
-        	$name = "سپر سینه‌ی سنگین";
-			$title = "1500+ قدرت هجومی برای قهرمان";
+        	$name = "Nehéz mellvért";
+			$title = "+1500 harci erő a hősnek";
             $item = "90";
             $effect = "1500";
 		}
         if($type==91){
-        	$name = "زره چند بخشی سبک";
-			$title = "خسارت وارده بر سلامتی به میزان 3 کاهش خواهد یافت.&lt;br /&gt;250+ قدرت هجومی برای قهرمان";
+        	$name = "Könnyű tagolt páncél";
+			$title = "Az életerő veszteség 3 ponttal csökken +250 harci erő a hősnek";
             $item = "91";
             $effect = "3";
 		}elseif($type==92){
-        	$name = "زره چند بخشی";
-			$title = "خسارت وارده بر سلامتی به میزان 4 کاهش خواهد یافت.&lt;br /&gt;500+ قدرت هجومی برای قهرمان";
+        	$name = "Tagolt páncél";
+			$title = "Az életerő veszteség 4 ponttal csökken +500 harci erő a hősnek";
             $item = "92";
             $effect = "4";
 		}elseif($type==93){
-        	$name = "زره چند بخشی سنگین";
-			$title = "خسارت وارده بر سلامتی به میزان 5 کاهش خواهد یافت.&lt;br /&gt;750+ قدرت هجومی برای قهرمان";
+        	$name = "Nehéz tagolt páncél";
+			$title = "Az életerő veszteség 5 ponttal csökken +750 harci erő a hősnek";
             $item = "93";
             $effect = "5";
 		}
@@ -152,98 +152,98 @@
 	}elseif($btype==3){
     
 		if($type==61){
-        	$name = "نقشه‌ی کوچک";
-        	$title = "%30 افزایش سرعت برگشت به دهکده";
+        	$name = "Kis térkép";
+        	$title = "30%-al gyorsabb hazatérés a hősnek és csapatának";
             $item = "61";
             $effect = "30";
 		}elseif($type==62){
-        	$name = "نقشه";
-        	$title = "%40 افزایش سرعت برگشت به دهکده";
+        	$name = "Térkép";
+        	$title = "40%-al gyorsabb hazatérés a hősnek és csapatának";
             $item = "62";
             $effect = "40";
 		}elseif($type==63){
-        	$name = "نقشه‌ی بزرگ";
-        	$title = "%50 افزایش سرعت برگشت به دهکده";
+        	$name = "Nagy térkép";
+        	$title = "50%-al gyorsabb hazatérés a hősnek és csapatának";
             $item = "63";
             $effect = "50";
 		}
         if($type==64){
-        	$name = "پرچم سه گوش کوچک";
-        	$title = "افزایش 30% سرعت حرکت لشکریان هنگام رفت آمد بین دهکده‌های خودی.";
+        	$name = "A Nép kis zászlaja";
+        	$title = "30%-al gyorsabb csapatmozgás saját falvak között";
             $item = "64";
             $effect = "30";
 		}elseif($type==65){
-        	$name = "پرچم سه گوش";
-        	$title = "افزایش 40% سرعت حرکت لشکریان هنگام رفت آمد بین دهکده‌های خودی.";
+        	$name = "A Nép zászlaja";
+        	$title = "40%-al gyorsabb csapatmozgás saját falvak között";
             $item = "65";
             $effect = "40";
 		}elseif($type==66){
-        	$name = "پرچم سه گوش بزرگ";
-        	$title = "افزایش 50% سرعت حرکت لشکریان هنگام رفت آمد بین دهکده‌های خودی.";
+        	$name = "A Nép nagy lobogója";
+        	$title = "50%-al gyorsabb csapatmozgás saját falvak között";
             $item = "66";
             $effect = "50";
 		}
         if($type==67){
-        	$name = "پرچم کوچک";
-			$title = "سرعت حرکت لشکریان میان متحدین به میزان 15% افزایش خواهد یافت.";
+        	$name = "A Szövetség kis zászlaja";
+			$title = "15%-al gyorsabb csapatmozgás klántagok között.";
             $item = "67";
             $effect = "15";
 		}elseif($type==68){
-        	$name = "پرچم";
-			$title = "سرعت حرکت لشکریان میان متحدین به میزان 20% افزایش خواهد یافت.";
+        	$name = "A Szövetség zászlaja";
+			$title = "20%-al gyorsabb csapatmozgás klántagok között.";
             $item = "68";
             $effect = "20";
 		}elseif($type==69){
-        	$name = "پرچم بزرگ";
-			$title = "سرعت حرکت لشکریان میان متحدین به میزان 25% افزایش خواهد یافت.";
+        	$name = "A Szövetség nagy lobogója";
+			$title = "25%-al gyorsabb csapatmozgás klántagok között.";
             $item = "69";
             $effect = "25";
 		}
         if($type==73){
-        	$name = "کیسه‌ی کوچک دزدان";
-			$title = "%10+ امتیاز غارت";
+        	$name = "A tolvaj batyuja";
+			$title = "%10+ fosztogató bónusz a rejtekhellyel szemben";
             $item = "73";
             $effect = "10";
 		}elseif($type==74){
-        	$name = "کیسه‌ی دزدان";
-			$title = "%15+ امتیاز غارت";
+        	$name = "A tolvaj zsákja";
+			$title = "%15+ fosztogató bónusz a rejtekhellyel szemben";
             $item = "74";
             $effect = "15";
 		}elseif($type==75){
-        	$name = "کیسه‌ی بزرگ دزدان";
-			$title = "%20+ امتیاز غارت";
+        	$name = "A tolvaj nagy zsákja";
+			$title = "%20+ fosztogató bónusz a rejtekhellyel szemben";
             $item = "75";
             $effect = "20";
 		}
         if($type==76){
-        	$name = "سپر کوچک";
-        	$title = "500+ قدرت هجومی برای قهرمان";
+        	$name = "Kis harci pajzs";
+        	$title = "+500 harci erő a hősnek";
             $item = "76";
             $effect = "500";
         }elseif($type==77){
-        	$name = "سپر";
-        	$title = "1000+ قدرت هجومی برای قهرمان";
+        	$name = "Harci pajzs";
+        	$title = "+1000 harci erő a hősnek";
             $item = "77";
             $effect = "1000";
         }elseif($type==78){
-        	$name = "سپر بزرگ";
-        	$title = "1500+ قدرت هجومی برای قهرمان";
+        	$name = "Nagy harci pajzs";
+        	$title = "+1500 harci erő a hősnek";
             $item = "78";
             $effect = "1500";
         }
         if($type==79){
-        	$name = "شیپور کوچک ناتارها";
-			$title = "%20+ قدرت هجومی در مقابل ناتارها";
+        	$name = "A Natar kis harci tülke";
+			$title = "+20% harci erő a Natar ellen támadás esetén";
             $item = "79";
             $effect = "20";
 		}elseif($type==80){
-        	$name = "شیپور ناتارها";
-			$title = "%25+ قدرت هجومی در مقابل ناتارها";
+        	$name = "A Natar kis harci tülke";
+			$title = "+25% harci erő a Natar ellen támadás esetén";
             $item = "80";
             $effect = "25";
 		}elseif($type==81){
-        	$name = "شیپور بزرگ ناتارها";
-			$title = "%30+ قدرت هجومی در مقابل ناتارها";
+        	$name = "A Natar nagy harci kürtje";
+			$title = "+30% harci erő a Natar ellen támadás esetén";
             $item = "81";
             $effect = "30";
 		}
@@ -251,239 +251,239 @@
 	}elseif($btype==4){
     
 		if($type==16){
-        	$name = "شمشیر کوتاه سرباز لژیون";
-        	$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر سرباز لژیون: 3+ قدرت حمله + 3+ قدرت دفاع";
+        	$name = "A Légiós rövid kardja";
+        	$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Légiós: 3+ támadóérték és + 3+ védelmi érték";
             $item = "16";
             $effect = "500";
 		}elseif($type==17){
-        	$name = "شمشیر سرباز لژیون";
-        	$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر سرباز لژیون: 4+ قدرت حمله + 4+ قدرت دفاع";
+        	$name = "A Légiós kardja";
+        	$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Légiós: 4+ támadóérték és + 4+ védelmi érték";
             $item = "17";
             $effect = "1000";
 		}elseif($type==18){
-        	$name = "شمشیر بلند سرباز لژیون";
-        	$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر سرباز لژیون: 5+ قدرت حمله + 5+ قدرت دفاع";
+        	$name = "A Légiós hosszú kardja";
+        	$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Légiós: 5+ támadóérték és + 5+ védelmi érték";
             $item = "18";
             $effect = "1500";
 		}
         if($type==19){
-        	$name = "شمشیر کوتاه محافظ";
-        	$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر محافظ: 3+ قدرت حمله + 3+ قدرت دفاع";
+        	$name = "Testőrség rövid kardja";
+        	$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Testőrség: 3+ támadóérték és + 3+ védelmi érték";
             $item = "19";
             $effect = "500";
         }elseif($type==20){
-        	$name = "شمشیر محافظ";
-        	$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر محافظ: 4+ قدرت حمله + 4+ قدرت دفاع";
+        	$name = "Testőrség kardja";
+        	$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Testőrség: 4+ támadóérték és + 4+ védelmi érték";
             $item = "20";
             $effect = "1000";
         }elseif($type==21){
-        	$name = "شمشیر بلند محافظ";
-        	$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر محافظ: 5+ قدرت حمله + 5+ قدرت دفاع";
+        	$name = "Testőrség hosszú kardja";
+        	$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Testőrség: 5+ támadóérték és + 5+ védelmi érték";
             $item = "21";
             $effect = "1500";
         }
         if($type==22){
-        	$name = "شمشیر کوتاه شمشیرزن روم";
-			$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شمشیرزن: 3+ قدرت حمله + 3+ قدرت دفاع";
+        	$name = "Az Birodalmi rövid kardja";
+			$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Birodalmi: 3+ támadóérték és + 3+ védelmi érték";
             $item = "22";
             $effect = "500";
 		}elseif($type==23){
-        	$name = "شمشیر شمشیرزن روم";
-			$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شمشیرزن: 4+ قدرت حمله + 4+ قدرت دفاع";
+        	$name = "Az Birodalmi kardja";
+			$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Birodalmi: 4+ támadóérték és + 4+ védelmi érték";
             $item = "23";
             $effect = "1000";
 		}elseif($type==24){
-        	$name = "شمشیر بلند شمشیرزن روم";
-			$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شمشیرزن: 5+ قدرت حمله + 5+ قدرت دفاع";
+        	$name = "A Birodalmi hosszú kardja";
+			$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Birodalmi: 5+ támadóérték és + 5+ védelmi érték";
             $item = "24";
             $effect = "1500";
 		}
         if($type==25){
-        	$name = "شمشیر کوتاه شوالیه";
-			$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه: 9+ قدرت حمله + 9+ قدرت دفاع";
+        	$name = "Az Imperatoris rövid kardja";
+			$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Equites Imperatoris: 9+ támadóérték és + 9+ védelmi érték";
             $item = "25";
             $effect = "500";
 		}elseif($type==26){
-        	$name = "شمشیر شوالیه";
-			$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه: 12+ قدرت حمله + 12+ قدرت دفاع";
+        	$name = "Az Imperatoris kardja";
+			$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Equites Imperatoris: 12+ támadóérték és + 12+ védelmi érték";
             $item = "26";
             $effect = "1000";
 		}elseif($type==27){
-        	$name = "شمشیر بلند شوالیه";
-			$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه: 15+ قدرت حمله + 15+ قدرت دفاع";
+        	$name = "Az Imperatoris hosszú kardja";
+			$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Equites Imperatoris: 15+ támadóérték és + 15+ védelmi érték";
             $item = "27";
             $effect = "1500";
 		}
         if($type==28){
-        	$name = "نیزه‌ی سبک شوالیه‌ی سزار";
-        	$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه‌ی سزار: 12+ قدرت حمله + 12+ قدرت دفاع";
+        	$name = "A Caesaris könnyű lándzsája";
+        	$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Equites Caesaris: 12+ támadóérték és + 12+ védelmi érték";
             $item = "28";
             $effect = "500";
         }elseif($type==29){
-        	$name = "نیزه‌ی شوالیه‌ی سزار";
-        	$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه‌ی سزار: 16+ قدرت حمله + 16+ قدرت دفاع";
+        	$name = "A Caesaris lándzsája";
+        	$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Equites Caesaris: 16+ támadóérték és + 16+ védelmi érték";
             $item = "29";
             $effect = "1000";
         }elseif($type==30){
-        	$name = "نیزه‌ی سنگین شوالیه‌ی سزار";
-        	$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه‌ی سزار: 20+ قدرت حمله + 20+ قدرت دفاع";
+        	$name = "A Caesaris nehéz lándzsája";
+        	$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Equites Caesaris: 20+ támadóérték és + 20+ védelmi érték";
             $item = "30";
             $effect = "1500";
         }
         if($type==31){
-        	$name = "نیزه‌ی سبک سرباز پياده";
-			$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر سرباز پیاده: 3+ قدرت حمله + 3+ قدرت دفاع";
+        	$name = "A Phalanx dárdája";
+			$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Phalanx: 3+ támadóérték és + 3+ védelmi érték";
             $item = "31";
             $effect = "500";
 		}elseif($type==32){
-        	$name = "نیزه‌ی سرباز پياده";
-			$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر سرباز پیاده: 4+ قدرت حمله + 4+ قدرت دفاع";
+        	$name = "A Phalanx kopjája";
+			$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Phalanx: 4+ támadóérték és + 4+ védelmi érték";
             $item = "32";
             $effect = "1000";
 		}elseif($type==33){
-        	$name = "نیزه‌ی سنگین سرباز پياده";
-			$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر سرباز پیاده: 5+ قدرت حمله + 5+ قدرت دفاع";
+        	$name = "A Phalanx lándzsája";
+			$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Phalanx: 5+ támadóérték és + 5+ védelmi érték";
             $item = "33";
             $effect = "1500";
 		}
         if($type==34){
-        	$name = "شمشیر کوتاه شمشيرزن گول";
-        	$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شمشیرزن: 3+ قدرت حمله + 3+ قدرت دفاع";
+        	$name = "A Kardos rövid kardja";
+        	$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Kardos: 3+ támadóérték és + 3+ védelmi érték";
             $item = "34";
             $effect = "500";
         }elseif($type==35){
-        	$name = "شمشیر شمشيرزن گول";
-        	$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شمشیرزن: 4+ قدرت حمله + 4+ قدرت دفاع";
+        	$name = "A Kardos kardja";
+        	$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Kardos: 4+ támadóérték és + 4+ védelmi érték";
             $item = "35";
             $effect = "1000";
         }elseif($type==36){
-        	$name = "شمشیر بلند شمشيرزن گول";
-        	$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شمشیرزن: 5+ قدرت حمله + 5+ قدرت دفاع";
+        	$name = "A Kardos hosszú kardja";
+        	$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Kardos: 5+ támadóérték és + 5+ védelmi érték";
             $item = "36";
             $effect = "1500";
         }
         if($type==37){
-        	$name = "کمان کوچک رعد";
-			$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر رعد: 6+ قدرت حمله + 6+ قدرت دفاع";
+        	$name = "A Theutat rövid íja";
+			$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Theutates Villám: 6+ támadóérték és + 6+ védelmi érték";
             $item = "37";
             $effect = "500";
 		}elseif($type==38){
-        	$name = "کمان رعد";
-			$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر رعد: 8+ قدرت حمله + 8+ قدرت دفاع";
+        	$name = "A Theutat íja";
+			$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Theutates Villám: 8+ támadóérték és + 8+ védelmi érték";
             $item = "38";
             $effect = "1000";
 		}elseif($type==39){
-        	$name = "کمان بزرگ رعد";
-			$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر رعد: 10+ قدرت حمله + 10+ قدرت دفاع";
+        	$name = "A Theutat vadász-íja";
+			$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Theutates Villám: 10+ támadóérték és + 10+ védelmi érték";
             $item = "39";
             $effect = "1500";
 		}
         if($type==40){
-        	$name = "تجهیزات جنگی سبک كاهن سواره";
-			$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر کاهن سواره: 6+ قدرت حمله + 6+ قدرت دفاع";
+        	$name = "A Druida vándorbotja";
+			$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Druidának: 6+ támadóérték és + 6+ védelmi érték";
             $item = "40";
             $effect = "500";
 		}elseif($type==41){
-        	$name = "تجهیزات جنگی كاهن سواره";
-			$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر کاهن سواره: 8+ قدرت حمله + 8+ قدرت دفاع";
+        	$name = "A Druida botja";
+			$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Druidának: 8+ támadóérték és + 8+ védelmi érték";
             $item = "41";
             $effect = "1000";
 		}elseif($type==42){
-        	$name = "تجهیزات جنگی سنگین كاهن سواره";
-			$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر کاهن سواره: 10+ قدرت حمله + 10+ قدرت دفاع";
+        	$name = "A Druida harci botja";
+			$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Druidának: 10+ támadóérték és + 10+ védelmi érték";
             $item = "42";
             $effect = "1500";
 		}
         if($type==43){
-        	$name = "نیزه‌ی سبک شوالیه‌ی گول";
-        	$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه‌ی گول: 9+ قدرت حمله + 9+ قدرت دفاع";
+        	$name = "A Haeduan könnyű lándzsája";
+        	$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Haeduan: 9+ támadóérték és + 9+ védelmi érték";
             $item = "43";
             $effect = "500";
         }elseif($type==44){
-        	$name = "نیزه‌ی شوالیه‌ی گول";
-        	$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه‌ی گول: 12+ قدرت حمله + 12+ قدرت دفاع";
+        	$name = "A Haeduan lándzsája";
+        	$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Haeduan: 12+ támadóérték és + 12+ védelmi érték";
             $item = "44";
             $effect = "1000";
         }elseif($type==45){
-        	$name = "نیزه‌ی سنگین شوالیه‌ی گول";
-        	$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه‌ی گول: 15+ قدرت حمله + 15+ قدرت دفاع";
+        	$name = "A Haeduan nehéz lándzsája";
+        	$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Haeduan: 15+ támadóérték és + 15+ védelmi érték";
             $item = "45";
             $effect = "1500";
         }
         if($type==46){
-        	$name = "گرز سبک گرزدار";
-			$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر گرزدار: 3+ قدرت حمله + 3+ قدرت دفاع";
+        	$name = "A Buzogányos bunkója";
+			$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Buzogányos: 3+ támadóérték és + 3+ védelmi érték";
             $item = "46";
             $effect = "500";
 		}elseif($type==47){
-        	$name = "گرز گرزدار";
-			$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر گرزدار: 4+ قدرت حمله + 4+ قدرت دفاع";
+        	$name = "A Buzogányos harci bunkója";
+			$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Buzogányos: 4+ támadóérték és + 4+ védelmi érték";
             $item = "47";
             $effect = "1000";
 		}elseif($type==48){
-        	$name = "گرز سنگین گرزدار";
-			$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر گرزدار: 5+ قدرت حمله + 5+ قدرت دفاع";
+        	$name = "A Buzogányos szöges buzogánya";
+			$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Buzogányos: 5+ támadóérték és + 5+ védelmi érték";
             $item = "48";
             $effect = "1500";
 		}
         if($type==49){
-        	$name = "نیزه‌ی سبک نيزه دار";
-        	$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر نیزه دار: 3+ قدرت حمله + 3+ قدرت دفاع";
+        	$name = "A Lándzsás dárdája";
+        	$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Lándzsás: 3+ támadóérték és + 3+ védelmi érték";
             $item = "49";
             $effect = "500";
         }elseif($type==50){
-        	$name = "نیزه‌ی نيزه دار";
-        	$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر نیزه دار: 4+ قدرت حمله + 4+ قدرت دفاع";
+        	$name = "A Lándzsás kopjája";
+        	$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Lándzsás: 4+ támadóérték és + 4+ védelmi érték";
             $item = "50";
             $effect = "1000";
         }elseif($type==51){
-        	$name = "نیزه‌ی سنگین نيزه دار";
-        	$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر نیزه دار: 5+ قدرت حمله + 5+ قدرت دفاع";
+        	$name = "A Lándzsás lándzsája";
+        	$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Lándzsás: 5+ támadóérték és + 5+ védelmi érték";
             $item = "51";
             $effect = "1500";
         }
         if($type==52){
-        	$name = "تبر سبک تبرزن";
-			$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر تبرزن: 3+ قدرت حمله + 3+ قدرت دفاع";
+        	$name = "A Csatabárdos baltája";
+			$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Csatabárdos: 3+ támadóérték és + 3+ védelmi érték";
             $item = "52";
             $effect = "500";
 		}elseif($type==53){
-        	$name = "تبر تبرزن";
-			$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر تبرزن: 4+ قدرت حمله + 4+ قدرت دفاع";
+        	$name = "A Csatabárdos fejszéje";
+			$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Csatabárdos: 4+ támadóérték és + 4+ védelmi érték";
             $item = "53";
             $effect = "1000";
 		}elseif($type==54){
-        	$name = "تبر سنگین تبرزن";
-			$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر تبرزن: 5+ قدرت حمله + 5+ قدرت دفاع";
+        	$name = "A Csatabárdos harci bárdja";
+			$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Csatabárdos: 5+ támadóérték és + 5+ védelmi érték";
             $item = "54";
             $effect = "1500";
 		}
         if($type==55){
-        	$name = "چکش سبک دلاور";
-			$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر دلاور: 6+ قدرت حمله + 6+ قدرت دفاع";
+        	$name = "A Paladin könnyű kalapácsa";
+			$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Paladin: 6+ támadóérték és + 6+ védelmi érték";
             $item = "55";
 		}elseif($type==56){
-        	$name = "چکش دلاور";
-			$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر دلاور: 8+ قدرت حمله + 8+ قدرت دفاع";
+        	$name = "A Paladin kalapácsa";
+			$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Paladin: 8+ támadóérték és + 8+ védelmi érték";
             $item = "56";
 		}elseif($type==57){
-        	$name = "چکش سنگین دلاور";
-			$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر دلاور: 10+ قدرت حمله + 10+ قدرت دفاع";
+        	$name = "A Paladin nehéz kalapácsa";
+			$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Paladin: 10+ támadóérték és + 10+ védelmi érték";
             $item = "57";
 		}
         if($type==58){
-        	$name = "شمشیر کوتاه شوالیه‌ی توتن";
-        	$title = "500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه‌ی توتن: 9+ قدرت حمله + 9+ قدرت دفاع";
+        	$name = "A Teuton lovag rövid kardja";
+        	$title = "500+ harci erő a hősnek&lt;br /&gt;minden egyes Teuton lovag: 9+ támadóérték és + 9+ védelmi érték";
             $item = "58";
             $effect = "500";
         }elseif($type==59){
-        	$name = "شمشیر شوالیه‌ی توتن";
-        	$title = "1000+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه‌ی توتن: 12+ قدرت حمله + 12+ قدرت دفاع";
+        	$name = "A Teuton lovag kardja";
+        	$title = "1000+ harci erő a hősnek&lt;br /&gt;minden egyes Teuton lovag: 12+ támadóérték és + 12+ védelmi érték";
             $item = "59";
             $effect = "1000";
         }elseif($type==60){
-        	$name = "شمشیر بلند شوالیه‌ی توتن";
-        	$title = "1500+ قدرت هجومی برای قهرمان&lt;br /&gt;برای هر شوالیه‌ی توتن: 15+ قدرت حمله + 15+ قدرت دفاع";
+        	$name = "A Teuton lovag hosszú kardja";
+        	$title = "1500+ harci erő a hősnek&lt;br /&gt;minden egyes Teuton lovag: 15+ támadóérték és + 15+ védelmi érték";
             $item = "60";
             $effect = "1500";
         }
@@ -491,123 +491,107 @@
 	}elseif($btype==5){
     
 		if($type==94){
-        	$name = "چکمه‌ی بازسازی";
-        	$title = "10+ سلامتی در هر روز";
+        	$name = "A Regeneráció cipője";
+        	$title = "10+ egészség pont naponta";
             $item = "94";
             $effect = "10";
 		}elseif($type==95){
-        	$name = "چکمه‌ی سلامتی";
-        	$title = "15+ سلامتی در هر روز";
+        	$name = "Az Egészség cipője";
+        	$title = "15+ egészség pont naponta";
             $item = "95";
             $effect = "15";
 		}elseif($type==96){
-        	$name = "چکمه‌ی ترمیم";
-        	$title = "20+ سلامتی در هر روز";
+        	$name = "A Gyógyulás cipője";
+        	$title = "20+ egészség pont naponta";
             $item = "96";
             $effect = "20";
 		}
         if($type==97){
-        	$name = "چکمه‌ی سربازی";
-        	$title = "افزایش %25+ سرعت لشکریان برای فاصله‌های بیشتر از 20 خانه";
+        	$name = "A Zsoldos cipője";
+        	$title = "+25% sebességnövekedés a sereg alapértékéhez képest, ahol a távolság  > 20 mező";
             $item = "97";
             $effect = "25";
         }elseif($type==98){
-        	$name = "چکمه‌ی جنگجو";
-        	$title = "افزایش %30+ سرعت لشکریان برای فاصله‌های بیشتر از 20 خانه";
+        	$name = "A Katona bakancsa";
+        	$title = "+50% sebességnövekedés a sereg alapértékéhez képest, ahol a távolság  > 20 mező";
             $item = "98";
             $effect = "30";
         }elseif($type==99){
-        	$name = "چکمه‌ی فرمانروا";
-        	$title = "افزایش %35+ سرعت لشکریان برای فاصله‌های بیشتر از 20 خانه";
+        	$name = "A Vezér csizmája";
+        	$title = "+75% sebességnövekedés a sereg alapértékéhez képest, ahol a távolság  > 20 mező";
             $item = "99";
             $effect = "35";
         }
         if($type==100){
-        	$name = "مهمیز کوچک";
-			$title = "3+ خانه در ساعت برای قهرمان های سواره";
+        	$name = "Kis sarkantyú";
+			$title = "+3 mező óránként a hősnek";
             $item = "100";
             $effect = "3";
 		}elseif($type==101){
-        	$name = "مهمیز";
-			$title = "4+ خانه در ساعت برای قهرمان های سواره";
+        	$name = "Sarkantyú";
+			$title = "+4 mező óránként a hősnek";
             $item = "101";
             $effect = "4";
 		}elseif($type==102){
-        	$name = "مهمیز بزرگ";
-			$title = "5+ خانه در ساعت برای قهرمان های سواره";
+        	$name = "Tüskés sarkantyú";
+			$title = "+5 mező óránként a hősnek";
             $item = "102";
             $effect = "5";
 		}
         
 	}elseif($btype==6){
     	if($type==103){
-        	$name = "اسب";
-			$title = "14+ خانه در ساعت برای قهرمان";
+        	$name = "Hátasló";
+			$title = "A hős sebessége 14 mezőre növekszik óránként";
             $item = "103";
             $effect = "14";
 		}elseif($type==104){
-        	$name = "اسب اصیل";
-			$title = "17+ خانه در ساعت برای قهرمان";
+        	$name = "Nemes mén";
+			$title = "A hős sebessége 17 mezőre növekszik óránként";
             $item = "104";
             $effect = "17";
 		}elseif($type==105){
-        	$name = "اسب جنگی";
-			$title = "20+ خانه در ساعت برای قهرمان";
+        	$name = "Harci paripa";
+			$title = "A hős sebessége 20 mezőre növekszik óránként";
             $item = "105";
             $effect = "20";
 		}
         
 	}elseif($btype==7){
-    	$name = "نوار زخم کوچک";
-		$title = "این جنس اگر همراه قهرمان باشد، تلفات جنگی بعد از جنگ
-کاهش خواهد یافت. این نوار زخم قادر به ترمیم حداکثر 25% 
-از تلفات جنگی می‌باشد. شما تنها به اندازه‌ی نوار زخمی که 
-همراه خود دارید قادر به ترمیم تلفات خواهید بود. مدت زمان 
-نیاز برای ترمیم برابر زمان نیاز برای برگشت لشکریان می‌باشد، ولی حداقل به 24 ساعت نیاز خواهد داشت.&lt;br /&gt;این جنس قابل انباشته شدن است.&lt;br /&gt;باید قبل از رخ دادن جنگ قهرمان را با آن مجهز کنید تا تاثیر 
-داشته باشد.";
+    	$name = "Kis sebkötöző";
+		$title = "A 25s kötszerek maximálisan az elesett sereg 25 százalékát képes meggyógyítani. Csak annyi egység gyógyítható meg, ahány darabos a kötszer. A gyógyulás ideje a kiinduló faluba való visszaérkezés időtartama, legalább 24 óra.&lt;br /&gt;A tárgy halmozható..&lt;br /&gt;A tárgyat fel kell venni harc előtt, hogy annak hatása érvényesüljön. ";
 		$item = "112";
 	}elseif($btype==8){
-    	$name = "نوار زخم";
-		$title = "این جنس اگر همراه قهرمان باشد، تلفات جنگی بعد از جنگ 
-کاهش خواهد یافت. این نوار زخم قادر به ترمیم حداکثر 33% 
-از تلفات جنگی می‌باشد. شما تنها به اندازه‌ی نوار زخمی که 
-همراه خود دارید قادر به ترمیم تلفات خواهید بود. مدت زمان 
-نیاز برای ترمیم برابر زمان نیاز برای برگشت لشکریان می‌باشد، ولی حداقل به 24 ساعت نیاز خواهد داشت.&lt;br /&gt;این جنس قابل انباشته شدن است.&lt;br /&gt;باید قبل از رخ دادن جنگ قهرمان را با آن مجهز کنید تا تاثیر 
-داشته باشد.";
+    	$name = "Sebkötöző";
+		$title = "A 33s kötszerek maximálisan az elesett sereg 33 százalékát képes meggyógyítani. Csak annyi egység gyógyítható meg, ahány darabos a kötszer. A gyógyulás ideje a kiinduló faluba való visszaérkezés időtartama, legalább 24 óra.&lt;br /&gt;A tárgy halmozható.&lt;br /&gt;A tárgyat fel kell venni harc előtt, hogy annak hatása érvényesüljön.";
 		$item = "113";
 	}elseif($btype==9){
-    	$name = "قفس";
-		$title = "با استفاده از این جنس قادر به گرفتن حیوانات موجود در آبادی &lt;br /&gt;
-ها و نگهداری آنها در دهکده برای دفاع در مقابل حمله‌ها می‌باشید.&lt;br /&gt;این جنس قابل انباشته شدن است.&lt;br /&gt;جنگی رخ نخواهد داد و حیوانات گرفته خواهند شد.";
+    	$name = "Ketrec";
+		$title = "Az oázisokban talált állatok ezzel megszelidíthetőek és a faluba vihetőek. Ott aztán a falu védelmére kelnek. Az elfogott állatok nem fogyasztanak búzát. &lt;br /&gt;A tárgy halmozható.&lt;br /&gt;Amennyiben ez a tárgy a hősöd felszereléséhez tartozik, egy szabad oázisban nem kerül harcra a sor.";
 		$item = "114";
 	}elseif($btype==10){
-    	$name = "کتیبه";
-		$title = "زمانی تاثیر خواهد داشت که همراه قهرمان باشد. باعث افزایش &lt;br /&gt;
-تجربه‌ی کسب شده از طرف قهرمان خواهد شد.&lt;br /&gt;زمانی که قهرمان با آن مجهز شود تاثیر خواهد داشت.&lt;br /&gt;این جنس قابل انباشته شدن است.";
+    	$name = "Papírtekercs";
+		$title = "Felvételkor azonnal hat és a hősnek 10 tapasztalati pontot ad tekercsenként &lt;br /&gt;Felvételkor aktiválódik.&lt;br /&gt;A tárgy halmozható.";
 		$item = "107";
 	}elseif($btype==11){
-    	$name = "پماد";
-		$title = "از این جنس برای ترمیم زخم‌های قهرمان می‌توانید استفاده کنید. &lt;br /&gt;
-مقدار سلامتی را به مقدار تعداد پمادهای موجود می‌توانید افزایش &lt;br /&gt;
-دهید (حداکثر 100%).&lt;br /&gt;زمانی که قهرمان با آن مجهز شود تاثیر خواهد داشت.&lt;br /&gt;این جنس قابل انباشته شدن است.";
+    	$name = "Gyógykenőcs";
+		$title = "Helyreállítja a hős egészségét. A felhasznált kenőcsök száma határozza meg a helyreállítás mértékét (max. 100%). &lt;br /&gt;Felvételkor aktiválódik. &lt;br /&gt;A tárgy halmozható.";
 		$item = "106";
 	}elseif($btype==12){
-    	$name = "سطل";
-		$title = "قهرمان شما را بصورت فوری و رایگان زنده خواهد کرد. اگر قهرمان زنده باشد، قادر به قرار دادن آن در جعبه‌ی او نیستید.&lt;br /&gt;زمانی که قهرمان با آن مجهز شود تاثیر خواهد داشت.";
+    	$name = "Vizesvödör";
+		$title = "Feléleszti a hőst azonnal és ingyenesen. Amikor a hős él, nem rakható a hős táskájába a vizesvödör. A vödör felhasználás után eltűnik.&lt;br /&gt;Felvételkor aktiválódik.";
         $item = "108";
 	}elseif($btype==13){
-    	$name = "کتاب دانش";
-		$title = "تمامی خصوصیات را بازنشانی (برگشت به حالت اول) کرده و می‌توانید آنها را دوباره تغییر دهید.&lt;br /&gt;زمانی که قهرمان با آن مجهز شود تاثیر خواهد داشت.";
+    	$name = "A Bölcsességek könyve";
+		$title = "Az összes hős tulajdonságot visszaállítja és így lehetőséged nyílik azokat újra elosztani.&lt;br /&gt;Felvételkor aktiválódik.";
         $item = "110";
 	}elseif($btype==14){
-    	$name = "لوح قانون";
-		$title = "وفاداری دهکده‌ای که قهرمان در آن می‌باشد را افزایش خواهد &lt;br /&gt;
-داد. هر لوح قادر به افزایش 1% وفاداری می‌باشد. حداکثر مقدار &lt;br /&gt;
-ممکن 125% است.&lt;br /&gt;زمانی که قهرمان با آن مجهز شود تاثیر خواهد داشت.&lt;br /&gt;این جنس قابل انباشته شدن است.";
+    	$name = "Törvénytáblák";
+		$title = "Azonnali hatállyal megnöveli a hős otthonául szolgáló falu hűségét 1 százalékkal táblánként, maximum 125 százalékkal. &lt;br /&gt;Felvételkor aktiválódik.&lt;br /&gt;A tárgy halmozható.";
 		$item = "109";
 	}elseif($btype==15){
-    	$name = "اثر هنری";
-		$title = "اگر از اثر هنری استفاده کنید به صورت فوری امتیاز فرهنگی بدست خواهید آورد. مقدار امتیاز فرهنگی که به شما داده خواهد شد برابر تولیدی کل دهکده‌های شما خواهد بود . حداکثر این مقدار در سرور اسپید 3x برابر 2500 امتیاز فرهنگی می‌باشد.&lt;br /&gt;زمانی که قهرمان با آن مجهز شود تاثیر خواهد داشت.&lt;br /&gt;این جنس قابل انباشته شدن است.";
+    	$name = "Műalkotás";
+		$title = "Ha a műalkotást felhasználod, az összes falud kultúrpont termelése alapján kultúrpontokat kapsz (+3 kultúrpont),de csak maximálisan 5000 KP (3x szerveren 2500) műalkotásonként.&lt;br /&gt;Felvételkor aktiválódik.&lt;br /&gt;A tárgy halmozható.";
         $item = "111";
 	}
 

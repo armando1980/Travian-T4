@@ -1,11 +1,12 @@
-<h1 class="titleInHeader">تالار <span class="level">سطح <?php echo $village->resarray['f'.$id]; ?></span></h1>
+﻿<h1 class="titleInHeader">Town Hall <span class="level">Level <?php echo $village->resarray['f'.$id]; ?></span></h1>
 
 <div id="build" class="gid24">
 <div class="build_desc">
 <a href="#" onClick="return Travian.Game.iPopup(24,4);" class="build_logo">
-	<img class="building big white g24" src="img/x.gif" alt="تالار" title="تالار" />
+	<img class="building big white g24" src="img/x.gif" alt="Városháza" title="Városháza" />
 </a>
-در تالار شما می توانید جشنهای پرشکوه برگزار کنید. این جشنها باعث افزایش امتیاز فرهنگی دهكده ي شما می شوند.
+
+In the Town Hall you can hold pompous celebrations. Such a celebration increases your culture points.
 </div>
 
 <?php

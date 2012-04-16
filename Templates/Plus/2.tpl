@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 include("Templates/Plus/pmenu.tpl");
 ?>
-<h4 class="round space">امکانات تراوین <span class="plus_g">پلاس</span></h4>
+<h4 class="round space">Advantages <span class="plus_g"></span></h4>
 <table id="plus_features" class="features transparent" cellpadding="1" cellspacing="1">
 	<tbody>
 
@@ -9,13 +9,11 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="waitingLoop" src="img/x.gif" alt="قراردادن در نویت ساخت"></a>
 	</td>
-	<th>قراردادن در نویت ساخت</th>
+	<th>Waiting loop for constructions</th>
 </tr>
 
 <tr>
-	<td class="text">این برای شما امکان به نوبت گذاشتن ساخت و یا ارتقاء ساختمان 
-دوم را می دهد. بعد از اتمام ساخت ساختمان اول کارگران ساخت 
-ساختمان دوم را شروع خواهند کرد.</td>
+	<td class="text">The waiting loop enables you to give your builders another order to raise or extend a second building. After completing their first task they will begin working on the next construction order in the loop.</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -25,14 +23,11 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="mapFullscreen" src="img/x.gif" alt="نقشه بزرگ"></a>
 	</td>
-	<th>نقشه بزرگ</th>
+	<th>Larger map</th>
 </tr>
 
 <tr>
-	<td class="text">قادر به بزرگتر کردن نقشه برای نمایش بهتر آن می باشید. به جای 
-نقشۀ 9×7 شما می توانید نقشۀ 19×11 داشته باشید. اتحاد هایی که 
-با شما متحد می باشند و یا قرارداد آتش بس دارند (NAP) نیز با 
-رنگ های متفاوتی برای شما نمایش داده خواهد شد.</td>
+	<td class="text">You can enlarge the map to get a better overview. Instead of 7x9 fields, you can have a map of 11x19 fields. Other alliances which are allied or have a non-aggression pact (NAP) with you are shown in special colours.
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -42,14 +37,12 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="archive" src="img/x.gif" alt="امکان آرشیو کردن گزارش ها و پیام ها"></a>
 	</td>
-	<th>امکان آرشیو کردن گزارش ها و پیام ها</th>
+	<th>Archive function for reports and messages</th>
 </tr>
 
 <tr>
-	<td class="text">می توانید پیام ها و گزارش های مهم را آرشیو کنید که بعداً 
-راحتتر قادر به پیدا کردن آنها باشید. علاوه بر این شما قادر به 
-انتخاتب همزمان چند نامه و یا گزارش برای حذف و یا آرشیو نیز 
-خواهید بود.</td>
+	<td class="text">Important reports and messages can be archived and thereby be looked up faster. Additionally, you can choose several messages or reports and archive or delete them at once.
+</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -59,17 +52,12 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="sorting" src="img/x.gif" alt="امکان مرتب کردن پیام ها و گزارش ها"></a>
 	</td>
-	<th>امکان مرتب کردن پیام ها و گزارش ها</th>
+	<th>Sorting function for reports and messages</th>
 </tr>
 
 <tr>
-	<td class="text">با کلیک بر روی منوی "فرستاده شده" در بالای جدول قادر به 
-تغییر ترتیب چیدش 
-پیام ها و گزارش ها خواهید بود. اگر تعداد پیام های ارسالی 
-به شما زیاد می 
-باشد، می توانید از این امکان برای پیدا کردن پیام های قدیمی 
-استفاده کنید. 
-این امکان در پوشۀ آرشیو نیز قابل استفاده می باشد.</td>
+	<td class="text">By clicking the table heading "Sent", you can reverse the sorting of reports and messages. If you get many messages a day and need to look up older ones, you are able to do so very fast with this function. It can also be used in the archives
+</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -79,15 +67,13 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="market" src="img/x.gif" alt="امکان مرتب سازی در بازار"></a>
 	</td>
-	<th>امکان مرتب سازی در بازار</th>
+	<th>Sorting function for the marketplace</th>
 </tr>
 
 <tr>
-	<td class="text">برای اینکه بتوانید در بازار بهتر عمل کنید، می توانید از 
-امکان فیلتر منابع در بازار استفاده کنید تا تنها تجارت ها 
-منابع خاص برای شما نمایش داده شود. علاوه بر آن شما می توانید 
-از فیلتر 1:1 (1ب1) نیز استفاده کنید تا تنها برای شما 
-تجارتهای 1:1 (1ب1) نمایش داده شود.</td>
+	<td class="text">To use the marketplace more efficiently, you can filter the offers for certain resources only. Additionally, you can use a ratio filter to only see 1:1 offers. 
+
+This feature is available for everything and NOT part of the plus account any more</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -97,14 +83,11 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="autoCompletion" src="img/x.gif" alt="تکمیل اتوماتیک"></a>
 	</td>
-	<th>تکمیل اتوماتیک</th>
+	<th>Auto-completion</th>
 </tr>
 
 <tr>
-	<td class="text">با استفاده از این امکان شما قادر به پیدا کردن نام دهکده ها 
-تنها با تایپ چند حرف اول آن خواهید بود. بسته به تنظیمات شما 
-می توانید این امکان را برای دهکده های خود، دهکده های متحدین 
-و یا دهکده های اطراف خود فعال کنید.</td>
+	<td class="text">By using the auto-completion you can easily "write" a whole village name by entering just a few letters/figures. Depending on your preferences, you can use this function in any combination for your own villages, villages of alliance members or villages in your surroundings</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -114,14 +97,11 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="reportFilter" src="img/x.gif" alt="فیلتر گزارش ها"></a>
 	</td>
-	<th>فیلتر گزارش ها</th>
+	<th>Report filter</th>
 </tr>
 
 <tr>
-	<td class="text">این سیستم برای شما امکان غیر فعال کردن گزارش های بازار را می 
-دهد. بسته به تنظیمات شما می توانید گزارش های ارسال/دریافت 
-منابع بین دهکده های خود، دهکده های دیگر را غیر فعال/فعال 
-کنید.</td>
+	<td class="text">Thanks to the report filter, unwanted reports concerning marketplace transactions are a problem of the past. Depending on your personal preferences, you can easily switch off reports concerning trades from/to other villages or between your own villages</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -131,16 +111,11 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="directLinks" src="img/x.gif" alt="لینک های مستقیم"></a>
 	</td>
-	<th>لینک های مستقیم</th>
+	<th>Freely definable direct links</th>
 </tr>
 
 <tr>
-	<td class="text">با استفاده از این امکان قادر به ایجاد لینک به صفحه هایی می 
-باشید که بیشتر از آنها استفاده می کنید. این لینک ها در تمامی 
-صفحه های بازی برای شما نمایش داده خواهد شد و براحتی از هر 
-صفحه ای به صفحۀ مورد نظر خود می توانید وارد شوید. می توانید 
-لینک هایی که برای شما مهم است را در اینجا قرار دهید 
-(سربازخانه، تجارت 1:1 در بازار و یا پروفایل اتحاد).</td>
+	<td class="text">Thanks to these links, you can reach every page you want with just one click. Just create a link to every destination you want and you can directly reach your alliance's overview, your barracks or the tempting 1:1 biddings at the marketplace</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -150,12 +125,11 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="graphicStatistics" src="img/x.gif" alt="آمار گرافیکی"></a>
 	</td>
-	<th>آمار گرافیکی</th>
+	<th>Graphical statistics</th>
 </tr>
 
 <tr>
-	<td class="text">این آمار پیشرفت اکانت شما را نمایش خواهد داد. برای مثال 
-پیشرفت در رتبه، لشکر و یا جمعیت.</td>
+	<td class="text">These statistics show you the chronological development of your account, e.g. the ranking, your army's strength or your population's development</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -165,18 +139,12 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="villageOverview" src="img/x.gif" alt="دیدکلی دهکده"></a>
 	</td>
-	<th>دیدکلی دهکده</th>
+	<th>Central account overview</th>
 </tr>
 
 <tr>
-	<td class="text">اگر دارای تعداد زیادی دهکده باشید، امکان دارد متوجه اتفاقات 
-مهمی که در یکی از دهکده های شما افتاده است نشوید: لشکریانی 
-که تربیت کرده بودم کجا هستند، آیا تمامی کارگران من در حال 
-کار می باشند، آیا بدلیل پر شدن انبار منابع از دست می دهم؟ 
-فقط به دیدکلی دهکده مراجعه کنید و اطلاعات همۀ دهکده ها یکجا 
-برای شما نمایش داده خواهد شد. اگر بیش از یک دهکده داشته 
-باشید با کلیک بر روی لینک "دهکده ها" موجود در بالای لیست 
-دهکده های خود قادر به باز کردن دیدکلی می باشید.</td>
+	<td class="text">Anyone who reigns over several villages might easily miss something important going on within his realm: where are those troops I've trained, are all my workers working hard or are some of them being lazy, am I losing resources because one of my warehouses isn't big enough? Just take a look at your central village overview and you can check out all your villages at once. If you own more than one village, you can reach the central village overview by clicking "Villages" directly above the list of your villages
+</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -186,20 +154,18 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="notepad" src="img/x.gif" alt="یادداشت"></a>
 	</td>
-	<th>یادداشت</th>
+	<th>Notepad</th>
 </tr>
 
 <tr>
-	<td class="text">همیشه کاغذ و مداد همراه ندارید. برای اینکه مطمئن شوید چیزی 
-را فراموش نکرده اید و یا مواردی را یادداشت کنید می توانید از 
-یادداشت داخل بازی استفاده کنید.</td>
+	<td class="text">A paper and pencil aren't always at hand. In order to make sure you don't forget important things, or if you simply want to make a few notes, you can use your ingame notebook</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
 </tr>
 	</tbody>
 </table>
-<h4 class="round spacer">امکانات <font color="#71D000">سکۀ طلای تراوین</font></h4>
+<h4 class="round spacer">Features of Travian <font color="#71D000">Gold</font></h4>
 <table id="gold_features" class="features transparent" cellpadding="1" cellspacing="1">
 	<tbody>
 	
@@ -207,17 +173,14 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="p25Lumber" src="img/x.gif" alt="افزایش تولید چوب"></a>
 	</td>
-	<th>افزایش تولید چوب</th>
+	<th>Production bonus for lumber</th>
 </tr>
 
 <tr>
-	<td class="text">با استفاده از این امکان قادر به افزایش 25% تولید چوب دهکدۀ 
-خود می باشید.
-<br><br>
-این مقدار به تولیدی تک تک هیزم شکن ها افزوده نخواهد شد و 
-بلکه تاثیر آن به تولیدی کل می باشد.
-<br><br>
-از امکانات کلوپ طلایی نمی باشد!</td>
+	<td class="text">With this Gold advantage all your villages' lumber production will be increased by 25%. 
+
+The bonus will not be added to the single resource fields but to the sum of the production 
+</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -227,17 +190,14 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="p25Clay" src="img/x.gif" alt="افزایش تولید خشت"></a>
 	</td>
-	<th>افزایش تولید خشت</th>
+	<th>Production bonus for clay</th>
 </tr>
 
 <tr>
-	<td class="text">با استفاده از این امکان قادر به افزایش 25% تولید خشت دهکدۀ 
-خود می باشید.
-<br><br>
-این مقدار به تولیدی تک تک آجرسازی ها افزوده نخواهد شد و 
-بلکه تاثیر آن به تولیدی کل می باشد.
-<br><br>
-از امکانات کلوپ طلایی نمی باشد!</td>
+	<td class="text">With this Gold advantage, all of your villages' clay production will be increased by 25%. 
+
+The bonus will not be added to the single resource fields, but to the sum of the production instead 
+</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -247,17 +207,14 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="p25Iron" src="img/x.gif" alt="افزایش تولید آهن"></a>
 	</td>
-	<th>افزایش تولید آهن</th>
+	<th>Production bonus for iron</th>
 </tr>
 
 <tr>
-	<td class="text">با استفاده از این امکان قادر به افزایش 25% تولید آهن دهکدۀ 
-خود می باشید.
-<br><br>
-این مقدار به تولیدی تک تک معادن آهن افزوده نخواهد شد و 
-بلکه تاثیر آن به تولیدی کل می باشد.
-<br><br>
-از امکانات کلوپ طلایی نمی باشد!</td>
+	<td class="text">With this Gold advantage, all of your villages' iron production will be increased by 25%. 
+
+The bonus will not be added to the single resource fields, but to the sum of the production instead 
+</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -267,17 +224,15 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="p25Crop" src="img/x.gif" alt="افزایش تولید گندم"></a>
 	</td>
-	<th>افزایش تولید گندم</th>
+	<th>Production bonus for crop</th>
 </tr>
 
 <tr>
-	<td class="text">با استفاده از این امکان قادر به افزایش 25% تولید گندم 
-دهکدۀ خود می باشید.
-<br><br>
-این مقدار به تولیدی تک تک گندم زار ها افزوده نخواهد شد و 
-بلکه تاثیر آن به تولیدی کل می باشد.
-<br><br>
-از امکانات کلوپ طلایی نمی باشد!</td>
+	<td class="text">With this Gold advantage, all of your villages' crop production will be increased by 25%. 
+
+The bonus will not be added to the single resource fields, but to the sum of the production instead 
+
+</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -287,18 +242,15 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="constructionComplete" src="img/x.gif" alt="ساخت ساختمان ها و تحقیقات را فورا به پایان برسانید."></a>
 	</td>
-	<th>ساخت ساختمان ها و تحقیقات را فورا به پایان برسانید.</th>
+	<th>Complete construction orders & research immediately..</th>
 </tr>
 
 <tr>
-	<td class="text">در دهکدۀ انتخاب شده تمامی ساخت ها و تحقیقات در حال انجام 
-در دارالفنون و آهنگری به صورت فوری تمام خواهد شد.
-<br><br>
-لازم بذکر است که قادر به استفاده از این امکان در مورد 
-ساختمان های <i>قصر و اقامتگاه</i> و دهکدۀ <i>شگفتی 
-جهان</i> نمی باشید.
-<br><br>
-از امکانات کلوپ طلایی نمی باشد!</td>
+	<td class="text">In the selected village, all construction and research orders in the academy as well as the smithy will be completed immediately. 
+
+However, the Residence and Palace buildings and villages with a wonder of the world are excluded from this feature 
+
+</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>
@@ -308,15 +260,14 @@ include("Templates/Plus/pmenu.tpl");
 	<td rowspan="2" class="preview">
 		<a href="plus.php?id=3"><img class="npcMerchant" src="img/x.gif" alt="تاجر تعدیل منابع"></a>
 	</td>
-	<th>تاجر تعدیل منابع</th>
+	<th>NPC Merchant</th>
 </tr>
 
 <tr>
-	<td class="text">تاجر تعدیل منابع قادر به تجارت فوری منابع به صورت 1:1 
-(1ب1) می باشد. می توانید منابع موجود در دهکده را به یکدیگر 
-تبدیل کنید.
-<br><br>
-از امکانات کلوپ طلایی نمی باشد!</td>
+	<td class="text">1:1 NPC Merchant
+The NPC Merchant will exchange any desired amount of resources in a village with other resources at a ratio of 1:1
+
+</td>
 </tr>
 <tr>
 	<td colspan="2" class="empty"></td>

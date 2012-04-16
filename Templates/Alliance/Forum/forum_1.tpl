@@ -1,4 +1,4 @@
-<!-- //////////////// made by TTMTT //////////////// -->
+﻿<!-- //////////////// made by TTMTT //////////////// -->
 <script language="JavaScript" type="text/javascript">
 
 function showCheckList() {
@@ -103,71 +103,30 @@ function showCheckList() {
 
 	<input type="hidden" name="newforum" value="1">
 	<input type="hidden" name="admin" value="1">
-<h4 class="round">فروم جدید</h4>
+<h4 class="round">New Forum</h4>
 	<table cellpadding="1" cellspacing="1" id="new_forum"><tbody>
 	<tr>
 
-		<th>نام فروم</th>
+		<th>Forum Name</th>
 		<td><input class="text" type="text" name="u1" value="" maxlength="20"></td>
 	</tr>
 
 	<tr>
-		<th>توضیحات</th>
+		<th>Description</th>
 		<td><input class="text" type="text" name="u2" value="" maxlength="38"></td>
 	</tr>
 
-	<tr>
-		<th>نوع فروم</th>
+			<th>Type forum</th>
 		<td><select class="dropdown" id="bid" name="bid" onchange="showCheckList();">
-        <option value="1">فروم عمومی</option>
-        <option value="2">فروم هم اتحادی</option>
-        <option value="0"selected>فروم اتحاد</option>
-        <option value="3">فروم بسته</option></select></td>
+        <option value="1">Public forum</option>
+        <option value="2">Alliance Forum</option>
+        <option value="0"selected>Alliance forum</option>
+        <option value="3">Closed Forum</option></select></td>
 	</tr>
 	</tbody></table><Br />
-    <h4 class="round">باز کردن برای اتحاد دیگر</h4>
-    <table cellpadding="1" cellspacing="1" id="ally_list"><thead>
+   
 
-	<tr>
-		<td>شماره اتحاد:</td>
-		<td>علامت:</td>
-		<td>اضافه</td>
-	</tr>
 
-	</thead><tbody>
-	<tr>
-		<td class="ally">
-			<input class="text" type="text" id="allys_by_id_0" maxlength="8" name="allys_by_id[0]" onkeyup="checkInputs(0,'allys');" />
-		</td>
-		<td class="tag">
-			<input class="text" type="text" id="allys_by_name_0" maxlength="8" name="allys_by_name[0]" onkeyup="checkInputs(0,'allys');" />
-		</td>
-		<td class="ad">
-
-			<img class="add" src="img/x.gif" title="add" alt="add" onclick="addRow('ally_list')" />
-		</td>
-	</tr>
-</table><Br />
-<h4 class="round">باز کردن برای یک بازیکن</h4>
-<table cellpadding="1" cellspacing="1" id="user_list"><thead>
-	<tr>
-		<td>شماره بازیکن:</td>
-
-		<td>نام:</td>
-		<td>اضافه</td>
-	</tr>
-	</thead><tbody>
-	<tr>
-		<td class="id">
-			<input class="text" type="text" id="users_by_id_0" maxlength="8" name="users_by_id[0]" onkeyup="checkInputs(0,'users');" />
-		</td>
-
-		<td class="pla">
-			<input class="text" type="text" id="users_by_name_0" maxlength="15" name="users_by_name[0]" onkeyup="checkInputs(0,'users');" />
-		</td>
-		<td class="ad">
-			<img class="add" src="img/x.gif" title="add" alt="add" onclick="addRow('user_list')" />
-		</td>
 	</tr>
 </tbody></table>
 
@@ -180,5 +139,5 @@ function showCheckList() {
 <button type="submit" id="fbtn_ok" name="s1" value="ok" class="build">
 <div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div>
 <div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div>
-</div><div class="button-contents">تایید</div></div></button>
+</div><div class="button-contents">Create</div></div></button>
 </p></form>

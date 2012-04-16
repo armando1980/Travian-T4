@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 ////////////// made by TTMTT //////////////
 
 if(isset($aid)) {
@@ -8,7 +8,7 @@ else {
 $aid = $session->alliance;
 }
 $allianceinfo = $database->getAlliance($aid);
-echo "<h1>اتحاد - ".$allianceinfo['tag']."</h1>";
+echo "<h1>Alliance - ".$allianceinfo['tag']."</h1>";
 include("alli_menu.tpl"); 
 
 

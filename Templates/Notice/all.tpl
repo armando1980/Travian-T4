@@ -1,5 +1,5 @@
 ﻿<?php
-$noticeClass = array("گزارش جاسوسی","پیروزی در حمله بدون تلفات.","پیروزی در حمله با تلفات.","شکست در حمله با تلفات.","پیروزی در دفاع بدون تلفات.","پیروزی در دفاع با تلفات.","شکست در دفاع با تلفات.","شکست در دفاع بدون تلفات","نیروی کمکی","گزارش ماجراجویی.","تاجران بیشتر چوب مبادله کردند.","تاجران بیشتر خشت مبادله کردند.","تاجران بیشتر آهن مبادله کردند.","تاجران بیشتر گندم مبادله کردند.","","حمله به نیروی کمکی");
+$noticeClass = array("Kémkedés jelentése","Mint támadó, győzelem, veszteségek nélkül","Mint támadó, győzelem, veszteségekkel.","Mint támadó vereség (egy katonád sem tért vissza).","Mint védő, győzelem, veszteségek nélkül.","Mint védő, győzelem, veszteségekkell.","Mint védő, vereség (egy katonád sem élte túl).","Mint védő, vereség (veszteségek nélkül)","A támogatás megérkezett","Jelentés a kalandról.","A kereskedő főként fát szállított.","A kereskedő főként agyagot szállított.","A kereskedő főként vasat szállított.","A kereskedő főként búzát szállított.","","Különféle (pl. natar támadás)");
 $prefix = "".TB_PREFIX."ndata";
 $sql = mysql_query("SELECT * FROM $prefix WHERE uid = $session->uid and archive = 0 ORDER BY time DESC");
 $query = mysql_num_rows($sql); // دریافت تعداد کوئری ها از دیتابیس
@@ -100,46 +100,46 @@ $nextPage = $_GET['page'] + 1;
 $previous = $_GET['page'] - 1;
 
 if ($page == "1" && $lastPage == "1"){
-$paginationDisplay .=  '<img alt="صفحه اول" src="img/x.gif" class="first disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه قبل" src="img/x.gif" class="previous disabled">';
+$paginationDisplay .=  '<img alt="Első" src="img/x.gif" class="first disabled"> ';
+$paginationDisplay .=  '<img alt="Előző" src="img/x.gif" class="previous disabled">';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<img alt="صفحه بعد" src="img/x.gif" class="next disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه آخر" src="img/x.gif" class="last disabled">';
+$paginationDisplay .=  '<img alt="Következő" src="img/x.gif" class="next disabled"> ';
+$paginationDisplay .=  '<img alt="Utolsó" src="img/x.gif" class="last disabled">';
 
 }elseif ($lastPage == 0){
-$paginationDisplay .=  '<img alt="صفحه اول" src="img/x.gif" class="first disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه قبل" src="img/x.gif" class="previous disabled">';
+$paginationDisplay .=  '<img alt="Első" src="img/x.gif" class="first disabled"> ';
+$paginationDisplay .=  '<img alt="Előző" src="img/x.gif" class="previous disabled">';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<img alt="صفحه بعد" src="img/x.gif" class="next disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه آخر" src="img/x.gif" class="last disabled">';
+$paginationDisplay .=  '<img alt="Következő" src="img/x.gif" class="next disabled"> ';
+$paginationDisplay .=  '<img alt="Utolsó" src="img/x.gif" class="last disabled">';
 
 }elseif ($page == "1" && $lastPage != "1"){
-$paginationDisplay .=  '<img alt="صفحه اول" src="img/x.gif" class="first disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه قبل" src="img/x.gif" class="previous disabled">';
+$paginationDisplay .=  '<img alt="Első" src="img/x.gif" class="first disabled"> ';
+$paginationDisplay .=  '<img alt="Előző" src="img/x.gif" class="previous disabled">';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<a class="next" href="' . $_SERVER['PHP_SELF'] . '?page=2"><img alt="صفحه بعد" src="img/x.gif"></a> ';
-$paginationDisplay .=  '<a class="last" href="' . $_SERVER['PHP_SELF'] . '?page=3"><img alt="صفحه آخر" src="img/x.gif"></a>';
+$paginationDisplay .=  '<a class="next" href="' . $_SERVER['PHP_SELF'] . '?page=2"><img alt="Következő" src="img/x.gif"></a> ';
+$paginationDisplay .=  '<a class="last" href="' . $_SERVER['PHP_SELF'] . '?page=3"><img alt="Utolsó" src="img/x.gif"></a>';
 
 }elseif ($page != "1" && $page != $lastPage){
-$paginationDisplay .=  '<a class="first" href="' . $_SERVER['PHP_SELF'] . '?page=1"><img alt="صفحه اول" src="img/x.gif"></a> ';
-$paginationDisplay .=  '<a class="previous" href="' . $_SERVER['PHP_SELF'] . '?page=' . $previous . '"><img alt="صفحه قبل" src="img/x.gif"></a>';
+$paginationDisplay .=  '<a class="first" href="' . $_SERVER['PHP_SELF'] . '?page=1"><img alt="Első" src="img/x.gif"></a> ';
+$paginationDisplay .=  '<a class="previous" href="' . $_SERVER['PHP_SELF'] . '?page=' . $previous . '"><img alt="Előző" src="img/x.gif"></a>';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<a class="next" href="' . $_SERVER['PHP_SELF'] . '?page=' . $nextPage . '"><img alt="صفحه بعد" src="img/x.gif"></a> ';
-$paginationDisplay .=  '<a class="last" href="' . $_SERVER['PHP_SELF'] . '?page=' . $lastPage . '"><img alt="صفحه آخر" src="img/x.gif"></a>';
+$paginationDisplay .=  '<a class="next" href="' . $_SERVER['PHP_SELF'] . '?page=' . $nextPage . '"><img alt="Következő" src="img/x.gif"></a> ';
+$paginationDisplay .=  '<a class="last" href="' . $_SERVER['PHP_SELF'] . '?page=' . $lastPage . '"><img alt="Utolsó" src="img/x.gif"></a>';
 
 }elseif ($page == $lastPage){
-$paginationDisplay .=  '<a class="first" href="' . $_SERVER['PHP_SELF'] . '?page=1"><img alt="صفحه اول" src="img/x.gif"></a> ';
-$paginationDisplay .=  '<a class="previous" href="' . $_SERVER['PHP_SELF'] . '?page=' . $previous . '"><img alt="صفحه قبل" src="img/x.gif"></a>';
+$paginationDisplay .=  '<a class="first" href="' . $_SERVER['PHP_SELF'] . '?page=1"><img alt="Első" src="img/x.gif"></a> ';
+$paginationDisplay .=  '<a class="previous" href="' . $_SERVER['PHP_SELF'] . '?page=' . $previous . '"><img alt="Előző" src="img/x.gif"></a>';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<img alt="صفحه بعد" src="img/x.gif" class="next disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه آخر" src="img/x.gif" class="last disabled">';
+$paginationDisplay .=  '<img alt="Következő" src="img/x.gif" class="next disabled"> ';
+$paginationDisplay .=  '<img alt="Utolsó" src="img/x.gif" class="last disabled">';
 }
 
 
 $outputList = '';
 $namee = 1;
 if($query == 0) {        
-    $outputList .= "<td colspan=\"4\" class=\"none\">هیچ گزارش جدیدی موجود نیست.</td>";
+    $outputList .= "<td colspan=\"4\" class=\"none\">Nincs új jelentés.</td>";
 }else{
 while($row = mysql_fetch_array($sql2)){ 
     $id = $row["id"];
@@ -184,11 +184,11 @@ $typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","ba
 			$outputList .= "<div class=\"reportInfoIcon\"><img title=\"".$name." (".$dataarray[3]."x)\" src=\"img/x.gif\" class=\"reportInfo itemCategory itemCategory_".$typeArray[$dataarray[1]]."\"></div>";
         }
     }else{
-		$outputList .= "<div class=\"reportInfoIcon\"><img src=\"img/x.gif\" class=\"reportInfo adventureDifficulty0\" title=\"قهرمان کشته شد\"></div>";
+		$outputList .= "<div class=\"reportInfoIcon\"><img src=\"img/x.gif\" class=\"reportInfo adventureDifficulty0\" title=\"A hősöd halott\"></div>";
 	}
 }
     $outputList .= "<a href=\"berichte.php?id=".$id."\">".$topic." </a> ";
-    if($viewed == 0) { $outputList .= "(جدید)"; }
+    if($viewed == 0) { $outputList .= "(Új)"; }
     $date = $generator->procMtime($time);
     $outputList .= "</div><div class=\"clear\"></div></td>
 			<td class=\"dat\">".$date[0]." ".date('H:i',$time)."</td></tr>";
@@ -201,7 +201,7 @@ $typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","ba
 <form method="post" action="berichte.php" name="msg">
 
 	<table cellpadding="1" cellspacing="1" id="overview" class="row_table_data">
-		<thead><tr><th colspan="2">موضوع:</th><th class="sent">فرستاده شده</th></tr></thead>
+		<thead><tr><th colspan="2">Címzett:</th><th class="sent">Elküldve</th></tr></thead>
         <tbody>
    <?php 
 
@@ -230,7 +230,7 @@ $typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","ba
 					element.checked = this.checked;
 				}, this);
 			">
-			<span><label for="sAll">انتخاب همه</label></span>
+			<span><label for="sAll">Összes kijelölése</label></span>
 		</div>
 <?php } ?>
 
@@ -241,12 +241,12 @@ $typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","ba
     <div class="clear"></div>
 </div>
 <button name="delntc" type="submit" value="del" id="del" class="delete">
-<div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">حذف</div></div>
+<div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Törlés</div></div>
 </button>
                     
 <?php if($session->plus) { ?>
 <button name="archive" type="submit" value="archive" id="archive" class="delete">
-<div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">آرشیو</div></div>
+<div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Archív</div></div>
 </button>
 <?php } ?>
 </form>

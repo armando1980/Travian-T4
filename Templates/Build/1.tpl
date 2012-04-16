@@ -1,4 +1,4 @@
-<h1 class="titleInHeader"><?php echo B1; ?> <span class="level">سطح <?php echo $village->resarray['f'.$id]; ?></span></h1>
+<h1 class="titleInHeader"><?php echo B1; ?> <span class="level">Level <?php echo $village->resarray['f'.$id]; ?></span></h1>
 <div id="build" class="gid1">
 <div class="build_desc">
 <a href="#" onClick="return Travian.Game.iPopup(0,4);" class="build_logo">
@@ -17,9 +17,7 @@
 		<th><?php echo NEXT_PROD; echo $village->resarray['f'.$id]+1; ?>:</th>
 		<td><b><?php echo $bid1[$village->resarray['f'.$id]+1]['prod']* SPEED; ?></b> <?php echo PER_HR; ?></td>
 	</tr>
-    <?php 
-    }
-    ?>
+    <?php } ?>
 </table>
 <?php 
 include("upgrade.tpl");

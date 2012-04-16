@@ -107,27 +107,27 @@ if($message->unread) {
 							<div class="contentTitle">&nbsp;</div> 
 
 <div class="contentContainer">
-								<div id="content" class="hero_inventory"><h1 class="titleInHeader">قهرمان</h1>
+								<div id="content" class="hero_inventory"><h1 class="titleInHeader">Hero</h1>
 <div class="contentNavi subNavi">
 				<div class="container active">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="hero_inventory.php"><span class="tabItem">خصوصیات</span></a></div>
+					<div class="content"><a href="hero_inventory.php"><span class="tabItem">Attributes</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="hero.php"><span class="tabItem">ظاهر</span></a></div>
+					<div class="content"><a href="hero.php"><span class="tabItem">Appearance</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="hero_adventure.php"><span class="tabItem">ماجراجویی‌ها</span></a></div>
+					<div class="content"><a href="hero_adventure.php"><span class="tabItem">Adventures</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="hero_auction.php"><span class="tabItem">حراجی‌ها</span></a></div>
+					<div class="content"><a href="hero_auction.php"><span class="tabItem">Auctions</span></a></div>
 				</div><div class="clear"></div>
 		</div>
 		<script type="text/javascript">
@@ -211,8 +211,7 @@ if($gi['bag']!=0){
 		</div>
 	</div>
 	<div class="heroHidden">
-		<input type="checkbox" class="check" name="hideShow" id="heroHideShow" checked="checked" disabled> اگر انتخاب شده باشد قهرمان از دهکده‌ای که در آن می‌باشد دفاع 
-نخواهد کرد (گریز خواهد کرد).
+		<input type="checkbox" class="check" name="hideShow" id="heroHideShow" checked="checked" disabled> When checked hero will defend village
 	</div>
 </div>
 <div id="hero_inventory">
@@ -261,8 +260,8 @@ if($inv <= 12){
 }
 ?>
 			<div class="market">
-				<a class="buy arrow" href="hero_auction.php?action=buy">خرید جنس.</a>
-				<a class="sell arrow" href="hero_auction.php?action=sell">فروش جنس.</a>
+				<a class="buy arrow" href="hero_auction.php?action=buy">Buy Items</a>
+				<a class="sell arrow" href="hero_auction.php?action=sell">Sell Items</a>
 				<div class="clear"></div>
 			</div>
 			<div class="clear"></div>
@@ -282,13 +281,13 @@ if($inv <= 12){
 <script type="text/javascript">
 	Travian.Game.Hero.Inventory = new (new Class(
 	{
-		b10: '<p><div style="color:#F90">تجربه فعلی قهرمان: <?php echo $hero['experience']; ?><br>افزایش تجربه: 10<br>تجربه بعد از استفاده: <?php echo ($hero['experience']+10); ?><br></div>',
+		b10: '<p><div style="color:#F90">Tapasztalat: <?php echo $hero['experience']; ?><br>افزایش تجربه: 10<br>تجربه بعد از استفاده: <?php echo ($hero['experience']+10); ?><br></div>',
 		
-		b15: '<table id="heroInventoryDataDialog" class="transparent" cellspacing="0" cellpadding="0"><tbody><tr class="rowBeforeUse"><th>امتیاز فرهنگی فعلی شما:</th><td><?php echo $database->getUserField($session->uid, 'cp',0); ?></td></tr><tr class="rowUseValue"><th>امتیاز فرهنگی بدست آمده بعد مصرف اثر هنری:</th><td class="displayUseValue"><?php echo $database->getVSumField($session->uid, 'cp'); ?></td></tr><tr class="rowAfterUse"><th>امتیاز فرهنگی بعد از مصرف اثر هنری:</th><td class="displayAfterUse"><?php echo ($database->getUserField($session->uid, 'cp',0)+$database->getVSumField($session->uid, 'cp')); ?></td></tr></tbody></table>',		
+		b15: '<table id="heroInventoryDataDialog" class="transparent" cellspacing="0" cellpadding="0"><tbody><tr class="rowBeforeUse"><th>Jelenlegi kultúrpont arány</th><td><?php echo $database->getUserField($session->uid, 'cp',0); ?></td></tr><tr class="rowUseValue"><th>امتیاز فرهنگی بدست آمده بعد مصرف اثر هنری:</th><td class="displayUseValue"><?php echo $database->getVSumField($session->uid, 'cp'); ?></td></tr><tr class="rowAfterUse"><th>امتیاز فرهنگی بعد از مصرف اثر هنری:</th><td class="displayAfterUse"><?php echo ($database->getUserField($session->uid, 'cp',0)+$database->getVSumField($session->uid, 'cp')); ?></td></tr></tbody></table>',		
 		
 		alreadyOpen: false,
-		textSingle: 'آیا واقعاً می‌خواهید این جنس را مصرف کنید؟',
-		textMulti: 'تعداد اجناسی که استفاده شوند: &lt;input class=\"text\" id=\"amount\" type=\"text\" value=\"\" /&gt;'.unescapeHtml(),
+		textSingle: 'Do you really want to wear this item?',
+		textMulti: 'Total item used: &lt;input class=\"text\" id=\"amount\" type=\"text\" value=\"\" /&gt;'.unescapeHtml(),
 		initialize: function() {
 			var $this = this;
 			
@@ -368,9 +367,9 @@ $('item_<?php echo $id; ?>').addEvent('click', function() { $this.sellItem(<?php
 			html.dialog({
 				relativeTo:			$('content'),
 				elementFoucs:		'inventoryAmount',
-				buttonTextOk:		'تایید',
-				buttonTextCancel:	'لغو',
-				title:				'استفاده',
+				buttonTextOk:		'Ok',
+				buttonTextCancel:	'Cancel',
+				title:				'Felhasználás',
 				onOpen: function(dialog, contentElement){
 					if ($('amount')){
 						$('amount').value = amount;

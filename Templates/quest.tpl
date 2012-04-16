@@ -6,9 +6,9 @@ if ($_SESSION['qst']!=25 && $_SESSION['fqst']!=35 && QUEST==true){
 <div id="anm" style="width:120px; height:140px; visibility:hidden;"></div>
 			<div id="qge">
 				<?php if ($_SESSION['qst'] == 0){ ?>
-				<img onclick="qst_handle();" src="img/x.gif" id="qgei" style="width:160px;height:195px;cursor:pointer;" class="q_l<?php echo $session->userinfo['tribe'];?>" title="به وظیفه">
+				<img onclick="qst_handle();" src="img/x.gif" id="qgei" style="width:160px;height:195px;cursor:pointer;" class="q_l<?php echo $session->userinfo['tribe'];?>" title="A küldetéshez...">
 				<?php }else{ ?>
-				<img onclick="qst_handle();" src="img/x.gif" id="qgei" style="width:160px;height:195px;cursor:pointer;" class="q_l<?php echo $session->userinfo['tribe'];?>g" title="به وظیفه">
+				<img onclick="qst_handle();" src="img/x.gif" id="qgei" style="width:160px;height:195px;cursor:pointer;" class="q_l<?php echo $session->userinfo['tribe'];?>g" title="A küldetéshez...">
 				<?php } ?>
 			</div>
 			<script type="text/javascript">
@@ -24,7 +24,7 @@ if ($_SESSION['qst']!=25 && $_SESSION['fqst']!=35 && QUEST==true){
 <script type="text/javascript"> 
 	Travian.Translation.add(
 	{
-		'close' : 'بستن'
+		'close' : 'Bezárás'
 	});
 </script>
 <?php
@@ -35,12 +35,12 @@ echo "<div id=\"sideInfoCountdown\"><div class=\"head\"></div>";
 echo "<div class=\"content\">";
 
 		$uurover=$generator->getTimeFormat($displayarray['protect']-time());
-        echo "شما هنوز <b><span
-		id=\"timer1\">".$uurover."</span></b> ساعت حمایت تازه واردین دارید.</div></div>";
+        echo "Még van <b><span
+		id=\"timer1\">".$uurover."</span></b> óráig kezdővédelmed.</div></div>";
 } elseif($timestamp) {
 echo "<div id=\"sideInfoCountdown\"><div class=\"head\"></div>";
 echo "<div class=\"content\">";
 		$time=$generator->getTimeFormat(($timestamp-time()));
-        echo "حذف اکانت در <span id=\"timer1\">".$time."</span> .</div></div>";
+        echo "Törlés <span id=\"timer1\">".$time."</span> .</div></div>";
 }
 ?>

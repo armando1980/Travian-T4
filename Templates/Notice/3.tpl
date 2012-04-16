@@ -256,7 +256,7 @@ $start=31; ?>
             <td class="troopHeadline" colspan="11">
             <?php
             if($targettribe=='4'){
-            echo "<span class=\"none2\">طبیعت</span>";
+            echo "<span class=\"none2\">Természet</span>";
             $coor = $database->getCoor($dataarray[31]);
             echo ' '.REPORT_FROM_VIL.' <a href="karte.php?d='.$dataarray[31].'&amp;c='.$generator->getMapCheck($dataarray[31]).'">
             '.stripslashes($dataarray[32]).' ('.$coor[x].'|'.$coor[y].')</a>';

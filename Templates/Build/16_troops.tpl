@@ -5,17 +5,17 @@
                   $coor = $database->getCoor($village->wid);
                   echo "<tr><th class=\"coords\">
 					<span class=\"coordinates coordinatesAligned\">
-                    <span class=\"coordinateY\">".$coor['x'].")</span>
+                    <span class=\"coordinateY\">(".$coor['y']."</span>
                     <span class=\"coordinatePipe\">|</span>
-                    <span class=\"coordinateX\">(".$coor['y']."</span>
+                    <span class=\"coordinateX\">".$coor['x'].")</span>
                     </span>
-                    <span class=\"clear\">‎</span></th>";
+                    <span class=\"clear\"></span></th>";
                   for($i=$start;$i<=($end);$i++) {
                   	echo "<td><img src=\"img/x.gif\" class=\"unit u$i\" title=\"".$technology->getUnitName($i)."\" alt=\"".$technology->getUnitName($i)."\" /></td>";	
                   }
                   echo "<td><img src=\"img/x.gif\" class=\"unit uhero\" title=\"".$technology->getUnitName(51)."\" alt=\"".$technology->getUnitName(51)."\" /></td>";	
 			?>
-			</tr><tr><th>لشگریان</th>
+			</tr><tr><th>Egységek</th>
             <?php
             for($i=$start;$i<=$end;$i++) {
             	if($village->unitarray['u'.$i] == 0) {
@@ -34,5 +34,5 @@
                 echo $village->unitarray['hero']."</td>";
             ?>
            </tr></tbody>
-            <tbody class="infos"><tr><th>غذای مصرفی</th>
-            <td colspan="11"><div class="sup"><?php echo $technology->getUpkeep($village->unitarray,$session->tribe); ?><img class="r4" src="img/x.gif" title="گندم" alt="گندم" />در ساعت</div></td></tr>
+            <tbody class="infos"><tr><th>Fenntartás</th>
+            <td colspan="11"><div class="sup"><?php echo $technology->getUpkeep($village->unitarray,$session->tribe); ?><img class="r4" src="img/x.gif" title="" alt="Búza fogyasztás" />óránként</div></td></tr>

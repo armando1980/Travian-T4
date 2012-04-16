@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 include('menu.tpl');
 
@@ -16,12 +16,12 @@ if($tribe == 1){$t = 1;}elseif($tribe == 2){$t = 11;}elseif($tribe == 3){$t = 21
 	<div class="container active">
 		<div class="background-start">&nbsp;</div>
 		<div class="background-end">&nbsp;</div>
-		<div class="content"><span class="tabItem">لشکریان خودی</span></div>
+		<div class="content"><span class="tabItem">Own Troops</span></div>
 	</div>
     <div class="container normal">
 		<div class="background-start">&nbsp;</div>
 		<div class="background-end">&nbsp;</div>
-		<div class="content"><span class="tabItem">لشکریان موجود در دهکده ها</span></div>
+		<div class="content"><span class="tabItem">Troops in Villages</span></div>
 	</div>
 	<div class="clear"></div>
 </div>
@@ -29,7 +29,7 @@ if($tribe == 1){$t = 1;}elseif($tribe == 2){$t = 11;}elseif($tribe == 3){$t = 21
 <thead>
 <tr>
 
-<th>دهکده</th>
+<th>Village</th>
 
 	<?php        
 
@@ -78,7 +78,7 @@ if($vil['capital'] == 1){$class = 'hl';}else{$class = 'hover';}
 
 <tr><td colspan="12" class="empty"></td></tr>
 
-<th>مجموع</th>
+<th>Total</th>
 
 <?php
 

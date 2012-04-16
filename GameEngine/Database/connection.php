@@ -16,7 +16,7 @@ define("SQL_USER", "root");
 define("SQL_PASS", "");
 
 // ***** Database Name
-define("SQL_DB", "t4");
+define("SQL_DB", "tester");
 
 // ***** Database - Table Prefix
 define("TB_PREFIX", "s1_");

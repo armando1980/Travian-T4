@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
    if(is_numeric($_GET['x']) AND is_numeric($_GET['y'])) {
        $coor2['x'] = $_GET['x'];
@@ -9,14 +9,14 @@
    }
    
 ?>
-<h1 class="titleInHeader">مرکز تحقیق 9/15 گندمی</h1>
+<h1 class="titleInHeader">15-9 Crop Finder</h1>
 <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>?s" id="cropfinder_form">
 <div class="boxes boxesColor gray"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">
     <table class="transparent">
 		<tbody>
 			<tr>
 				<td>
-					<span class="coordInputLabel">نقطه شروع</span>
+					<span class="coordInputLabel">Coordinates</span>
 					
 			<div class="coordinatesInput">
 				<div class="xCoord">
@@ -34,19 +34,19 @@
 			</tr>
 			<tr>
 				<td>
-					نوع:					<span class="type">
-						<input type="radio" class="radio" name="type" value="15" <?php if($_GET['s'] == 1) { print 'checked="checked"'; } ?> />15 گندمی					</span>
+										<span class="type">
+						<input type="radio" class="radio" name="type" value="15" <?php if($_GET['s'] == 1) { print 'checked="checked"'; } ?> />15 Cropper					</span>
 					<span class="type">
-		    			<input type="radio" class="radio" name="type" value="9" <?php if($_GET['s'] == 2) { print 'checked="checked"'; } ?> />9 گندمی		    		</span>
+		    			<input type="radio" class="radio" name="type" value="9" <?php if($_GET['s'] == 2) { print 'checked="checked"'; } ?> />9 Cropper		    		</span>
 		    		<span class="type">
-		    			<input type="radio" class="radio" name="type" value="both" <?php if($_GET['s'] == 3) { print 'checked="checked"'; } ?> />هر دو		    		</span>
+		    			<input type="radio" class="radio" name="type" value="both" <?php if($_GET['s'] == 3) { print 'checked="checked"'; } ?> /> Both		    		</span>
 				</td>
 			</tr>
 		</tbody>
 	<br /></table><br />
 		</div>
 				</div>
-	<button type="submit" value="جستجو" name="suchen" id="suchen"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">جستجو</div></div></button>	<div class="spacer"></div>
+	<button type="submit" value="جستجو" name="suchen" id="suchen"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Search</div></div></button>	<div class="spacer"></div>
 	</form>
     <?php
 
@@ -77,15 +77,15 @@
 
 ?>
 <div class="spacer"></div>
-<h4 class="round">گندم زارها</h4>
+<h4 class="round">Croppers</h4>
 <table cellpadding="1" cellspacing="1" id="croplist">
 <thead>
 				<tr>
-					<th>فاصله</th>
-					<th>موقعیت</th>
-					<th>نوع</th>
-					<th>آبادی</th>
-					<th>تسخیر شده از</th>
+					<th>Distance</th>
+					<th>Position</th>
+					<th>Type</th>
+					<th>Oasis</th>
+					<th>Occupied by</th>
 				</tr>
 </thead>
 
@@ -106,12 +106,12 @@ echo "<td class=\"coords\">";
 echo "<a href=\"karte.php?d=".$row['id']."&c=".$generator->getMapCheck($row['id'])."\">";
 echo "<span class=\"coordinates coordinatesAligned\"><span class=\"coordinateY\">".$row['y'].")</span><span class=\"coordinatePipe\">|</span>";
 echo "<span class=\"coordinateX\">(".$row['x']."</span></span></a></td>";
-echo "<td class=\"typ\">15 گندمی</td>";
+echo "<td class=\"typ\">15 Cropper</td>";
 if($row['occupied'] == 0) {
-echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"green\">تسخیر نشده</font></b></td>";
+echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"green\">Oasis</font></b></td>";
 echo "<td class=\"owned\"><a href=\"karte.php?d=".$row['id']."\">----</a></td>";
 } else {
-echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"red\">تسخیر شده</font></b></td>";
+echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"red\">Occupied</font></b></td>";
 echo "<td class=\"owned\"><a href=\"spieler.php?uid=".$database->getVillageField($row['id'], "owner")."\">".$database->getUserField($database->getVillageField($row['id'], "owner"), "username", 0)."</a></td>";
 
 }
@@ -129,15 +129,15 @@ echo "</tr>";
 
 ?>
 <div class="spacer"></div>
-<h4 class="round">گندم زارها</h4>
+<h4 class="round">Croppers</h4>
 <table cellpadding="1" cellspacing="1" id="croplist">
 <thead>
 				<tr>
-					<th>فاصله</th>
-					<th>موقعیت</th>
-					<th>نوع</th>
-					<th>آبادی</th>
-					<th>تسخیر شده از</th>
+					<th>Distance</th>
+					<th>Coordinates</th>
+					<th>Type</th>
+					<th>Oasis</th>
+					<th>Occupied by</th>
 				</tr>
 </thead>
 <?php
@@ -159,12 +159,12 @@ echo "<td class=\"coords\">";
 echo "<a href=\"karte.php?d=".$row['id']."&c=".$generator->getMapCheck($row['id'])."\">";
 echo "<span class=\"coordinates coordinatesAligned\"><span class=\"coordinateY\">".$row['y'].")</span><span class=\"coordinatePipe\">|</span>";
 echo "<span class=\"coordinateX\">(".$row['x']."</span></span></a></td>";
-echo "<td class=\"typ\">9 گندمی</td>";
+echo "<td class=\"typ\">9 Cropper</td>";
 if($row['occupied'] == 0) {
-echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"green\">تسخیر نشده</font></b></td>";
+echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"green\">Oasis</font></b></td>";
 echo "<td class=\"owned\"><a href=\"karte.php?d=".$row['id']."\">----</a></td>";
 } else {
-echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"red\">تسخیر شده</font></b></td>";
+echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"red\">Occupied</font></b></td>";
 echo "<td class=\"owned\"><a href=\"spieler.php?uid=".$database->getVillageField($row['id'], "owner")."\">".$database->getUserField($database->getVillageField($row['id'], "owner"), "username", 0)."</a></td>";
 
 }
@@ -181,15 +181,15 @@ echo "</tr>";
 
 ?>
 <div class="spacer"></div>
-<h4 class="round">گندم زارها</h4>
+<h4 class="round">Croppers</h4>
 <table cellpadding="1" cellspacing="1" id="croplist">
 <thead>
 				<tr>
-					<th>فاصله</th>
-					<th>موقعیت</th>
-					<th>نوع</th>
-					<th>آبادی</th>
-					<th>تسخیر شده از</th>
+					<th>Distance</th>
+					<th>Coordinates</th>
+					<th>Type</th>
+					<th>Oasis</th>
+					<th>Occupied by</th>
 				</tr>
 </thead>
 
@@ -206,9 +206,9 @@ echo "</tr>";
    foreach($rows as $dist => $row) {
 
        if($row['fieldtype'] == 1) {
-           $field = '9 گندمی';
+           $field = '9 Cropper';
        } elseif($row['fieldtype'] == 6) {
-           $field = '15 گندمی';
+           $field = '15 Cropper';
        }
    
 echo "<tr>";
@@ -219,10 +219,10 @@ echo "<span class=\"coordinates coordinatesAligned\"><span class=\"coordinateY\"
 echo "<span class=\"coordinateX\">(".$row['x']."</span></span></a></td>";
 echo "<td class=\"typ\">" . $field . "</td>";
 if($row['occupied'] == 0) {
-echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"green\">تسخیر نشده</font></b></td>";
+echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"green\">Oasis</font></b></td>";
 echo "<td class=\"owned\"><a href=\"karte.php?d=".$row['id']."\">----</a></td>";
 } else {
-echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"red\">تسخیر شده</font></b></td>";
+echo "<td class=\"oase\"><img src=\"img/x.gif\" class=\"r4\"> <b><font color=\"red\">Occupied by</font></b></td>";
 echo "<td class=\"owned\"><a href=\"spieler.php?uid=".$database->getVillageField($row['id'], "owner")."\">".$database->getUserField($database->getVillageField($row['id'], "owner"), "username", 0)."</a></td>";
 
 }

@@ -1,10 +1,10 @@
-<h1 class="titleInHeader">کارگاه بزرگ <span class="level">سطح <?php echo $village->resarray['f'.$id]; ?></span></h1>
+<h1 class="titleInHeader">Műhely <span class="level">Szint <?php echo $village->resarray['f'.$id]; ?></span></h1>
 
     <div id="build" class="gid42">
     <div class="build_desc">
         <a href="#" onClick="return Travian.Game.iPopup(42,4);" class="build_logo">
-        <img class="building big white g42" src="img/x.gif" alt="کارگاه بزرگ" title="کارگاه بزرگ"></a>
-        در کارگاه شما می توانید ماشینهای جنگی مثل دژكوب و منجنیق را تولید کنید. هرچقدر سطح کارگاه بالاتر باشد تولیدات سریعتر است</div>
+        <img class="building big white g42" src="img/x.gif" alt="Műhely" title="Műhely"></a>
+        A műhelyben városromboló eszközöket lehet építeni, katapultot, faltörő kost. Magasabb szintű épület esetén az építési idő csökken. Az építhető harci egységek technológiáját ki kell fejleszteni előbb az akadémiában</div>
 
 <?php if ($building->getTypeLevel(42) > 0) { ?>
 <form method="POST" name="snd" action="build.php">

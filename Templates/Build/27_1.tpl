@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
         $artefact = $database->getOwnArtefactInfo($village->wid);
         $result = mysql_num_rows(mysql_query("SELECT * FROM " . TB_PREFIX . "artefacts WHERE vref = " . $village->wid . ""));
@@ -18,14 +18,14 @@
    }
 ?>
 <div class="gid27">
-<h4 class="round">كتيبه هاي خودي</h4>
+<h4 class="round">Your Artefacts</h4>
     <table id="own" cellpadding="1" cellspacing="1">
         <thead>
             <tr>
                 <td></td>
-                <td>نام كتيبه</td>
-                <td>دهکده</td>
-                <td>تاریخ</td>
+                <td>Artefact Name</td>
+                <td>Village</td>
+                <td>Date</td>
             </tr>
         </thead>
 
@@ -34,41 +34,41 @@
             <?php
 
         if($result == 0) {
-        	echo '<td colspan="4" class="none">شما هيچ كتيبه اي نداريد .</td>';
+        	echo '<td colspan="4" class="none">You own no artefacts</td>';
         } else {
         	if($artefact['size'] == 1) {
         		$reqlvl = 10;
-        		$effect = "دهكده حاوي كتيبه";
+        		$effect = "Village containing inscriptions";
         	} elseif($artefact['size'] == 2 or 3) {
         		$reqlvl = 20;
-        		$effect = "تمام دهكده ها";
+        		$effect = "All villages";
         	}
         	echo '<td class="icon"><img class="artefact_icon_' . $artefact['type'] . '" src="img/x.gif"></td>';
         	echo '<td class="nam">
                             <a href="build.php?id=' . $id . '&show='.$artefact['id'].'">' . $artefact['name'] . '</a> <span class="bon">(' . $artefact['effect'] . ')</span>
                             <div class="info">
-                                خزانه <b>' . $reqlvl . '</b>, تاثیر <b>' . $effect . '</b>
+                                Kincstár <b>' . $reqlvl . '</b>, Hatás <b>' . $effect . '</b>
                             </div>
                         </td>';
         	echo '<td class="pla"><a href="karte.php?d=' . $artefact['vref'] . '&c=' . $generator->getMapCheck($artefact['vref']) . '">' . $database->getVillageField($artefact['vref'], "name") . '</a></td>';
-        	echo '<td class="dist">' . date("Y/m/d H:i", $artefact['conquered']) . '</td>';
+        	echo '<td class="dist">' . date("Y.m.d H:i", $artefact['conquered']) . '</td>';
         }
 
 ?>
             </tr>
         </tbody>
     </table>
-<br /><h4 class="round">كتيبه هاي اطراف شما</h4>
+<br /><h4 class="round">Artefacts Nearby</h4>
     <table id="near" cellpadding="1" cellspacing="1">
         <thead>
             <tr>
                 <td></td>
 
-                <td>نام كتيبه</td>
+                <td>Artefact Name</td>
 
-                <td>بازیکن</td>
+                <td>Player</td>
 
-                <td>فاصله</td>
+                <td>Distance</td>
             </tr>
         </thead>
 
@@ -76,7 +76,7 @@
           <?php
 
         if(mysql_num_rows(mysql_query("SELECT * FROM " . TB_PREFIX . "artefacts")) == 0) {
-        	echo '<td colspan="4" class="none">هیچ کتیبه ای اطراف شما نیست</td>';
+        	echo '<td colspan="4" class="none">Nincsenek ereklyék körülötted</td>';
         } else {
 
 
@@ -93,14 +93,14 @@
 
         	unset($reqlvl);
         	unset($effect);
-        	$arts = mysql_query("SELECT * FROM " . TB_PREFIX . "artefacts");
+        	$arts = mysql_query("SELECT * FROM " . TB_PREFIX . "ereklyék");
         	$rows = array();
         	while($row = mysql_fetch_array($arts)) {
         		$query = mysql_query('SELECT * FROM `' . TB_PREFIX . 'wdata` WHERE `id` = ' . $row['vref']);
         		$coor2 = mysql_fetch_assoc($query);
 
         		
-        		$dist = haversine($coor['x'], $coor['y'], $coor2['x'], $coor2['y']);
+        		$dist = haversine($coor['y'], $coor['x'], $coor2['y'], $coor2['x']);
 
         		$rows[$dist] = $row;
 
@@ -118,14 +118,14 @@
         		echo '<div class="info">';
         		if($row['size'] == 1) {
         			$reqlvl = 10;
-        			$effect = "دهكده حاوي كتيبه";
+        			$effect = "Village containing inscriptions";
         		} elseif($row['size'] == 2 or $row['size'] == 3) {
         			$reqlvl = 20;
-        			$effect = "تمام دهكده ها";
+        			$effect = "All villages";
         		}
-        		echo '<div class="info">خزانه <b>' . $reqlvl . '</b>, تاثیر <b>' . $effect . '</b>';
+        		echo '<div class="info">Kincstár <b>' . $reqlvl . '</b>, Hatás <b>' . $effect . '</b>';
         		echo '</div></td><td class="pla"><a href="karte.php?d=' . $row['vref'] . '&c=' . $generator->getMapCheck($row['vref']) . '">' . $database->getUserField($row['owner'], "username", 0) . '</a></td>';
-        		echo '<td class="dist">'.getDistance($coor['x'], $coor['y'], $coor2['x'], $coor2['y']).'</td>';
+        		echo '<td class="dist">'.getDistance($coor['y'], $coor['x'], $coor2['y'], $coor2['x']).'</td>';
         		echo '</tr>';
         	}
         }

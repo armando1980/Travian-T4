@@ -1,9 +1,9 @@
-<h2>اردوگاه</h2>
+﻿<h2>Rally Point</h2>
 <div class="build_desc">
 	<a href="#" onclick="return Travian.Game.iPopup(16,4);" class="build_logo">
 		<img class="building big white g16" src="img/x.gif" alt="اردوگاه">
 	</a>
-	لشکریان دهکده‌ی شما در این محل جمع می شوند. از اینجا شما قادر به ارسال آنها برای غارت، حمله، تسخیر و یا پشتیبانی دهکده های دیگر می باشید.</div>
+	The village's troops meet at the rally point. From here you can send them out to reinforce, raid, or conquer another village..</div>
 		<?php
         $_GET['bid'] = 16;
         include("availupgrade.tpl");

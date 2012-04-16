@@ -1,5 +1,5 @@
 			<div class="activation">
-				اکانت شما با موفقیت فعال شد
+				A fiókod aktiválva lett
 				<br /><br />
-				این لینک را ادامه دهید تا <a class="a arrow" href="login.php?name=">ورود</a>
+				A bejelentkezéshez kattints <a class="a arrow" href="login.php?name=">IDE</a>
 			</div>

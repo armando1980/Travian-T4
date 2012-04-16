@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 if(isset($aid)) {
 $aid = $aid;
 }
@@ -6,14 +6,13 @@ else {
 $aid = $session->alliance;
 }
 $allianceinfo = $database->getAlliance($aid);
-echo "<h1>اتحاد - ".$allianceinfo['tag']."</h1>";
+echo "<h1>Alliance - ".$allianceinfo['tag']."</h1>";
 include("alli_menu.tpl"); 
 ?>
 
-<h4 class="round">خروج از اتحاد</h4>
+<h4 class="round">Quit Alliance</h4>
 
-<p class="option">برای خروج از اتحاد باید رمز اکانت (کلمۀ عبور) خود را وارد 
-کنید.</p>
+<p class="option">For security reasons, please enter your password again to leave the alliance</p>
 
 <form method="post" action="allianz.php">
 <input type="hidden" name="a" value="11">
@@ -23,7 +22,7 @@ include("alli_menu.tpl");
 			<tbody>
 				<tr>
 					<th>
-						رمز:					</th>
+						Password:					</th>
 					<td>
 						<input class="pass text" type="password" name="pw" maxlength="20">
 					</td>
@@ -32,7 +31,7 @@ include("alli_menu.tpl");
 		</table>
 
 		<p class="option">
-			<button type="submit" value="ok" name="s1" id="btn_ok"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">تایید</div></div></button>
+			<button type="submit" value="ok" name="s1" id="btn_ok"><div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">Quit</div></div></button>
             </p>
 	</form>
 <p class="error"><?php echo $form->getError("error"); ?></p>

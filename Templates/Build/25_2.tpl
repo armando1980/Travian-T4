@@ -1,25 +1,26 @@
-<h1 class="titleInHeader">اقامتگاه <span class="level">سطح <?php echo $village->resarray['f'.$id]; ?></span></h1>
+﻿<h1 class="titleInHeader">Residence <span class="level"> Level <?php echo $village->resarray['f'.$id]; ?></span></h1>
 <div id="build" class="gid25">
 <div class="build_desc">
         <a href="#" onClick="return Travian.Game.iPopup(25,4, 'gid');" class="build_logo">
-        <img class="building big white g25" src="img/x.gif" alt="اقامتگاه" title="اقامتگاه" /> </a>
-        اقامتگاه قصر کوچکی است و هنگامی که پادشاه و یا ملکه از دهکده دیدن می کنند در آن می مانند. اقامتگاه از دهکده در مقابل افرادی که قصد تسخیر ان را دارند محافظت می کند.</div>
+        <img class="building big white g25" src="img/x.gif" alt="Rezidencia" title="Rezidencia" /> </a>
+        The residence is a small palace, where the king or queen lives when (s)he visits the village. The residence protects the village against enemies who want to conquer it.
+.</div>
 
 <?php
 include("upgrade.tpl");
 include("25_menu.tpl"); ?>
 
-<p>برای توسعۀ امپراطوری خود، به امتیاز فرهنگی نیاز خواهید داشت. امتیاز فرهنگی با گذشت زمان بیشتر می شود و حتی قادر به افزایش سرعت آن با ارتقاء ساختمان ها نیز می باشید.</p>
+<p>In order to expand your nation you need culture points. These accumulate over time from your buildings, and faster at higher levels..</p>
 
 <table cellpadding="1" cellspacing="1" id="build_value">
 <tr>
-        <th>تولید این دهکده:</th>
-        <td><b><?php echo $database->getVillageField($village->wid, 'cp'); ?></b> امتياز فرهنگی در هر روز</td>
+        <th>This Village is producing</th>
+        <td><b><?php echo $database->getVillageField($village->wid, 'cp'); ?></b> Culture Points</td>
 </tr>
 <tr>
-        <th>تولید تمامی دهکده ها:</th>
-        <td><b><?php echo $database->getVSumField($session->uid, 'cp'); ?></b> امتياز فرهنگی در هر روز</td>
+        <th>All Villages are Producing </th>
+        <td><b><?php echo $database->getVSumField($session->uid, 'cp'); ?></b> Culture Points</td>
 </tr>
-</table><p>دهکده های شما <b><?php echo $database->getUserField($session->uid, 'cp',0); ?></b> امتیاز فرهنگی تولید کرده اند. برای تسخیر و یا بنای دهکدۀ جدید شما نیاز به <b><?php $mode = CP; $total = count($database->getProfileVillages($session->uid)); echo ${'cp'.$mode}[$total+1]; ?></b> امتیاز فرهنگی دارید. </p>
+</table><p>In order to settle a new village you need <b><?php $mode = CP; $total = count($database->getProfileVillages($session->uid)); echo ${'cp'.$mode}[$total+1]; ?></b> Culture Points. You have <b><?php echo $database->getUserField($session->uid, 'cp',0); ?></b> Culture Points. </p>
 </div><div class="clear">&nbsp;</div>
     <div class="clear"></div>

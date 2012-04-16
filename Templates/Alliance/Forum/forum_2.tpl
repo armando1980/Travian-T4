@@ -1,16 +1,16 @@
-<?php
+﻿<?php
 //////////////// made by TTMTT ////////////////
 
 $displayarray = $database->getUserArray($session->uid,1);
 $forumcat = $database->ForumCat(htmlspecialchars($displayarray['alliance']));
 ?>
-<h4 class="round">فروم اتحاد</h4>
+<h4 class="round">Alliance forum</h4>
 <table cellpadding="1" cellspacing="1" id="alliance"><thead>
 		<tr>
 			<td></td>
-			<td>اسم فروم</td>
-			<td>&nbsp;موضوعات&nbsp;</td>
-			<td>&nbsp;آخرین پست&nbsp;</td>
+			<td>Name of forum</td>
+			<td>&nbsp;Thread&nbsp;</td>
+			<td>&nbsp;Posts&nbsp;</td>
 		</tr></thead><tbody>
 <?php
 foreach($forumcat as $arr) {
@@ -57,12 +57,12 @@ echo '</td><td class="tit"><a href="allianz.php?s=2&fid='.$arr['id'].'&pid='.$ai
 				echo "<button type=\"button\" value=\"فروم جدید\" class=\"build\" onclick=\"window.location.href = 'allianz.php?s=2&admin=newforum'; return false;\">
 <div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div>
 <div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div>
-</div><div class=\"button-contents\">فروم جدید</div></div></button>
+</div><div class=\"button-contents\">New forum</div></div></button>
 
 <button type=\"button\" value=\"تنظیمات\" class=\"build\" onclick=\"window.location.href = 'allianz.php?s=".$ids."&admin=switch_admin'; return false;\">
 <div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div>
 <div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div>
-</div><div class=\"button-contents\">تنظیمات</div></div></button>";
+</div><div class=\"button-contents\">Options</div></div></button>";
 			}
 		?>
 </p>

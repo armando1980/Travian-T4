@@ -1,29 +1,29 @@
-<div class="contentNavi tabNavi">
+﻿<div class="contentNavi tabNavi">
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="statistiken.php?tid=4"><span class="tabItem">دیدکلی</span></a></div>
+					<div class="content"><a href="statistiken.php?tid=4"><span class="tabItem">Overview</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="statistiken.php?tid=41"><span class="tabItem">مهاجم</span></a></div>
+					<div class="content"><a href="statistiken.php?tid=41"><span class="tabItem">Attacker</span></a></div>
 				</div>
 				<div class="container active">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="statistiken.php?tid=42"><span class="tabItem">مدافع</span></a></div>
+					<div class="content"><a href="statistiken.php?tid=42"><span class="tabItem">Defender</span></a></div>
 				</div>
 				<div class="container normal">
 					<div class="background-start">&nbsp;</div>
 					<div class="background-end">&nbsp;</div>
-					<div class="content"><a href="statistiken.php?tid=43"><span class="tabItem">تاپ 10</span></a></div>
+					<div class="content"><a href="statistiken.php?tid=43"><span class="tabItem">Top 10</span></a></div>
 				</div><div class="clear"></div>
 </div>
-<h4 class="round">بهترین اتحاد (مدافع)</h4>
+<h4 class="round">Top Defending Alliances</h4>
 <table cellpadding="1" cellspacing="1" id="alliance" class="row_table_data">
 	<thead>
-		<tr><td></td><td>اتحاد</td><td>بازیکن</td><td>Ø</td><td>امتیاز</td></tr>
+		<tr><td></td><td>Alliance</td><td>Players</td><td>Ø</td><td>Points</td></tr>
 		</thead><tbody>
 <?php
 $myrank = $ranking->getAllianceDefRank($session->alliance);
@@ -130,39 +130,39 @@ $nextPage = $_GET['page'] + 1;
 $previous = $_GET['page'] - 1;
 
 if ($page == "1" && $lastPage == "1"){
-$paginationDisplay .=  '<img alt="صفحه اول" src="img/x.gif" class="first disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه قبل" src="img/x.gif" class="previous disabled">';
+$paginationDisplay .=  '<img alt="Első oldal" src="img/x.gif" class="first disabled"> ';
+$paginationDisplay .=  '<img alt="Előző oldal" src="img/x.gif" class="previous disabled">';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<img alt="صفحه بعد" src="img/x.gif" class="next disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه آخر" src="img/x.gif" class="last disabled">';
+$paginationDisplay .=  '<img alt="Következő oldal" src="img/x.gif" class="next disabled"> ';
+$paginationDisplay .=  '<img alt="Utolsó oldal" src="img/x.gif" class="last disabled">';
 
 }elseif ($lastPage == 0){
-$paginationDisplay .=  '<img alt="صفحه اول" src="img/x.gif" class="first disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه قبل" src="img/x.gif" class="previous disabled">';
+$paginationDisplay .=  '<img alt="Első oldal" src="img/x.gif" class="first disabled"> ';
+$paginationDisplay .=  '<img alt="Előző oldal" src="img/x.gif" class="previous disabled">';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<img alt="صفحه بعد" src="img/x.gif" class="next disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه آخر" src="img/x.gif" class="last disabled">';
+$paginationDisplay .=  '<img alt="Következő oldal" src="img/x.gif" class="next disabled"> ';
+$paginationDisplay .=  '<img alt="Utolsó oldal" src="img/x.gif" class="last disabled">';
 
 }elseif ($page == "1" && $lastPage != "1"){
-$paginationDisplay .=  '<img alt="صفحه اول" src="img/x.gif" class="first disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه قبل" src="img/x.gif" class="previous disabled">';
+$paginationDisplay .=  '<img alt="Első oldal" src="img/x.gif" class="first disabled"> ';
+$paginationDisplay .=  '<img alt="Előző oldal" src="img/x.gif" class="previous disabled">';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<a class="next" href="?tid=42&page=' . $nextPage . '"><img alt="صفحه بعد" src="img/x.gif"></a> ';
-$paginationDisplay .=  '<a class="last" href="?tid=42&page=' . $lastPage . '"><img alt="صفحه آخر" src="img/x.gif"></a>';
+$paginationDisplay .=  '<a class="next" href="?tid=42&page=' . $nextPage . '"><img alt="Következő oldal" src="img/x.gif"></a> ';
+$paginationDisplay .=  '<a class="last" href="?tid=42&page=' . $lastPage . '"><img alt="Utolsó oldal" src="img/x.gif"></a>';
 
 }elseif ($page != "1" && $page != $lastPage){
-$paginationDisplay .=  '<a class="first" href="?tid=42&page=1"><img alt="صفحه اول" src="img/x.gif"></a> ';
-$paginationDisplay .=  '<a class="previous" href="?tid=42&page=' . $previous . '"><img alt="صفحه قبل" src="img/x.gif"></a>';
+$paginationDisplay .=  '<a class="first" href="?tid=42&page=1"><img alt="Első oldal" src="img/x.gif"></a> ';
+$paginationDisplay .=  '<a class="previous" href="?tid=42&page=' . $previous . '"><img alt="Előző oldal" src="img/x.gif"></a>';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<a class="next" href="?tid=42&page=' . $nextPage . '"><img alt="صفحه بعد" src="img/x.gif"></a> ';
-$paginationDisplay .=  '<a class="last" href="?tid=42&page=' . $lastPage . '"><img alt="صفحه آخر" src="img/x.gif"></a>';
+$paginationDisplay .=  '<a class="next" href="?tid=42&page=' . $nextPage . '"><img alt="Következő oldal" src="img/x.gif"></a> ';
+$paginationDisplay .=  '<a class="last" href="?tid=42&page=' . $lastPage . '"><img alt="Utolsó oldal" src="img/x.gif"></a>';
 
 }elseif ($page == $lastPage){
-$paginationDisplay .=  '<a class="first" href="?tid=42&page=1"><img alt="صفحه اول" src="img/x.gif"></a> ';
-$paginationDisplay .=  '<a class="previous" href="?tid=42&page=' . $previous . '"><img alt="صفحه قبل" src="img/x.gif"></a>';
+$paginationDisplay .=  '<a class="first" href="?tid=42&page=1"><img alt="Első oldal" src="img/x.gif"></a> ';
+$paginationDisplay .=  '<a class="previous" href="?tid=42&page=' . $previous . '"><img alt="Előző oldal" src="img/x.gif"></a>';
 $paginationDisplay .= $centerPages;
-$paginationDisplay .=  '<img alt="صفحه بعد" src="img/x.gif" class="next disabled"> ';
-$paginationDisplay .=  '<img alt="صفحه آخر" src="img/x.gif" class="last disabled">';
+$paginationDisplay .=  '<img alt="Következő oldal" src="img/x.gif" class="next disabled"> ';
+$paginationDisplay .=  '<img alt="Utolsó oldal" src="img/x.gif" class="last disabled">';
 }
 
 	$limit = 'LIMIT ' .($page - 1) * $itemsPerPage .',' .$itemsPerPage; 
@@ -195,19 +195,19 @@ if(!isset($_GET['tid'])){ $_GET['tid']='1'; }
 ?>
 <div id="search_navi">
 	<form method="post" action="statistiken.php?tid=<?php echo isset($_GET['tid'])? $_GET['tid'] : 1; ?>">
-		<div class="boxes boxesColor gray"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents">
+		<div class="boxes boxesColor gray"><div class="boxes-tl"></div><div class="boxes-tr"></div><div class="boxes-tc"></div><div class="boxes-ml"></div><div class="boxes-mr"></div><div class="boxes-mc"></div><div class="boxes-bl"></div><div class="boxes-br"></div><div class="boxes-bc"></div><div class="boxes-contents w292">
             <table class="transparent">
                 <tbody><tr>
                     <td>
-                        <span>رتبه <input type="text" class="text ra" maxlength="5" name="rank" value="" /></span>
+                        <span>Rank <input type="text" class="text ra" maxlength="5" name="rank" value="" /></span>
                     </td>
                     <td>
-                        <span>یا نام: <input type="text" class="text name" maxlength="20" name="name" value="<?php if(!is_numeric($search)) {echo $search; } ?>" /></span>
+                        <span>Name <input type="text" class="text name" maxlength="20" name="name" value="<?php if(!is_numeric($search)) {echo $search; } ?>" /></span>
                     </td>
                     <td>
                         <input type="hidden" name="ft" value="r<?php echo isset($_GET['tid'])? $_GET['tid'] : 1; ?>" />
                         <button type="submit" value="submit" name="submit" id="btn_ok" class="dynamic_img" src="img/x.gif">
-            <div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">تایید</div></div></button>
+            <div class="button-container"><div class="button-position"><div class="btl"><div class="btr"><div class="btc"></div></div></div><div class="bml"><div class="bmr"><div class="bmc"></div></div></div><div class="bbl"><div class="bbr"><div class="bbc"></div></div></div></div><div class="button-contents">OK</div></div></button>
                     </td>
                 </tr>
                 </tbody>

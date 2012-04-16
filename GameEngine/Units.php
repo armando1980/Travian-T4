@@ -159,7 +159,7 @@ class Units {
                     header("Location: a2b.php");        
                 }else{                
 
-                $villageName = "آبادی تسخیر نشده";
+                $villageName = "Not capture the village";
                 $speed= 300;
                 $timetaken = $generator->procDistanceTime($coor,$village->coor,INCREASE_SPEED,1);                                
                 array_push($post, "$id", "$villageName", "3","$timetaken");

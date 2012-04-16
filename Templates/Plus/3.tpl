@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
     $MyGold = mysql_query("SELECT * FROM ".TB_PREFIX."users WHERE `username`='".$session->username."'") or die(mysql_error());
     $golds = mysql_fetch_array($MyGold);
@@ -26,9 +26,9 @@ include("Templates/Plus/pmenu.tpl");
 
 if (mysql_num_rows($MyGold)) {
 	if($session->gold == 0) {
-		echo "<div class=\"boxes boxesColor gray goldBalance\"><div class=\"boxes-tl\"></div><div class=\"boxes-tr\"></div><div class=\"boxes-tc\"></div><div class=\"boxes-ml\"></div><div class=\"boxes-mr\"></div><div class=\"boxes-mc\"></div><div class=\"boxes-bl\"></div><div class=\"boxes-br\"></div><div class=\"boxes-bc\"></div><div class=\"boxes-contents\">در حال حاضر شما <b>هیچ</b> سکه ای ندارید</div></div>";
+		echo "<div class=\"boxes boxesColor gray goldBalance\"><div class=\"boxes-tl\"></div><div class=\"boxes-tr\"></div><div class=\"boxes-tc\"></div><div class=\"boxes-ml\"></div><div class=\"boxes-mr\"></div><div class=\"boxes-mc\"></div><div class=\"boxes-bl\"></div><div class=\"boxes-br\"></div><div class=\"boxes-bc\"></div><div class=\"boxes-contents\">hiا<b>you</b> سکه ای ندارید</div></div>";
 	} else {
-		echo "<div class=\"boxes boxesColor gray goldBalance\"><div class=\"boxes-tl\"></div><div class=\"boxes-tr\"></div><div class=\"boxes-tc\"></div><div class=\"boxes-ml\"></div><div class=\"boxes-mr\"></div><div class=\"boxes-mc\"></div><div class=\"boxes-bl\"></div><div class=\"boxes-br\"></div><div class=\"boxes-bc\"></div><div class=\"boxes-contents\">در حال حاضر شما <b>$session->gold</b> عدد سکۀ طلای تراوین داريد.</div></div>";
+		echo "<div class=\"boxes boxesColor gray goldBalance\"><div class=\"boxes-tl\"></div><div class=\"boxes-tr\"></div><div class=\"boxes-tc\"></div><div class=\"boxes-ml\"></div><div class=\"boxes-mr\"></div><div class=\"boxes-mc\"></div><div class=\"boxes-bl\"></div><div class=\"boxes-br\"></div><div class=\"boxes-bc\"></div><div class=\"boxes-contents\">you have <b>$session->gold</b>  Pieces of gold</div></div>";
 	}
 }
 
@@ -54,7 +54,7 @@ mysql_query("UPDATE ".TB_PREFIX."research set timestamp = '1' where vref = '".$v
 
 
 
-$done1 = "ساخت <b>".$buildnum."</b> ساختمان و <b>".$resnum."</b> تحقیق به پایان رسید.";
+$done1 = "ساخت <b>".$buildnum."</b> bold <b>".$resnum."</b> تحقیق به پایان رسید.";
     mysql_query("UPDATE ".TB_PREFIX."users set gold = ".($session->gold-2)." where `username`='".$session->username."'") or die(mysql_error());
     mysql_query("INSERT INTO ".TB_PREFIX."gold_fin_log VALUES ('".(mysql_num_rows($goldlog)+1)."', '".$village->wid."', 'Finish construction and research with gold')") or die(mysql_error());
 
@@ -69,23 +69,23 @@ $done1 = "ساخت <b>".$buildnum."</b> ساختمان و <b>".$resnum."</b> ت�
 }
  ?>
 
-<h4 class="spacer">پلاس</h4>
+<h4 class="spacer">Plus Managment</h4>
 
 <?php echo $done1; ?>
 <table class="plusFunctions" cellpadding="1" cellspacing="1">
 	<thead>
 
 		<tr>
-			<td>توضیح</td>
-			<td>مدت زمان</td>
-			<td>سکۀ طلای تراوین</td>
-			<td>عمل</td>
+			<td>Description</td>
+			<td>Duration</td>
+			<td>Gold</td>
+			<td>Action</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td class="desc">
-				اکانت <b><font color="#71D000">پلاس</font></b><br><span class="run">
+				Plus <b><font color="#71D000">Account</font></b><br><span class="run">
 <?php 
 $datetimep=$golds['plus'];
 $datetime1=$golds['b1'];
@@ -110,14 +110,14 @@ $holdtotday=round(($datetimep-$date2)/86400, 1);
 $holdhr=intval($holdtothr-($holdtotday*24));	
 $holdmr=intval($holdtotmin-(($holdhr*60)+($holdtotday*1440))); 
     
-    echo "هنوز <b>".$holdtotday. "</b> روز تا ".date('H:i',$golds['plus'])."";
+    echo "You have <b>".$holdtotday. "</b> days left till ".date('H:i',$golds['plus'])."";
  }
 ?>
                 </span>			</td>
 			<td class="dur"><?php if(PLUS_TIME >= 86400){
-			echo ''.(PLUS_TIME/86400).' روز';
+			echo ''.(PLUS_TIME/86400).' Days';
 			} else if(PLUS_TIME < 86400){
-			echo ''.(PLUS_TIME/3600).' ساعت';
+			echo ''.(PLUS_TIME/3600).' Days';
 			} ?></td>
 			<td class="cost"><img src="img/x.gif" class="gold" alt="سکۀ طلای تراوین">10</td>
 			<td class="act">
@@ -127,13 +127,13 @@ $holdmr=intval($holdtotmin-(($holdhr*60)+($holdtotday*1440)));
 
 if (mysql_num_rows($MyGold)) {
 	if($golds['gold'] > 9 && $datetimep < $date2) {
-	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=8'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">فعال سازی</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=8'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 }elseif
 	($golds['gold'] > 9 && $datetimep > $date2) {
-	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=8'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">تمدید</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=8'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 
 } else {
-	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">طلا کم است</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
     }
 }
  ?>            
@@ -144,16 +144,16 @@ if (mysql_num_rows($MyGold)) {
 <table class="plusFunctions" cellpadding="1" cellspacing="1">
 	<thead>
 		<tr>
-			<td>توضیح</td>
-			<td>مدت زمان</td>
-			<td>سکۀ طلای تراوین</td>
-			<td>عمل</td>
+			<td>Description</td>
+			<td>Duration</td>
+			<td>Gold</td>
+			<td>Action</td>
 		</tr>
 	</thead>
 	<tbody>
 				<tr>
 			<td class="desc">
-				+<b>25</b>% <img class="r1" src="img/x.gif" alt="چوب"> تولید: چوب<br>
+				+<b>25</b>% Lumber <img class="r1" src="img/x.gif" alt="<br>
 				<span class="run">
 <?php
 
@@ -170,15 +170,15 @@ $holdmr1=intval($holdtotmin1-(($holdhr1*60)+($holdtotday1*1440)));
 
  if ($tl_b1 < $date2) {
      print " ";
- } else {		
-echo "هنوز <b>".$holdtotday1. "</b> روز تا ".date('H:i',$golds['b1'])."";
+ } else {
+echo "    <br>You have <b>".$holdtotday1. "</b> days left till   ".date('H:i',$golds['b1'])."";
 
  }
 ?>               
                 
                 </span>			</td>
 			<td class="dur"><?php if(PLUS_PRODUCTION >= 86400){
-			echo ''.(PLUS_PRODUCTION/86400).' روز';
+			echo ''.(PLUS_PRODUCTION/86400).' Days';
 			} else if(PLUS_PRODUCTION < 86400){
 			echo ''.(PLUS_PRODUCTION/3600).' ساعت';
 			} ?></td>
@@ -188,12 +188,12 @@ echo "هنوز <b>".$holdtotday1. "</b> روز تا ".date('H:i',$golds['b1'])."
 
 if (mysql_num_rows($MyGold)) {
 	if($golds['gold'] > 4 && $tl_b1 < $date2) {
-		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=9'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">فعال سازی</div></div></button>";
+		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=9'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 }elseif
 	($golds['gold'] > 4 && $datetime1 > $date2) {
-	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=9'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">تمدید</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=9'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 } else {
-	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">طلا کم است</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
     }
 }
 ?>            
@@ -201,7 +201,7 @@ if (mysql_num_rows($MyGold)) {
 		</tr>
 			<tr>
 			<td class="desc">
-				+<b>25</b>% <img class="r2" src="img/x.gif" alt="خشت"> تولید: خشت<br>
+				+<b>25</b>% Clay <img class="r2" src="img/x.gif" alt="<br>
 				<span class="run">
                 <?php
 
@@ -220,14 +220,14 @@ $holdmr2=intval($holdtotmin2-(($holdhr2*60)+($holdtotday2*1440)));
      print " ";
  } else {		
 
-echo "هنوز <b>".$holdtotday2. "</b> روز تا ".date('H:i',$golds['b2'])."";
+echo "<br> You have <b>".$holdtotday2. "</b> days left till ".date('H:i',$golds['b2'])."";
 
  }
 ?>
                 
                 </span>			</td>
 			<td class="dur"><?php if(PLUS_PRODUCTION >= 86400){
-			echo ''.(PLUS_PRODUCTION/86400).' روز';
+			echo ''.(PLUS_PRODUCTION/86400).' Days';
 			} else if(PLUS_PRODUCTION < 86400){
 			echo ''.(PLUS_PRODUCTION/3600).' ساعت';
 			} ?></td>
@@ -237,12 +237,12 @@ echo "هنوز <b>".$holdtotday2. "</b> روز تا ".date('H:i',$golds['b2'])."
 
 if (mysql_num_rows($MyGold)) {
 	if($golds['gold'] > 4 && $tl_b2 < $date2) {
-		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=10'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">فعال سازی</div></div></button>";
+		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=10'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 }elseif
 	($golds['gold'] > 4 && $tl_b2 > $date2) {
-	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=10'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">تمدید</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=10'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 } else {
-	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">طلا کم است</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
     }
     }
  ?>
@@ -251,7 +251,7 @@ if (mysql_num_rows($MyGold)) {
 		</tr>
 			<tr>
 			<td class="desc">
-				+<b>25</b>% <img class="r3" src="img/x.gif" alt="آهن"> تولید: آهن<br>
+				+<b>25</b>% iron <img class="r3" src="img/x.gif" alt="<br>
 				<span class="run">
 <?php
 
@@ -269,14 +269,14 @@ $holdmr3=intval($holdtotmin3-(($holdhr3*60)+($holdtotday3*1440)));
  if ($tl_b3 < $date2) {
      print " ";
  } else {		
-echo "هنوز <b>".$holdtotday3. "</b> روز تا ".date('H:i',$golds['b3'])."";
+echo " <br> You have <b>".$holdtotday3. "</b> Days left till ".date('H:i',$golds['b3'])."";
 
  }
 ?>
                 
                 </span>			</td>
 			<td class="dur"><?php if(PLUS_PRODUCTION >= 86400){
-			echo ''.(PLUS_PRODUCTION/86400).' روز';
+			echo ''.(PLUS_PRODUCTION/86400).' Days';
 			} else if(PLUS_PRODUCTION < 86400){
 			echo ''.(PLUS_PRODUCTION/3600).' ساعت';
 			} ?></td>
@@ -286,21 +286,21 @@ echo "هنوز <b>".$holdtotday3. "</b> روز تا ".date('H:i',$golds['b3'])."
 
 if (mysql_num_rows($MyGold)) {
 	if($golds['gold'] > 4 && $tl_b3  < $date2) {
-		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=11'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">فعال سازی</div></div></button>";
+		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=11'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 }elseif
 	($golds['gold'] > 4 && $tl_b3 > $date2) {
-	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=11'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">تمدید</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=11'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 } else  {
-	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">طلا کم است</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 } }
  ?>            
             </td>
 		</tr>
 			<tr>
 			<td class="desc">
-				+<b>25</b>% <img class="r4" src="img/x.gif" alt="گندم"> تولید: گندم<br>
+				+<b>25</b>% wheat <img class="r4" src="img/x.gif" alt="<br>
+				<span class="run">
 <?php
-
 $tl_b4=$golds['b4'];
  if ($tl_b4 < $date2) {
      print " ";
@@ -316,12 +316,12 @@ $holdmr4=intval($holdtotmin4-(($holdhr4*60)+($holdtotday4*1440)));
      print " ";
  } else {		
 
-echo "هنوز <b>".$holdtotday4. "</b> روز تا ".date('H:i',$golds['b4'])."";
+echo "<br> You have <b>".$holdtotday4. "</b> days left till ".date('H:i',$golds['b4'])."";
  }
 ?>
 		</td>
 			<td class="dur"><?php if(PLUS_PRODUCTION >= 86400){
-			echo ''.(PLUS_PRODUCTION/86400).' روز';
+			echo ''.(PLUS_PRODUCTION/86400).' Days';
 			} else if(PLUS_PRODUCTION < 86400){
 			echo ''.(PLUS_PRODUCTION/3600).' ساعت';
 			} ?></td>
@@ -331,12 +331,12 @@ echo "هنوز <b>".$holdtotday4. "</b> روز تا ".date('H:i',$golds['b4'])."
 
 if (mysql_num_rows($MyGold)) {
 	if($golds['gold'] > 4 && $tl_b4 < $date2) {
-		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=12'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">فعال سازی</div></div></button>";
+		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=12'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 }elseif
 	($golds['gold'] > 4 && $tl_b4 > $date2) {
-	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=12'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">تمدید</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=12'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 } else {
-	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">طلا کم است</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 } }
 ?>
             
@@ -347,87 +347,86 @@ if (mysql_num_rows($MyGold)) {
 <table class="plusFunctions" cellpadding="1" cellspacing="1">
 	<thead>
 		<tr>
-			<td>توضیح</td>
-			<td>مدت زمان</td>
-			<td>سکۀ طلای تراوین</td>
-			<td>عمل</td>
+			<td>Description</td>
+			<td>Duration</td>
+			<td>Gold</td>
+			<td>Action</td>
 		</tr>
 	</thead>
 	<tbody>
 		
 		<tr>
-			<td class="desc">تمامی ساخت ها و تحقیق های در حال انجام در این دهکده را 
-بصورت فوری تمام کن (در مورد اقامتگاه و قصر کار نمی کند).</td>
-			<td class="dur">فوری</td>
+			<td class="desc">Complete all Building and Researches immediately.</td>
+			<td class="dur">Instant</td>
 			<td class="cost"><img src="img/x.gif" class="gold" alt="سکۀ طلای تراوین">2</td>
 			<td class="act">
 <?php
 if (mysql_num_rows($MyGold)) {
 	if($golds['gold'] > 1) {
-		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=3&action=FinishBuilding'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">فعال سازی</div></div></button>";
+		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=3&action=FinishBuilding'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 
 } else {
-	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">فعال سازی</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 	}
 }
  ?>
 			</td>
 		</tr>
 			<tr>
-			<td class="desc">تعدیل منابع بصورت 1:1</td>
-			<td class="dur">فوری</td>
+			<td class="desc">NPC Merchant 1:1</td>
+			<td class="dur">instant</td>
 			<td class="cost"><img src="img/x.gif" class="gold" alt="سکۀ طلای تراوین">3</td>
 			<td class="act link">
             <?php
             if($building->getTypeLevel(17)){ ?>
-            <a class="arrow" href="build.php?gid=17&amp;t=3">ورود به بازار</a>
+            <a class="arrow" href="build.php?gid=17&amp;t=3">Go to Market</a>
             <?php }else{ ?>
-            <span class="none"><center>بازار بنا کن</center></span>
+            <span class="none"><center>Go To Market</center></span>
             <?php } ?>
 			</td>
 		</tr>
         <tr>
-				<td class="desc">مبادلۀ سکۀ طلای تراوین طلا و سکۀ نقرۀ تراوین</td>
-				<td class="dur">فوری</td>
+				<td class="desc">Exchange gold and Silver</td>
+				<td class="dur">Instant</td>
 				<td class="cost"><img src="img/x.gif" class="gold" alt="سکۀ طلای تراوین"></td>
-				<td class="act arrow" style="text-align: right"><a class="arrow" href="plus.php?id=6">مبادله</a></td>
+				<td class="act arrow" style="text-align: right"><a class="arrow" href="plus.php?id=6">Exchange Office</a></td>
 			</tr>
         </tbody>
 </table>
-<h4 class="spacer">کلوپ طلایی تراوین</h4>
+<h4 class="spacer">Gold Club</h4>
 <table class="plusFunctions" cellpadding="1" cellspacing="1">
 		<thead>
 			<tr>
-				<td>توضیح</td>
-				<td>مدت زمان</td>
-				<td>سکۀ طلای تراوین</td>
-				<td>عمل</td>
+				<td>Description</td>
+				<td>Duration</td>
+				<td>Gold</td>
+				<td>Action</td>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
 				<td class="desc">
 					<a name="goldclub"></a>
-					<b>کلوپ طلایی</b>
+					<b>Gold Club</b>
 
-<div class="run">تا پایان بازی فعال می باشد.</div>
+<div class="run">Activate Gold Club for extra.</div>
 				</td>
 				<td class="dur">
-					تا پایان بازی فعال می باشد؛ امکانات اکانت پلاس و افزایش تولید 
-جز امکانات کلوپ طلایی نمی باشد.
+					The whole Game
+					
 				</td>
 				<td class="cost"><img src="img/x.gif" class="gold" alt="سکۀ طلای تراوین">100</td>
 				<td class="act">
 <?php
 if($session->gold >= 100){
 	if($golds['goldclub'] == 0) {
-		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=15'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">فعال سازی</div></div></button>";
+		echo "<button type=\"button\" value=\"فعال سازی\" onclick=\"window.location.href = 'plus.php?id=15'; return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 
 	} else {
-		echo "<button type=\"button\" value=\"فعال شده\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">فعال شده</div></div></button>";
+		echo "<button type=\"button\" value=\"فعال شده\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 	}
 }else{
-	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">طلا کم است</div></div></button>";
+	echo "<button type=\"button\" value=\"فعال سازی\" class=\" disabled\" onclick=\"(new Event(event)).stop(); return false;\" onfocus=\"$$('button', 'input[type!=hidden]', 'select')[0].focus(); (new Event(event)).stop(); return false;\"><div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div><div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div></div><div class=\"button-contents\">Activate</div></div></button>";
 }
                 ?></td>
 			</tr>

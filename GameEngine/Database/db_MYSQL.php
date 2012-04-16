@@ -395,9 +395,9 @@
         	function addVillage($wid, $uid, $username, $capital) {
         		$total = count($this->getVillagesID($uid));
 				if($total >= 1) {
-					$vname = "دهکدۀ جدید";
+					$vname = "Új falu";
 				} else {
-					$vname = "دهکدۀ ".$username;
+					$vname = $username." faluja";
 				}
 				
         		$time = time();
@@ -601,7 +601,7 @@
         	function getOMInfo($id) {
         		$q = "SELECT * FROM " . TB_PREFIX . "wdata left JOIN " . TB_PREFIX . "odata ON " . TB_PREFIX . "odata.wref = " . TB_PREFIX . "wdata.id where " . TB_PREFIX . "wdata.id = $id";
         		$result = mysql_query($q, $this->connection);
-        		return mysql_fetch_array($result);
+        		//return mysql_fetch_array($result);
         	}
 
         	function getOasis($vid) {
@@ -658,11 +658,13 @@
         		return mysql_query($q, $this->connection);
         	}
 
-        	function getCoor($wref) {
-        		$q = "SELECT x,y FROM " . TB_PREFIX . "wdata where id = $wref";
-        		$result = mysql_query($q, $this->connection);
-        		return mysql_fetch_array($result);
-        	}
+                function getCoor($wref) { 
+                        if ($wref !=""){ 
+                                $q = "SELECT x,y FROM " . TB_PREFIX . "wdata where id = $wref"; 
+                                $result = mysql_query($q, $this->connection); 
+                                return mysql_fetch_array($result); 
+                        } 
+                } 
 			
         	function CheckForum($id) {
         		$q = "SELECT * from " . TB_PREFIX . "forum_cat where alliance = '$id'";
@@ -1467,6 +1469,7 @@
         		$dbarray = mysql_fetch_array($result);
         		return $dbarray['wref'];
         	}
+
 
         	/***************************
         	Function to set accept flag on market
@@ -2450,9 +2453,11 @@ break;
         		return mysql_fetch_array($result);
         	}
         	function getOwnArtefactInfoByType($vref, $type) {
-        		$q = "SELECT * FROM " . TB_PREFIX . "artefacts WHERE vref = $vref AND type = $type";
-        		$result = mysql_query($q, $this->connection);
-        		return mysql_fetch_array($result);
+                        if($vref!=0) {
+                		$q = "SELECT * FROM " . TB_PREFIX . "artefacts WHERE vref = $vref AND type = $type";
+                		$result = mysql_query($q, $this->connection);
+                		return mysql_fetch_array($result);
+                        }
         	}
         	function getOwnUniqueArtefactInfo($id, $type, $size) {
         		$q = "SELECT * FROM " . TB_PREFIX . "artefacts WHERE owner = $id AND type = $type AND size=$size";
@@ -2954,7 +2959,7 @@ break;
 				$ddd = rand(0,3);
 				if($ddd == 1){ $dif = 1; }else{ $dif = 0; }
 				$sql = mysql_query("SELECT * FROM ".TB_PREFIX."wdata ORDER BY id DESC LIMIT 1");
-				$query = mysql_fetch_array($sql, $this->connection);
+				//Zoltán$query = mysql_fetch_array($sql, $this->connection);
 				$lastw = 641601;
 				if(($wref-10000)<=10){
 					$w1 = rand(10,($wref+10000));

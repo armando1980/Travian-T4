@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                             TRAVIANX                                             //
@@ -13,14 +13,14 @@
 									/////////////////////////////
 
 //MAIN MENU
-define("TRIBE1","Romans"); 
-define("TRIBE2","Tuetons");
-define("TRIBE3","Gauls"); 
+define("TRIBE1","Roman"); 
+define("TRIBE2","Tueton");
+define("TRIBE3","Gaul");
 define("TRIBE4","Nature"); 
-define("TRIBE5","Natars");
-define("TRIBE6","Monsters");
+define("TRIBE5","Natar");
+define("TRIBE6","Monster");
  
-define("HOME","Homepage"); 
+define("HOME","Home"); 
 define("INSTRUCT","Instructions");
 define("ADMIN_PANEL","Admin Panel");
 define("MASS_MESSAGE","Mass Message");
@@ -28,13 +28,73 @@ define("LOGOUT","Logout");
 define("PROFILE","Profile");
 define("SUPPORT","Support");
 define("UPDATE_T_10","Update Top 10");
-define("SYSTEM_MESSAGE","System message");
+define("SYSTEM_MESSAGE","System Message");
 define("TRAVIAN_PLUS","Travian <b><span class=\"plus_g\">P</span><span class=\"plus_o\">l</span><span class=\"plus_g\">u</span><span class=\"plus_o\">s</span></span></span></b>");
 define("CONTACT","Contact us!");
 
+define("HEADER_MESSAGES","Messages");
+define("HEADER_PLUS","Plus");
+define("HEADER_ADMIN","Admin");
+define("HEADER_PLUSMENU","Plus menu");
+define("HEADER_NOTICES","Reports");
+define("HEADER_STATS","Statistics");
+define("HEADER_MAP","Map");
+define("HEADER_DORF2","Village Center");
+define("HEADER_DORF1","Resource");
+define("HEADER_GOLD","Gold");
+define("HEADER_SILVER","Silver");
+define("HEADER_NIGHT","Night");
+define("HEADER_DAY","Day");
+define("HEADER_NOTICES_NEW","New Report");
+
+
+define("SIDEINFO_ADVENTURES","Adventure");
+define("SIDEINFO_AUCTIONS","Auction");
+define("SIDEINFO_PROFILE","Profile");
+define("SIDEINFO_ALLIANCE","Alliance");
+define("SIDEINFO_CHANGE_TITLE","These double-click to rename the village");
+define("SIDEINFO_CHANGEVIL_TITLE","Village name change");
+define("SIDEINFO_CHANGEVIL_LABEL","New village name");
+define("SIDEINFO_CHANGEVIL_BTN","Cancel");
+
+define("LOGOUT_TITLE","Logout complete!");
+define("LOGOUT_H4","Thank you for visiting");
+define("LOGOUT_DESC","If multiple people use this PC, you should clear the cookie with your user name and password for security reasons");
+define("LOGOUT_LINK","Clear cookies");
+
+define("LOGIN_WELCOME","Welcome to server");
+define("LOGIN_USERNAME","Username");
+define("LOGIN_PASSWORD","Password");
+define("LOGIN_LOWRES_DESC","Low resolution");
+define("LOGIN_LOWRES_OPTION","");
+define("LOGIN_LOWRES_NOTICE","");
+define("LOGIN_PW_FORGOTTEN","Password Forgotten");
+
+define("LOGIN_PW_REQUEST","Request Password");
+define("LOGIN_PW_EMAIL","Email");
+define("LOGIN_PW_BTN","Go");
+
+define("REGISTER_USERINFO","Register");
+define("REGISTER_USERNAME","Name");
+define("REGISTER_EMAIL","Email");
+define("REGISTER_PASSWORD","Password");
+define("REGISTER_STARTER","");
+define("REGISTER_SELECT_TRIBE","Select Tribe");
+define("REGISTER_LOCATION","Location");
+define("REGISTER_NE","North-East");
+define("REGISTER_NW","North-West");
+define("REGISTER_SE","South-East");
+define("REGISTER_SW","South-West");
+define("REGISTER_RANDOM","Random");
+define("REGISTER_MOREINFO","T&C");
+
+
+
+
+
 //MENU
 define("REG","Register");
-define("FORUM","Forum");
+define("FORUM","Home");
 define("CHAT","Chat");
 define("IMPRINT","Imprint");
 define("MORE_LINKS","More Links");
@@ -72,40 +132,40 @@ define("ANAME_EXIST","Name taken");
 define("TRAVIAN_COPYRIGHT","TravianX 100% Open Source Travian Clone.");
 
 //BUILD.TPL
-define("CUR_PROD","Current production");
-define("NEXT_PROD","Production at level ");
+define("CUR_PROD","Current Production");
+define("NEXT_PROD","Next Level Production");
 
 //BUILDINGS
 define("B1","Woodcutter");
-define("B1_DESC","The Woodcutter cuts down trees in order to produce lumber. The further you extend the bid1 the more lumber is produced by him.");
+define("B1_DESC","The woodcutter fells trees in the woodlands to collect wood. The higher the woodcutter's level, the more wood is produced.");
 define("B2","Clay Pit");
-define("B2_DESC","Clay is produced here. By increasing its level you increase its clay production.");
+define("B2_DESC","Clay is collected from the clay pit. The higher the level of the clay pit, the more clay is produced.");
 define("B3","Iron Mine");
-define("B3_DESC","Here miners produce the precious resource iron. By increasing the mine`s level you increase its iron production.");
-define("B4","Cropland");
-define("B4_DESC","Your population`s food is produced here. By increasing the farm`s level you increase its crop production.");
+define("B3_DESC","Iron is mined from these mines. The higher the level, the higher the iron production.");
+define("B4","Wheat");
+define("B4_DESC","The food supply for your villagers is produced in the wheat fields. The higher the level, the more wheat is produced");
 
 //DORF1
-define("LUMBER","Lumber");
+define("LUMBER","Wood");
 define("CLAY","Clay");
 define("IRON","Iron");
 define("CROP","Crop");
-define("LEVEL","Level");
+define("LEVEL","Levl");
 define("CROP_COM",CROP." consumption");
-define("PER_HR","per hour");
+define("PER_HR"," hour");
 define("PROD_HEADER","Production");
 define("MULTI_V_HEADER","Villages");
 define("ANNOUNCEMENT","Announcement");
-define("GO2MY_VILLAGE","Go to my village");
-define("VILLAGE_CENTER","Village centre");
-define("FINISH_GOLD","Finish all construction and research orders in this village immediately for 2 Gold?");
+define("GO2MY_VILLAGE","Ugorj a falumhoz");
+define("VILLAGE_CENTER","Falu központ");
+define("FINISH_GOLD","Befejezi az összes építést és fejlesztést azonnal, 2 aranyért?");
 define("WAITING_LOOP","(waiting loop)");
 define("HRS","(hrs.)");
-define("DONE_AT","done at");
-define("CANCEL","cancel");
-define("LOYALTY","Loyalty:"); 
+define("DONE_AT","Done At ");
+define("CANCEL","Cancel");
+define("LOYALTY","Loyalty"); 
 define("CALCULATED_IN","Calculated in");
-define("SEVER_TIME","Server time:");  
+define("SEVER_TIME","Server Time");  
 
 //QUEST
 define("Q_CONTINUE","Continue with the next task.");
@@ -154,6 +214,9 @@ define("Q5_RESP","As you noticed, building orders take rather long. The world of
 //======================================================//
 //================ UNITS - DO NOT EDIT! ================//
 //======================================================//
+// HEROE UNIT
+define("U0","hero");
+
 //ROMAN UNITS
 define("U1","Legionnaire");
 define("U2","Praetorian");
@@ -167,16 +230,16 @@ define("U9","Senator");
 define("U10","Settler");
 
 //TEUTON UNITS
-define("U11","Clubswinger");
+define("U11","Maceman");
 define("U12","Spearman");
 define("U13","Axeman");
 define("U14","Scout");
 define("U15","Paladin");
 define("U16","Teutonic Knight");
 define("U17","Ram");
-define("U18","Catapult");
-define("U19","Chief");
-define("U20","Settler");
+define("U18","catapult");
+define("U19","Chieftain");
+define("U20","settler");
 
 //GAUL UNITS
 define("U21","Phalanx");
@@ -191,10 +254,10 @@ define("U29","Chieftain");
 define("U30","Settler");
 
 //NATURE UNITS
-define("U31","Rat");
-define("U32","Spider");
-define("U33","Snake");
-define("U34","Bat");
+define("U31","rat");
+define("U32","spider");
+define("U33","snake");
+define("U34","bat");
 define("U35","Wild Boar");
 define("U36","Wolf");
 define("U37","Bear");
@@ -228,14 +291,14 @@ define("U60","Monster Settler");
 
 //INDEX.php
 define("LOGIN","Login");
-define("PLAYERS","Players");
+define("PLAYERS","Player");
 define("ONLINE","Online");
 define("TUTORIAL","Tutorial");
-define("PLAYER_STATISTICS","Player statistics");
-define("TOTAL_PLAYERS","".PLAYERS." in total");
-define("ACTIVE_PLAYERS","Active players");
+define("PLAYER_STATISTICS","Player Statistics");
+define("TOTAL_PLAYERS","".PLAYERS." Total Players");
+define("ACTIVE_PLAYERS","Active Players");
 define("ONLINE_PLAYERS","".PLAYERS." online");
-define("MP_STRATEGY_GAME","".SERVER_NAME." - the multiplayer strategy game");
+define("MP_STRATEGY_GAME","".SERVER_NAME." - a többjátékos stratégia játék");
 define("WHAT_IS","".SERVER_NAME." is one of the most popular browser games in the world. As a player in ".SERVER_NAME.", you will build your own empire, recruit a mighty army, and fight with your allies for game world hegemony.");
 define("REGISTER_FOR_FREE","Register here for free!");
 define("LATEST_GAME_WORLD","Latest game world");
@@ -265,29 +328,30 @@ define("STARTED"," The server started ". round((time()-COMMENCE)/86400) ." days 
 define("NICKNAME","Nickname");
 define("EMAIL","Email");
 define("PASSWORD","Password");
-define("ROMANS","Romans");
-define("TEUTONS","Teutons");
-define("GAULS","Gauls");
-define("NW","North West");
-define("NE","North East");
-define("SW","South West");
-define("SE","South East");
+define("ROMANS","Roman");
+define("TEUTONS","Tueton");
+define("GAULS","Gaul");
+define("NW","North-West");
+define("NE","North-East");
+define("SW","south-West");
+define("SE","South-East");
 define("RANDOM","random");
-define("ACCEPT_RULES"," I accept the game rules and general terms and conditions.");
-define("ONE_PER_SERVER","Each player may only own ONE account per server.");
+define("ACCEPT_RULES"," Accept Rules");
+define("ONE_PER_SERVER","You can have only 1 account per server");
 define("BEFORE_REGISTER","Before you register an account you should read the <a href='../anleitung.php' target='_blank'>instructions</a> of TravianX to see the specific advantages and disadvantages of the three tribes.");
 define("BUILDING_UPGRADING","Building:");
-define("HOURS","hours");
+define("HOURS","Hour");
 
 
 //ATTACKS ETC.
-define("TROOP_MOVEMENTS","Troop Movements:");
-define("ARRIVING_REINF_TROOPS","Arriving reinforcing troops");
+define("TROOP_MOVEMENTS","Troops Moving");
+define("ARRIVING_REINF_TROOPS","Reinf.");
 define("ARRIVING_REINF_TROOPS_SHORT","Reinf.");
-define("OWN_ATTACKING_TROOPS","Own attacking troops");
+define("ARRIVING_ATTACKING_TROOPS","Attack");
+define("OWN_ATTACKING_TROOPS","Attack");
 define("ATTACK","Attack");
-define("OWN_REINFORCING_TROOPS","Own reinforcing troops");
-define("TROOPS_DORF","Troops:");
+define("OWN_REINFORCING_TROOPS","Reinf");
+define("TROOPS_DORF","Units:");
 
 
 //LOGIN.php
@@ -307,7 +371,7 @@ define("WE_LOOKED","We looked 404 times already but can't find anything");
 
 //TIME RELATED
 define("CALCULATED","Calculated in");
-define("SERVER_TIME","Server time:");
+define("SERVER_TIME","Server Time:");
 
 //MASSMESSAGE.php
 define("MASS","Message Content");
@@ -321,6 +385,51 @@ define("MASS_CONFIRM","Confirmation");
 define("MASS_REALLY","Do you really want to send MassIGM?");
 define("MASS_ABORT","Aborting right now");
 define("MASS_SENT","Mass IGM was sent");
+
+
+// Jelentések
+
+define("REPORT_SUBJECT","Subject:");
+define("REPORT_SENT","Sent");
+define("REPORT_AT","");
+define("REPORT_ATTACKER","Attacker");
+define("REPORT_FROM_VIL","From village ");
+define("REPORT_TROOPS","Units");
+define("REPORT_CASUALTIES","Casualties");
+define("REPORT_DEFENDER","Defender");
+define("REPORT_BOUNTY","Bounty");
+define("REPORT_DEL_BTN","Delete Report");
+define("REPORT_WARSIM", "Combat Simulater");
+define("REPORT_ATK_AGAIN", "Repeat Attack");
+define("REPORT_INFORMATION", "Information");
+define("REPORT_SENDER","sender");
+define("REPORT_RECEIVER","RECIEVER");
+define("REPORT_SEND_REINF_TO","Reinforce");
+define("REPORT_CLOCK","Clock");
+define("REPORT_UPKEEP","Upkeep");
+define("REPORT_PER_HOURS","Per Hour");
+
+
+// Warsim.php
+define("WARSIM_ATTACKER","Attacker");
+define("WARSIM_ETC","ect");
+
+define("WARSIM_POP","Population");	
+define("WARSIM_KATA","Catapult Target");		
+define("WARSIM_HEROPOWER","Hero");	
+define("WARSIM_STONEMASON","Stonemason");
+define("WARSIM_PALACE","Palace");
+
+// Contact.php
+define("CONTACT_DESC","The next form you can contact the help (eg admin). As many
+
+fill in fields that have a question / answer and process your request as soon as we can. It is important that a valid email address to
+
+In the absence of the question / request is not answered, we are ablei");
+define("CONTACT_CATEGORY","Category");
+define("CONTACT_USERNAME","Username");
+define("CONTACT_EMAIL","Email");
+define("CONTACT_MESSAGE","Message");
 
 
 /*
@@ -348,6 +457,7 @@ define("MASS_SENT","Mass IGM was sent");
        $lang['forum'] = "Forum";
        $lang['register'] = "Register";
        $lang['login'] = "Login";
+
 
 
 ?>

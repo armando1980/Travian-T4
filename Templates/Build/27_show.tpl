@@ -1,17 +1,17 @@
-<?php
+﻿<?php
 
     $artefact = $database->getArtefactDetails($_GET['show']);
                     if($artefact['size'] == 1){
                        $reqlvl = 10;
-                       $effect = "دهكده حاوي كتيبه";
+                       $effect = "Village containing inscriptions";
                    }elseif($artefact['size'] == 2 OR $artefact['size'] == 3){
                        $reqlvl = 20;
-                       $effect = "تمام دهکده ها";
+                       $effect = "All villages";
                    }  
                    if ($artefact['conquered'] >= (time()-86400)){
-                   $active = "غیر فعال"; 
+                   $active = "Inactive"; 
                    }else{
-                    $active = "فعال"; 
+                    $active = "Active"; 
                    }
 	
 ?>
@@ -27,53 +27,53 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>صاحب كتيبه</th>
+                        <th>The Artefact</th>
                         <td>
                             <a href="spieler.php?uid=<?php echo $artefact['owner'];?>"><?php echo $database->getUserField($artefact['owner'],"username",0);?></a>
                         </td>
                     </tr>
                     <tr>
-                        <th>دهكده حاوي كتيبه</th>
+                        <th>Village containing inscriptions</th>
                         <td>
                             <a href="karte.php?d=<?php echo $artefact['vref'];?>&c=<?php echo $generator->getMapCheck($artefact['vref']);?>"><?php echo $database->getVillageField($artefact['vref'], "name");?> </a>
                         </td>
                     </tr>                                  
                     <tr>
-                        <th>اتحاد</th>
+                        <th>Klán</th>
                         <td><a href="allianz.php?aid=<?php echo $database->getUserField($artefact['owner'],"alliance",0);?>"><?php echo $database->getAllianceName($database->getUserField($artefact['owner'],"alliance",0)); ?></a></td>
                     </tr> 
                     <tr>
-                        <th>محدوده تاثير</th>
+                        <th>Effect</th>
                         <td><?php echo $effect; ?></td>
                     </tr>
         
                 <tr>
-                    <th>ميزان</th>
+                    <th>Of</th>
                     <td><b><?php echo $artefact['effect']; ?></b></td>
                 </tr>
                
             <tr>
-                <th>سطح مورد نياز</th>
-                <td>خزانه سطح <b><?php echo $reqlvl; ?></b></td>
+                <th>Treasure Chamber</th>
+                <td>A kincstár <b><?php echo $reqlvl; ?></b></td>
             </tr>
         
                 <tr>
-                    <th>زمان تسخير</th>
-                    <td><?php echo date("Y/m/d H:i",$artefact['conquered']);?></td>
+                    <th>Date</th>
+                    <td><?php echo date("Y.m.d. H:i",$artefact['conquered']);?></td>
                 </tr>
             
                 <tr>
-                    <th>زمان فعالسازی</th>
+                    <th>Activity</th>
                     <td><?php echo $active;?></td>
                 </tr>
             </tbody></table><br />
-            <h4>تاريخچه صاحبان</h4>
+            <h4>Artefacts</h4>
                 <table class="art_details" cellpadding="1" cellspacing="1">
                     <thead>
                         <tr>
-                            <td>بازیکن</td>
-                            <td>دهكده حاوي كتيبه</td>
-                            <td>تاريخچه تسخير</td>
+                            <td>Player</td>
+                            <td>Village containing inscriptions</td>
+                            <td>Capture History</td>
                         </tr>
                     </thead>
                     <tbody>

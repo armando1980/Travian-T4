@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 if(!$session->logged_in) {
 ?>
-<a id="ingameManual" href="help.php" title="راهنما">
-<img src="img/x.gif" class="question" alt="راهنما"/>
+<a id="ingameManual" href="help.php" title="Guide">
+<img src="img/x.gif" class="question" alt="Guide"/>
 </a>
 <?php
     }else {

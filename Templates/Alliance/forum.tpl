@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 //////////////// made by TTMTT ////////////////
 
 if(isset($aid)) {
@@ -8,7 +8,7 @@ else {
 $aid = $session->alliance;
 }
 $allianceinfo = $database->getAlliance($aid);
-echo "<h1 class=\"titleInHeader\">اتحاد - ".$allianceinfo['tag']."</h1>";
+echo "<h1 class=\"titleInHeader\">Alliance - ".$allianceinfo['tag']."</h1>";
 include("alli_menu.tpl"); 
 $ids = $_GET['s'];
 
@@ -133,11 +133,11 @@ if($_GET['admin']== "newforum"){
 	if($database->CheckForum($aid)){
 		include("Forum/forum_2.tpl"); 
 	}else{
-			echo "<p class=\"error\">هیچ فرومی ساخته نشده</p><p>
+			echo "<p class=\"error\">A Forum has not been created</p><p>
 <button type=\"button\" value=\"Upgrade level\" class=\"build\" onclick=\"window.location.href = 'allianz.php?s=2&admin=newforum'; return false;\">
 <div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div>
 <div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div>
-</div><div class=\"button-contents\">فروم جدید</div></div></button></p>";
+</div><div class=\"button-contents\">New forum</div></div></button></p>";
 	}				
 }
 ?>

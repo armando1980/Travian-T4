@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $bid = $_GET['bid'];
 unset($_GET['bid']);
 $bindicator = $building->canBuild($id,$bid);
@@ -7,11 +7,11 @@ $crop = round($village->acrop);
 
 $bindicate = $building->canBuild($id,$village->resarray['f'.$id.'t']);
 if($bindicate == 1) {
-	echo "<p><span class=\"none\">ساختمان به سطح آخر رسیده.</span></p>";
+	echo "<p><span class=\"none\">Building Complete.</span></p>";
 } else if($bindicate == 10) {
-	echo "<p><span class=\"none\">آخرین سطح ساختمان در حال ساخت است.</span></p>";
+	echo "<p><span class=\"none\">The last level of the building is under construction.</span></p>";
 } else if($bindicate == 11) {
-	echo "<p><span class=\"none\">ساختمان در حال تخریب است.</span></p>";
+	echo "<p><span class=\"none\">The building is being demolished.</span></p>";
 } else {
 	$loopsame = $building->isCurrent($id)?1:0;
         if ($loopsame>0 && $building->isLoop($id)) {
@@ -20,7 +20,7 @@ if($bindicate == 1) {
         
 ?>
 <div id="contract" class="contract contractNew contractWrapper">
-	<div class="contractText">هزینه:</div>
+	<div class="contractText">Cost:</div>
 	<div class="contractCosts">
     <div class="showCosts">
     <span class="resources r1 little_res"><img class="r1" src="img/x.gif" title="چوب"><?php echo $uprequire['wood']; ?></span>
@@ -43,36 +43,36 @@ if($bindicate == 1) {
 	<div class="contractLink">
     <?php
     if($bindicate == 2) {
-   		echo "<span class=\"none\">کارگران مشغول کار هستند.</span>";
+   		echo "<span class=\"none\">Workers are working.</span>";
     }
     else if($bindicate == 3) {
-    	echo "<span class=\"none\">کارگران مشغول کار هستند.</span>";
+    	echo "<span class=\"none\">Workers are working</span>";
     }
     else if($bindicate == 4) {
-    	echo "<span class=\"none\">کمبود غذا: اول گندم زار را ارتقا دهید!</span>";
+    	echo "<span class=\"none\">Food shortages: first upgrade Cropland!</span>";
     }
    
     else if($bindicate == 5) {
-    	echo "<span class=\"none\">انبار را ارتقا بده.</span>";
+    	echo "<span class=\"none\">Upgrade warehouse.</span>";
     }
     else if($bindicate == 6) {
-    	echo "<span class=\"none\">انبار غذا را ارتقا بده.</span>";
+    	echo "<span class=\"none\">Upgrade Granary.</span>";
     }
      else if($bindicator == 7) {
     	$neededtime = $building->calculateAvaliable($id,$bid);
-    	echo "<span class=\"none\">تامین منابع ".$neededtime[0]." در  ".$neededtime[1]."</span>";
+    	echo "<span class=\"none\">Enough resources at ".$neededtime[1]."</span>";
      }
      else if($bindicator == 8) {
      	echo "<button type=\"button\" value=\"Upgrade level\" class=\"build\" onclick=\"window.location.href = 'dorf2.php?a=$bid&id=$id&c=".$session->checker."'; return false;\">
 <div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div>
 <div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div>
-</div><div class=\"button-contents\">ساختمان را بنا کن</div></div></button>";
+</div><div class=\"button-contents\">Build</div></div></button>";
      }
      else if($bindicator == 9) {
      	echo "<button type=\"button\" value=\"Upgrade level\" class=\"build\" onclick=\"window.location.href = 'dorf2.php?a=$bid&id=$id&c=".$session->checker."'; return false;\">
 <div class=\"button-container\"><div class=\"button-position\"><div class=\"btl\"><div class=\"btr\"><div class=\"btc\"></div></div></div>
 <div class=\"bml\"><div class=\"bmr\"><div class=\"bmc\"></div></div></div><div class=\"bbl\"><div class=\"bbr\"><div class=\"bbc\"></div></div></div>
-</div><div class=\"button-contents\">ساختمان را بنا کن</div></div></button> <span class=\"none\">(قرار دادن در نوبت ساخت)</span>";
+</div><div class=\"button-contents\">Build</div></div></button> <span class=\"none\">(Que)</span>";
      } }
             ?>
 

@@ -1,9 +1,9 @@
-<h2>دفتر تجارت</h2>
+﻿<h2>Trade Office</h2>
 <div class="build_desc">
 	<a href="#" onclick="return Travian.Game.iPopup(28,4);" class="build_logo">
 		<img class="building big white g28" src="img/x.gif" alt="دفتر تجارت">
 	</a>
-	در دفتر تجارت می توانید گاری های تجار را پیشرفت دهید و به اسبهای قوی تر مجهز کنید. گاری های پیشرفته تر ظرفیت حمل بیشتری خواهند داشت.</div>
+	The trade carts of your marketplace can be improved in the trade office. The higher the level, the more each merchant can carry.</div>
 		<?php
         $_GET['bid'] = 28;
         include("availupgrade.tpl");

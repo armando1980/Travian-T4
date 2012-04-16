@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 include('menu.tpl');
 ?>
 <table id="culture_points" cellpadding="1" cellspacing="1">
 <thead>
-<tr><td> دهکده </td><td> امتیاز فرهنگی در روز </td><td> جشن </td><td> لشکریان </td><td> خانه برای دهکدۀ جدید </td></tr>
+<tr><td> Village </td><td> CPs/Day </td><td> Celebrations </td><td> Units </td><td> Slots </td></tr>
 </thead>
 <tbody>
 <?php
@@ -62,7 +62,7 @@ foreach($varray as $vil){
 <tr><td colspan="5" class="empty"></td></tr>
 
 <tr class="sum">
-	<th class="vil">مجموع</th>
+	<th class="vil">Total</th>
 	<td class="cps"><?php echo $gescp;?></td>
 	<td class="cel none">-</td>
 

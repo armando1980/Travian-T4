@@ -2,7 +2,7 @@
 set_time_limit(0); 
 include("../GameEngine/config.php");
 include("../GameEngine/Data/buidata.php");
-include ("../GameEngine/Lang/fa.php");
+//include ("../GameEngine/Lang/fa.php");
 class adm_DB {
 	var $connection;
 	

@@ -16,47 +16,47 @@ class Automation {
         public function procResType($ref) {
         global $session;
         switch($ref) {
-            case 1: $build = "هیزم شکن"; break;
-            case 2: $build = "آجر سازی"; break;
-            case 3: $build = "معدن آهن"; break;
-            case 4: $build = "گندم زار"; break;
-            case 5: $build = "چوب بری"; break;
-            case 6: $build = "آجرپزی"; break;
-            case 7: $build = "ذوب آهن"; break;
-            case 8: $build = "آسیاب"; break;
-            case 9: $build = "نانوایی"; break;
-            case 10: $build = "انبار"; break;
-            case 11: $build = "انبار غذا"; break;
-            case 12: $build = "آهنگری"; break;
-            case 14: $build = "میدان تمرین"; break;
-            case 15: $build = "ساختمان اصلی"; break;
-            case 16: $build = "اردوگاه"; break;
-            case 17: $build = "بازار"; break;
-            case 18: $build = "سفارت"; break;
-            case 19: $build = "سربازخانه"; break;
-            case 20: $build = "اصطبل"; break;
-            case 21: $build = "کارگاه"; break;
-            case 22: $build = "دارالفنون"; break;
-            case 23: $build = "مخفیگاه"; break;
-            case 24: $build = "تالار"; break;
-            case 25: $build = "اقامتگاه"; break;
-            case 26: $build = "قصر"; break;
-            case 27: $build = "خزانه"; break;
-            case 28: $build = "تجارت خانه"; break;
-            case 29: $build = "پادگان بزرگ"; break;
-            case 30: $build = "اصطبل بزرگ"; break;
-            case 31: $build = "دیوار شهر"; break;
-            case 32: $build = "دیوار گلی"; break;
-            case 33: $build = "پرچین"; break;
-            case 34: $build = "سنگ تراشی"; break;
-            case 35: $build = "آبجوسازی"; break;
-            case 36: $build = "تله سازی"; break;
-            case 37: $build = "عمارت قهرمان"; break;
-            case 38: $build = "انبار بزرگ"; break;
-            case 39: $build = "انبار غذای بزرگ"; break;
-            case 40: $build = "شگفتی های جهان"; break;
-            case 41: $build = "آبخوری اسب ها"; break;
-            case 42: $build = "کارگاه بزرگ"; break;
+            case 1: $build = "Favágó"; break;
+            case 2: $build = "Agyagbánya"; break;
+            case 3: $build = "Vasércbánya"; break;
+            case 4: $build = "Búzafarm"; break;
+            case 5: $build = "Fűrészüzem"; break;
+            case 6: $build = "Agyagégető"; break;
+            case 7: $build = "Vasöntöde"; break;
+            case 8: $build = "Malom"; break;
+            case 9: $build = "Pékség"; break;
+            case 10: $build = "Raktár"; break;
+            case 11: $build = "Magtár"; break;
+            case 12: $build = "Kovács"; break;
+            case 14: $build = "Gyakorlótér"; break;
+            case 15: $build = "Főépület"; break;
+            case 16: $build = "Gyülekezőtér"; break;
+            case 17: $build = "Piac"; break;
+            case 18: $build = "Követség"; break;
+            case 19: $build = "Kaszárnya"; break;
+            case 20: $build = "Istálló"; break;
+            case 21: $build = "Műhely"; break;
+            case 22: $build = "Akadémia"; break;
+            case 23: $build = "Rejtekhely"; break;
+            case 24: $build = "Városháza"; break;
+            case 25: $build = "Rezidencia"; break;
+            case 26: $build = "Palota"; break;
+            case 27: $build = "Kincstár"; break;
+            case 28: $build = "Kereskedelmi központ"; break;
+            case 29: $build = "Nagy kaszárnya"; break;
+            case 30: $build = "Nagy istálló"; break;
+            case 31: $build = "Kőfal"; break;
+            case 32: $build = "Földfal"; break;
+            case 33: $build = "Cölöpfal"; break;
+            case 34: $build = "Kőfaragó"; break;
+            case 35: $build = "Sörfőzde"; break;
+            case 36: $build = "Csapdakészítő"; break;
+            case 37: $build = "Hősök háza"; break;
+            case 38: $build = "Nagy raktár"; break;
+            case 39: $build = "Nagy magtár"; break;
+            case 40: $build = "Világcsoda"; break;
+            case 41: $build = "Lóitató"; break;
+            case 42: $build = "Műhely2"; break;
             default: $build = "Error"; break;
         }
         return $build;
@@ -497,7 +497,7 @@ class Automation {
             $fromcoor = $database->getCoor($data['to']);
             $targettribe = $database->getUserField($database->getVillageField($data['from'],"owner"),"tribe",0);
             $endtime = $this->procDistanceTime($tocoor,$fromcoor,$targettribe,0) + $data['endtime'];
-            $database->addMovement(2,$data['to'],$data['from'],$data['merchant'],$endtime);
+            $database->addMovement(2,$data['to'],$data['from'],$ref,$data['merchant'],$endtime);
             $database->setMovementProc($data['moveid']);
         }
         $q = "UPDATE ".TB_PREFIX."movement set proc = 1 where endtime < $time and sort_type = 2";
@@ -920,7 +920,7 @@ class Automation {
 					//NEED TO SEND A RAPPORTAGE!!!
 					$data2 = ''.$database->getVillageField($enforce['from'],"owner").','.$to['wref'].','.addslashes($to['name']).','.$tribe.''.$life.''.$notlife.'';
 					$fromAlly = $database->getUserField($database->getVillageField($enforce['from'],"owner"),'alliance',0);
-					$database->addNotice($database->getVillageField($enforce['from'],"owner"),$to['wref'],$fromAlly,15,'نیروهای کمکی شما در'.addslashes($to['name']).' مورد حمله قرار گرفتند.',$data2,$AttackArrivalTime);
+					$database->addNotice($database->getVillageField($enforce['from'],"owner"),$to['wref'],$fromAlly,15,'Támogatás'.addslashes($to['name']).' Támadtak',$data2,$AttackArrivalTime);
 					//delete reinf sting when its killed all.
 					if($wrong=='0'){
 						$database->deleteReinf($enforce['id']);
@@ -1123,23 +1123,23 @@ class Automation {
             if ($type=='3'){
                 if ($rams!='0'){
                     if (isset($empty)){
-                        $info_ram = "".$ram_pic.", دیوار قبلا <b>تخریب شده</b>.";
+                        $info_ram = "".$ram_pic.", A fal már le volt rombolva.";
                     } else
 
                       if ($battlepart[8]>$battlepart[7]){
-                            $info_ram = "".$ram_pic.", دیوار <b>تخریب شد</b>.";
+                            $info_ram = "".$ram_pic.", A fal le lett rombolva.";
                             $database->setVillageLevel($data['to'],"f".$wallid."",'0');
                             $database->setVillageLevel($data['to'],"f".$wallid."t",'0');
                             $pop=$this->recountPop($data['to']);
 
                     }elseif ($battlepart[8]==0){
                     
-                        $info_ram = "".$ram_pic.",به دیوار آسیبی نرسید.";
+                        $info_ram = "".$ram_pic.",A fal nem sérült meg.";
                     }else{
             
                         $demolish=$battlepart[8]/$battlepart[7];
                         $totallvl = round(sqrt(pow(($walllevel+0.5),2)-($battlepart[8]*8)));
-                    $info_ram = "".$ram_pic.",دیوار از سطح <b>".$walllevel."</b> به سطح <b>".$totallvl."</b> آسیب دید.";
+                    $info_ram = "".$ram_pic.",A fal ".$walllevel." szintről ".$totallvl." szintre lett rombolva.";
                             $database->setVillageLevel($data['to'],"f".$wallid."",$totallvl);
 
                     }                  
@@ -1153,7 +1153,7 @@ class Automation {
         if($toF['pop']<=0)
         {
               
-                 $info_cat = ",".$catp_pic.", روستا قبلا <b>تخریب شده</b>.";
+                 $info_cat = ",".$catp_pic.", A falu le lett rombolva.";
         }
         else
         {
@@ -1218,7 +1218,7 @@ class Automation {
                 $needed_cata = round((($battlepart[5] * (pow($tblevel,2) + $tblevel + 1)) / (8 * (round(200 * pow(1.0205,$battlepart[6]))/200) / (1 * $bid34[$stonemason]['attri']/100))) + 0.5);
                 if ($battlepart[4]>$needed_cata)
                 {
-                        $info_cat = "".$tbgid.",".$this->procResType($tbgid)." <b>تخریب شد</b>.";
+                        $info_cat = "".$tbgid.",".$this->procResType($tbgid)." le lett rombolva.";
 						
 				$database->setVillageLevel($data['to'],"f".$tbid."",'0');
                     if($tbid>=19) { $database->setVillageLevel($data['to'],"f".$tbid."t",'0'); }
@@ -1276,14 +1276,14 @@ class Automation {
                 }
                 elseif ($battlepart[4]==0)
                 {    
-					$info_cat = "".$tbgid.",به ".$this->procResType($tbgid)." آسیبی نرسید.";
+					$info_cat = "".$tbgid.",A ".$this->procResType($tbgid)." nem sérült meg.";
 					}
                 else
                 {   
 					$demolish=$battlepart[4]/$needed_cata;
                     $totallvl = round(sqrt(pow(($tblevel+0.5),2)-($battlepart[4]*8)));
                     if ($tblevel==$totallvl) 
-                        $info_cata=" آسیبی نرسید.";
+                        $info_cata=" nem sérült meg.";
                     else
                     {
 					
@@ -1291,7 +1291,7 @@ class Automation {
 					
                                
             
-                    $info_cata= " از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آسیب دید.";
+                    $info_cata= " A célpont ".$totallvl." szintről ".$tblevel." szintre lett rombolva.";
                   $buildarray = $GLOBALS["bid".$tbgid];
                         if ($tbgid==10 || $tbgid==38) {
                             $tsql=mysql_query("select `maxstore`,`maxcrop` from ".TB_PREFIX."vdata where wref=".$data['to']."");
@@ -1372,7 +1372,7 @@ class Automation {
                 $needed_cata = round((($battlepart[5] * (pow($tblevel,2) + $tblevel + 1)) / (8 * (round(200 * pow(1.0205,$battlepart[6]))/200) / (1 * $bid34[$stonemason]['attri']/100))) + 0.5);
                 if (($battlepart[4]/2)>$needed_cata)
                 {
-					$info_cat = "".$tbgid.", ".$this->procResType($tbgid)." <b>تخریب شد</b>.";
+					$info_cat = "".$tbgid.", ".$this->procResType($tbgid)." Le lett rombolva.";
                     $database->setVillageLevel($data['to'],"f".$tbid."",'0');
                     if($tbid>=19) { $database->setVillageLevel($data['to'],"f".$tbid."t",'0'); }
                     $buildarray = $GLOBALS["bid".$tbgid];
@@ -1429,17 +1429,17 @@ class Automation {
                 }
                 elseif ($battlepart[4]==0)
                 {                        
-                    $info_cat = "".$tbgid.",به ".$this->procResType($tbgid)." آسیبی نرسید.";
+                    $info_cat = "".$tbgid.",A ".$this->procResType($tbgid)." nem sérült meg.";
                 }
                 else
                 {                
                     $demolish=($battlepart[4]/2)/$needed_cata;
                     $totallvl = round(sqrt(pow(($tblevel+0.5),2)-(($battlepart[4]/2)*8)));
                     if ($tblevel==$totallvl) 
-                        $info_cata=" تخریب نشد.";
+                        $info_cata=" Nem sérült meg.";
                     else
                     {
-                        $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آسیب دید.";
+                        $info_cata=" A célpont ".$totallvl." szintről ".$tblevel." szintre lett lerombolva.";
                         $buildarray = $GLOBALS["bid".$tbgid];
                         if ($tbgid==10 || $tbgid==38) {
                             $tsql=mysql_query("select `maxstore`,`maxcrop` from ".TB_PREFIX."vdata where wref=".$data['to']."");
@@ -1518,8 +1518,8 @@ class Automation {
                 $needed_cata = round((($battlepart[5] * (pow($tblevel,2) + $tblevel + 1)) / (8 * (round(200 * pow(1.0205,$battlepart[6]))/200) / (1 * $bid34[$stonemason]['attri']/100))) + 0.5);
                 if (($battlepart[4]/2)>$needed_cata)
                 {
-					$info_cat .= "<br><tbody class=\"goods\"><tr><th>اطلاعات</th><td colspan=\"11\">
-                    <img class=\"unit u".$tbgid."\" src=\"img/x.gif\" alt=\"منجنیق\" title=\"منجنیق\" /> ".$this->procResType($tbgid)." <b>تخریب شد</b>.</td></tr></tbody>";
+					$info_cat .= "<br><tbody class=\"goods\"><tr><th>Információk</th><td colspan=\"11\">
+                    <img class=\"unit u".$tbgid."\" src=\"img/x.gif\" alt=\"Katapult\" title=\"Katapult\" /> ".$this->procResType($tbgid)." le lett rombolva..</td></tr></tbody>";
                     $database->setVillageLevel($data['to'],"f".$tbid."",'0');
                     if($tbid>=19) { $database->setVillageLevel($data['to'],"f".$tbid."t",'0'); }
                     $buildarray = $GLOBALS["bid".$tbgid];
@@ -1576,15 +1576,15 @@ class Automation {
                     }
                 }
                 elseif ($battlepart[4]==0){                        
-                    $info_cat .= "<br><tbody class=\"goods\"><tr><th>اطلاعات</th><td colspan=\"11\">
-                    <img class=\"unit u".$tbgid."\" src=\"img/x.gif\" alt=\"منجنیق\" title=\"منجنیق\" /> به ".$this->procResType($tbgid)." آسیبی نرسید.</td></tr></tbody>";
+                    $info_cat .= "<br><tbody class=\"goods\"><tr><th>Információk</th><td colspan=\"11\">
+                    <img class=\"unit u".$tbgid."\" src=\"img/x.gif\" alt=\"Katapult\" title=\"Katapult\" /> A ".$this->procResType($tbgid)." nem sérült meg.</td></tr></tbody>";
                 }else{                
                     $demolish=($battlepart[4]/2)/$needed_cata;
                     $totallvl = round(sqrt(pow(($tblevel+0.5),2)-(($battlepart[4]/2)*8)));
                     if ($tblevel==$totallvl){
-                        $info_cata=" تخریب نشد.";
+                        $info_cata=" Nincs sérülés.";
 					}else{
-$info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آسیب دید.";
+                        $info_cata=" A célpont ".$totallvl." szintről ".$tblevel." szintre lett lerombolva.";
                         $buildarray = $GLOBALS["bid".$tbgid];
                         if ($tbgid==10 || $tbgid==38) {
                             $tsql=mysql_query("select `maxstore`,`maxcrop` from ".TB_PREFIX."vdata where wref=".$data['to']."");
@@ -1605,8 +1605,8 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
                         $pop=$this->recountPop($data['to']);
                     }
                         
-                    $info_cat .= "<br><tbody class=\"goods\"><tr><th>اطلاعات</th><td colspan=\"11\">
-                    <img class=\"unit u".$tbgid."\" src=\"img/x.gif\" alt=\"منجنیق\" title=\"منجنیق\" /> ".$this->procResType($tbgid).$info_cata."</td></tr></tbody>";
+                    $info_cat .= "<br><tbody class=\"goods\"><tr><th>Információk</th><td colspan=\"11\">
+                    <img class=\"unit u".$tbgid."\" src=\"img/x.gif\" alt=\"Katapult\" title=\"Katapult\" /> ".$this->procResType($tbgid).$info_cata."</td></tr></tbody>";
                     $database->setVillageLevel($data['to'],"f".$tbid."",$totallvl);
                 }
             }
@@ -1624,7 +1624,7 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
                 for ($i=18; $i<39; $i++){
                     if ($database->getFieldLevel($data['to'],"".$i."t")==25 or $database->getFieldLevel($data['to'],"".$i."t")==26){
                         $nochiefing='1';
-                            $info_chief = "".$chief_pic.", قصر یا اقامتگاه هنوز سالم است.";
+                            $info_chief = "".$chief_pic.", A Palota vagy a Rezidencia még mindíg áll.";
                     }
                 }
                 if(!isset($nochiefing)){
@@ -1634,12 +1634,12 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
                     }
                     //loyalty is more than 0
                     if(($toF['loyalty']-$rand)>0){
-                        $info_chief = "".$chief_pic.", وفاداری دهکده از <b>".$toF['loyalty']."</b> به <b>".($toF['loyalty']-$rand)."</b> کاهش یافت.";
+                        $info_chief = "".$chief_pic.", A falu hűsége ".$toF['loyalty']."-ról ".($toF['loyalty']-$rand)."-ra esett.";
                         $database->setVillageField($data['to'],loyalty,($toF['loyalty']-$rand));
                     } else {
                     //you took over the village
                         $artifact = $database->getOwnArtefactInfo($data['to']);
-                        $info_chief = "".$chief_pic.", ساکنین دهکده به امپراطوری شما <b>ملحق شدند</b>.";
+                        $info_chief = "".$chief_pic.", A falu lakosai úgy döntöttek, hogy mostantól a te birodalmadhoz akarnak tartozni..";
                         if ($artifact['vref'] == $data['to']){
                          $database->claimArtefact($data['to'],$data['to'],$database->getVillageField($data['from'],"owner"));
                         }
@@ -1673,7 +1673,7 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
                     }
                 }
             } else {
-                $info_chief = "".$chief_pic.", شما نمی توانید پایتخت را تصرف کنید.";
+                $info_chief = "".$chief_pic.", A főfalut nem lehet elfoglalni.";
             }
         }
         
@@ -1720,17 +1720,17 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
 								$o_loyalty=$dbo['loyalty']; 
 								$a_uid = $database->getVillageField($data['from'],"owner");
 								if ($o_conqured=='0' or $o_conqured!=$data['from']) { 
-									mysql_query("UPDATE ".TB_PREFIX."odata SET `conqured`='".$data['from']."', `owner`='".$a_uid."', `name`='آبادی تسخیر شده', `lastupdated`='".time()."' WHERE `wref`='".$data['to']."' "); 
+									mysql_query("UPDATE ".TB_PREFIX."odata SET `conqured`='".$data['from']."', `owner`='".$a_uid."', `name`='Oázis elfoglalható', `lastupdated`='".time()."' WHERE `wref`='".$data['to']."' "); 
 									mysql_query("UPDATE ".TB_PREFIX."wdata SET `occupied`='1' WHERE `id`='".$data['to']."' "); 
-									$info_chief = "".$hero_pic.", قهرمان شما این آبادی را تسخیر کرد."; 
+									$info_chief = "".$hero_pic.", A hősöd elfoglalta az oázist."; 
 								} elseif($o_conqured==$data['from']) { 
-									$info_chief = "".$hero_pic.", قهرمان شما قبلا این آبادی را تسخیر کرده."; 
+									$info_chief = "".$hero_pic.", A hősöd már elfoglalta ezt az oázist korábban."; 
 								} 
 							} else {                                     
-								$info_chief = "".$hero_pic.", برای تسخیر این آبادی به عمارت قهرمان سطح ".$needed_hero_mansion_level." نیاز است."; 
+								$info_chief = "".$hero_pic.", Hogy, elfoglald az oázist, ".$needed_hero_mansion_level." szintű hősök házára van szükséged."; 
 							}
 						} else { 
-							$info_chief = "".$hero_pic.", در حال حاضر این دهکده 3 آبادی تسخیر شده دارد."; 
+							$info_chief = "".$hero_pic.", Már elfoglaltál 3 oázist."; 
 						} 
 					}
 			}else{
@@ -1738,7 +1738,7 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
 				if ($artifact['vref'] == $data['to']){ 
 					if($database->canClaimArtifact($artifact['vref'],$artifact['size'])) { 
 						$database->claimArtefact($data['to'],$data['to'],$database->getVillageField($data['from'],"owner")); 
-						$info_chief = "".$hero_pic.", کتیبه توسط قهرمان شما دزدیده شد.";   
+						$info_chief = "".$hero_pic.", A tervet sikeresen elhozta a hősöd.";   
 					}else{ 
 						$info_chief = "";
 					} 
@@ -1750,8 +1750,8 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
 				$info_spy = "".$spy_pic.",
 <tbody><tr><td class=\"empty\" colspan=\"12\"></td></tr></tbody>
 <tbody class=\"goods\">
-	<tr><th>منابع</th><td colspan=\"11\"><div class=\"res\"><div class=\"rArea\"><img class=\"r1\" src=\"img/x.gif\" title=\"چوب\">".round($totwood)."</div><div class=\"rArea\"><img class=\"r2\" src=\"img/x.gif\" title=\"خشت\">".round($totclay)."</div><div class=\"rArea\"><img class=\"r3\" src=\"img/x.gif\" title=\"آهن\">".round($totiron)."</div><div class=\"rArea\"><img class=\"r4\" src=\"img/x.gif\" title=\"گندم\">".round($totcrop)."</div></div></td></tr></tbody>
-<tbody class=\"goods\"><tr><th></th><td colspan=\"11\"><div class=\"res\"><div class=\"rArea\"><img class=\"gebIcon g23Icon\" src=\"img/x.gif\" title=\"مخفیگاه\">".$bid23[$crannylevel]['attri']."</div></div></td></tr></tbody>";
+	<tr><th>Nyersanyagok</th><td colspan=\"11\"><div class=\"res\"><div class=\"rArea\"><img class=\"r1\" src=\"img/x.gif\" title=\"Fa\">".round($totwood)."</div><div class=\"rArea\"><img class=\"r2\" src=\"img/x.gif\" title=\"Agyag\">".round($totclay)."</div><div class=\"rArea\"><img class=\"r3\" src=\"img/x.gif\" title=\"Vasérc\">".round($totiron)."</div><div class=\"rArea\"><img class=\"r4\" src=\"img/x.gif\" title=\"Búza\">".round($totcrop)."</div></div></td></tr></tbody>
+<tbody class=\"goods\"><tr><th></th><td colspan=\"11\"><div class=\"res\"><div class=\"rArea\"><img class=\"gebIcon g23Icon\" src=\"img/x.gif\" title=\"Rejtekhely\">".$bid23[$crannylevel]['attri']."</div></div></td></tr></tbody>";
 				
 			}else if($data['spy'] == 2){
 				if ($isoasis == 0){  
@@ -1781,20 +1781,20 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
 					$rplevel = 0;
 				}
                 if($tribe == 1){
-					$walltitle = "دیوار شهر";
+					$walltitle = "Kőfal";
 				}elseif($tribe == 2){
-					$walltitle = "دیوار گلی";
+					$walltitle = "Földfal";
 				}else{
-					$walltitle = "پرچین";
+					$walltitle = "Fal";
 				}
                                         
                 $info_spy = "".$spy_pic.",
 <tbody><tr><td class=\"empty\" colspan=\"12\"></td></tr></tbody>
 <tbody class=\"goods\">
-	<tr><th>اطلاعات</th><td colspan=\"11\"><div class=\"res\">
+	<tr><th>Információk</th><td colspan=\"11\"><div class=\"res\">
 <div class=\"rArea\">
-<img class=\"gebIcon g".$rpid."Icon\" src=\"img/x.gif\" title=\"".$rptitle."\">قصر/اقامتگاه <b>سطح ".$rplevel."</b><Br>
-<img class=\"gebIcon g3".$tribe."Icon\" src=\"img/x.gif\" title=\"".$walltitle."\">".$walltitle." <b>سطح ".$walllevel."</b>
+<img class=\"gebIcon g".$rpid."Icon\" src=\"img/x.gif\" title=\"".$rptitle."\">A palota vagy a rezidencia ".$rplevel." szintű<Br>
+<img class=\"gebIcon g3".$tribe."Icon\" src=\"img/x.gif\" title=\"".$walltitle."\">A ".$walltitle."  ".$walllevel." szintű
 </div>
 </div></td></tr></tbody>";
             
@@ -1813,7 +1813,7 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
                 for($i=1;$i<=11;$i++){
                     if($battlepart['casualties_attacker'][$i]){
 						$toAlly = $database->getUserField($to['owner'],'alliance',0);
-                        $database->addNotice($to['owner'],$to['wref'],$toAlly,0,''.addslashes($from['name']).' از '.addslashes($to['name']).' جاسوسی ﻣﻰﻛﻨﺪ',$data2,$AttackArrivalTime);
+                        $database->addNotice($to['owner'],$to['wref'],$toAlly,0,''.addslashes($from['name']).' kikémleli: '.addslashes($to['name']).'',$data2,$AttackArrivalTime);
                         break;
                     }
                 }
@@ -1823,14 +1823,14 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
 					$toAlly = $database->getUserField($to['owner'],'alliance',0);
 					for($i=1;$i<=50;$i++){ if($getu['u'.$i]!=0){ $eee = $getu['u'.$i]; } }
 					if($eee==0){
-						$database->addNotice($to['owner'],$to['wref'],$toAlly,7,''.addslashes($from['name']).' به '.addslashes($to['name']).' حمله ﻣﻰﻛﻨﺪ',$data2,$AttackArrivalTime);
+						$database->addNotice($to['owner'],$to['wref'],$toAlly,7,''.addslashes($from['name']).' támadja: '.addslashes($to['name']).'',$data2,$AttackArrivalTime);
 					}else{
-						$database->addNotice($to['owner'],$to['wref'],$toAlly,4,''.addslashes($from['name']).' به '.addslashes($to['name']).' حمله ﻣﻰﻛﻨﺪ',$data2,$AttackArrivalTime);
+						$database->addNotice($to['owner'],$to['wref'],$toAlly,4,''.addslashes($from['name']).' támadja: '.addslashes($to['name']).'',$data2,$AttackArrivalTime);
 					}
 					
             	} else {
 					$toAlly = $database->getUserField($to['owner'],'alliance',0);
-            		$database->addNotice($to['owner'],$to['wref'],$toAlly,5,''.addslashes($from['name']).' به '.addslashes($to['name']).' حمله ﻣﻰﻛﻨﺪ',$data2,$AttackArrivalTime);
+            		$database->addNotice($to['owner'],$to['wref'],$toAlly,5,''.addslashes($from['name']).' támadja: '.addslashes($to['name']).' ',$data2,$AttackArrivalTime);
                 }
             }    
             //to here
@@ -1842,14 +1842,14 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
                 //$endtime = $this->procDistanceTime($from,$to,min($speeds),1) + time();
                 if($type == 1) {
 					$fromAlly = $database->getUserField($from['owner'],'alliance',0);
-                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,0,''.addslashes($from['name']).' از '.addslashes($to['name']).' جاسوسی ﻣﻰﻛﻨﺪ',$data2,$AttackArrivalTime);
+                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,0,''.addslashes($from['name']).' kikémleli: '.addslashes($to['name']).'',$data2,$AttackArrivalTime);
                 }else {
                     if ($totaldead_att == 0){
 					$fromAlly = $database->getUserField($from['owner'],'alliance',0);
-                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,1,''.addslashes($from['name']).' به '.addslashes($to['name']).' حمله ﻣﻰﻛﻨﺪ',$data2,$AttackArrivalTime);
+                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,1,''.addslashes($from['name']).' támadja: '.addslashes($to['name']).'',$data2,$AttackArrivalTime);
                     }else{ 
 					$fromAlly = $database->getUserField($from['owner'],'alliance',0);
-                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,2,''.addslashes($from['name']).' به '.addslashes($to['name']).' حمله ﻣﻰﻛﻨﺪ',$data2,$AttackArrivalTime);
+                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,2,''.addslashes($from['name']).' támadja: '.addslashes($to['name']).'',$data2,$AttackArrivalTime);
                     }       
                 }
                 
@@ -1880,10 +1880,10 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
                 $database->setMovementProc($data['moveid']);
                 if($type == 1){
 					$fromAlly = $database->getUserField($from['owner'],'alliance',0);
-                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,0,''.addslashes($from['name']).' از '.addslashes($to['name']).' جاسوسی ﻣﻰﻛﻨﺪ',$data_fail,$AttackArrivalTime);
+                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,0,''.addslashes($from['name']).' kikémleli: '.addslashes($to['name']).'',$data_fail,$AttackArrivalTime);
                 }else{
 					$fromAlly = $database->getUserField($from['owner'],'alliance',0);
-                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,3,''.addslashes($from['name']).' به '.addslashes($to['name']).' حمله ﻣﻰﻛﻨﺪ  ',$data_fail,$AttackArrivalTime); 
+                    $database->addNotice($from['owner'],$to['wref'],$fromAlly,3,''.addslashes($from['name']).' támadja: '.addslashes($to['name']).'',$data_fail,$AttackArrivalTime); 
                     }
             }
         
@@ -1952,10 +1952,10 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
             $unitssend_att = ''.$data['t1'].','.$data['t2'].','.$data['t3'].','.$data['t4'].','.$data['t5'].','.$data['t6'].','.$data['t7'].','.$data['t8'].','.$data['t9'].','.$data['t10'].','.$data['t11'].'';
             $data_fail = ''.$from['wref'].','.$from['owner'].','.$owntribe.','.$unitssend_att.','.$to['wref'].','.$to['owner'].'';
 			$fromAlly = $database->getUserField($from['owner'],'alliance',0);
-            $database->addNotice($from['owner'],$to['wref'],$fromAlly,8,''.addslashes($from['name']).' به دهکده‌ی '.addslashes($to['name']).' نیرو می فرستد',$data_fail,$AttackArrivalTime);
+            $database->addNotice($from['owner'],$to['wref'],$fromAlly,8,''.addslashes($from['name']).' Falu '.addslashes($to['name']).' Egységek küldése',$data_fail,$AttackArrivalTime);
 			if($from['owner'] != $to['owner']) {
 				$toAlly = $database->getUserField($from['owner'],'alliance',0);
-				$database->addNotice($to['owner'],$to['wref'],$toAlly,8,''.addslashes($from['name']).' به دهکده‌ی '.addslashes($to['name']).' نیرو می فرستد',$data_fail,$AttackArrivalTime);
+				$database->addNotice($to['owner'],$to['wref'],$toAlly,8,''.addslashes($from['name']).' Falu '.addslashes($to['name']).' Egységek küldése',$data_fail,$AttackArrivalTime);
 			}
             //update status
             $database->setMovementProc($data['moveid']); 
@@ -2183,7 +2183,7 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
 				if(($getHero['health']-$health)<=0){
 					$database->modifyHero2('dead', 1, $ownerID, 0);
 					$database->modifyHero2('health', $health, $ownerID, 2);
-					$database->addNotice($ownerID,$data['to'],$ally,9,''.addslashes($from['name']).' در حال کاوش ('.addslashes($coor['x']).'|'.addslashes($coor['y']).') است.',''.$from['wref'].',dead,قهرمان در ماجراجویی کشته شد.,,'.$health.','.$exp.'',$data['endtime']);
+					$database->addNotice($ownerID,$data['to'],$ally,9,''.addslashes($from['name']).' felfedezi: ('.addslashes($coor['x']).'|'.addslashes($coor['y']).')',''.$from['wref'].',dead,A hős kalandozás közben meghalt.,,'.$health.','.$exp.'',$data['endtime']);
 				}else{
 					if($btype>=7){
 						$nntype = $ntype[$btype];
@@ -2213,9 +2213,9 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
 						}
 					}
 					if($btype==0 or $btype==2){
-						$database->addNotice($ownerID,$data['to'],$ally,9,''.addslashes($from['name']).' در حال کاوش ('.addslashes($coor['x']).'|'.addslashes($coor['y']).') است.',''.$from['wref'].',,هیچ چیز با ارزشی پیدا نشد.,,'.$health.','.$exp.'',$data['endtime']);
+						$database->addNotice($ownerID,$data['to'],$ally,9,''.addslashes($from['name']).' felfedezi: ('.addslashes($coor['x']).'|'.addslashes($coor['y']).')',''.$from['wref'].',,A hős nem talált semmi értékeset,,'.$health.','.$exp.'',$data['endtime']);
 					}else{
-						$database->addNotice($ownerID,$data['to'],$ally,9,''.addslashes($from['name']).' در حال کاوش ('.addslashes($coor['x']).'|'.addslashes($coor['y']).') است.',''.$from['wref'].','.$btype.','.$nntype.','.$num.','.$health.','.$exp.'',$data['endtime']);
+						$database->addNotice($ownerID,$data['to'],$ally,9,''.addslashes($from['name']).' felfedezi: ('.addslashes($coor['x']).'|'.addslashes($coor['y']).')',''.$from['wref'].','.$btype.','.$nntype.','.$num.','.$health.','.$exp.'',$data['endtime']);
 					}
 					$database->modifyHero2('health', $health, $ownerID, 2);
 					$ref = $database->addAttack($from['wref'],0,0,0,0,0,0,0,0,0,0,1,3,0,0,0);
@@ -2289,7 +2289,7 @@ $info_cata=" از سطح <b>".$tblevel."</b> به سطح <b>".$totallvl."</b> آ
         $this->bountyoasisowned = $database->getOasis($bountywid);
         $this->bountyocounter = $this->bountysortOasis();
         $this->bountypop = $this->bountyinfoarray['pop'];
-        
+    
         //$unitarray = $database->getUnit($bountywid);
         //if(count($unitarray) > 0) {
         //    for($i=1;$i<=50;$i++) {

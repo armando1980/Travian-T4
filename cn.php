@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /** --------------------------------------------------- **\
 | ********* DO NOT REMOVE THIS COPYRIGHT NOTICE ********* |
@@ -8,8 +8,7 @@
 |                                                         |
 | Copyright:   TravianX Project All rights reserved       |
 \** --------------------------------------------------- **/
-
-set_time_limit(0); 
+ 
         include_once ("GameEngine/Session.php");
         include_once ("GameEngine/config.php");
 

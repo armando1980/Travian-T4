@@ -26,7 +26,7 @@ define("SALES_ID","westehran");
 //////////////////////////////////
 // (E_ALL ^ E_NOTICE) = enabled
 // (0) = disabled
-error_reporting (E_ALL ^ E_NOTICE);
+error_reporting (0); 
 
 //////////////////////////////////
 // *****  SERVER SETTINGS  *****//
@@ -37,7 +37,7 @@ define("SERVER_NAME",$result['server_name']);
 
 // ***** Started
 // Defines when has server started.
-define("COMMENCE","1332676158");
+define("COMMENCE","1334164742");
 
 // ***** Language
 // Choose your server language.
@@ -67,7 +67,7 @@ define("INCREASE_SPEED",$result['increase']);
 // ***** Village Expand
 // 1 = slow village expanding - more Cultural Points needed for every new village
 // 0 = fast village expanding - less Cultural Points needed for every new village
-define("CP", 1);
+define("CP", 0);
 
 // ***** Demolish Level Required
 // Defines which level of Main building is required to be able to
@@ -170,7 +170,7 @@ define("NEWSBOX3",$newsbox3);
 
 // ***** Limit Mailbox
 // Limits mailbox to defined number of mails. (IGM's)
-define("LIMIT_MAILBOX",true);
+define("LIMIT_MAILBOX",false);
 // If enabled, define number of maximum mails.
 define("MAX_MAIL","30");
 
@@ -178,8 +178,8 @@ define("MAX_MAIL","30");
 define("INCLUDE_ADMIN", true);
 
 // ***** Server Start Date / Time
-define("START_DATE", "03/25/2012");
-define("START_TIME", "16:15");
+define("START_DATE", "2012.04.11.");
+define("START_TIME", "19:18");
 
 
 
@@ -191,7 +191,7 @@ define("START_TIME", "16:15");
 define("ADMIN_EMAIL", $result['admin_email']);
 
 // ***** Admin Name
-define("ADMIN_NAME", "akshay");
+define("ADMIN_NAME", "Admin");
 
 
 

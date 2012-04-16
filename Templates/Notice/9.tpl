@@ -70,13 +70,13 @@ for($i=$start;$i<=$end;$i++) {
 }
 ?>
 						<td class="unit last">
-				<img title="قهرمان" class="unit uhero" src="img/x.gif">
+				<img title="Hős" class="unit uhero" src="img/x.gif">
 			</td>
 		</tr>
 	</tbody>
 	<tbody class="units last">
 		<tr>
-			<th>واحد</th>
+			<th>Egységek</th>
 	<td class="unit none">0</td>
 	<td class="unit none">0</td>
 	<td class="unit none">0</td>
@@ -94,15 +94,15 @@ for($i=$start;$i<=$end;$i++) {
 	<tbody class="infos">
 		<tr><td class="empty" colspan="12"></td></tr>
 		<tr>
-			<th>اطلاعات</th>
+			<th>Információk</th>
 			<td class="dropItems" colspan="11">
             <?php if($dataarray[1]!='dead'){ ?>
-				<img src="img/x.gif" class="iExperience" title="تجربه:">
+				<img src="img/x.gif" class="iExperience" title="Tapasztalat:">
 				+<?php echo $dataarray[5]; ?>
-				<img src="img/x.gif" class="injury" title="سلامتی:">
+				<img src="img/x.gif" class="injury" title="Egészség:">
 				-<?php echo round($dataarray[4]); ?>%
             <?php }else{
-            		echo '<img src="img/x.gif" class="adventureDifficulty0" title="قهرمان کشته شد">'.$dataarray[2];
+            		echo '<img src="img/x.gif" class="adventureDifficulty0" title="A Hős halott">'.$dataarray[2];
                   }
             ?>
             	
@@ -113,11 +113,11 @@ for($i=$start;$i<=$end;$i++) {
 	<tbody class="goods">
 		<tr><td class="empty" colspan="12"></td></tr>
 		<tr>
-			<th>غنائم</th>
+			<th>Trófea</th>
 			<td colspan="11">
             <?php
            	if($dataarray[1]){
-            	$typeArray = array("","helmet","body","leftHand","rightHand","shoes","horse","bandage25","bandage33","cage","scroll","ointment","bucketOfWater","bookOfWisdom","lawTables","artWork");
+            	$typeArray = array("","sisak","test","balKéz","jobbKéz","cipők","lovak","25öscsomag","33ascsomag","ketrec","tekercs","gyógykrém","vizesvödör","bölcsességkönyve","törvénytáblák","műalkotás");
                 $btype = $dataarray[1];
                 $type = $dataarray[2];
             	include "Templates/Auction/alt.tpl";

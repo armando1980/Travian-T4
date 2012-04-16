@@ -1,9 +1,9 @@
-<h2>عمارت قهرمان</h2>
+﻿<h2>Heros Mansion</h2>
 <div class="build_desc">
 	<a href="#" onclick="return Travian.Game.iPopup(37,4);" class="build_logo">
 		<img class="building big white g37" src="img/x.gif" alt="عمارت قهرمان">
 	</a>
-	در این عمارت شما می توانید یک قهرمان تربیت کنید و بعد از اینکه این ساختمان به مرحله 10 رسید می توانید آبادی های اطراف خود را بگیرید (برای گرفتن آبادی دوم و سوم به ترتیب نیاز به عمارت قهرمان سطح 15 و 20 دارید).</div>
+	At building levels 10, 15 and 20, you can use your hero to annex an unoccupied oasis to your village, one per each of these levels respectively. Depending on the oasis, you will get a production increase for a certain type of resource (or even two resources, from some oases).).</div>
 		<?php
         $_GET['bid'] = 37;
         include("availupgrade.tpl");
